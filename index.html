@@ -6,9 +6,11 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #FFFFFF; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
-    #__bundler_loading { position: fixed; bottom: 20px; right: 20px; font: 13px/1.4 -apple-system, BlinkMacSystemFont, sans-serif; color: #666; background: #fff; padding: 8px 14px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.12); z-index: 10000; }
-    #__bundler_thumbnail { position: fixed; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #FFFFFF; z-index: 9999; }
-    #__bundler_thumbnail svg { width: 100%; height: 100%; object-fit: contain; }
+    #__bundler_loading { display: none; position: fixed; bottom: 20px; right: 20px; font: 13px/1.4 -apple-system, BlinkMacSystemFont, sans-serif; color: #666; background: #fff; padding: 8px 14px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.12); z-index: 10000; }
+    #__bundler_thumbnail { position: fixed; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #F4EDE1; z-index: 9999; }
+    #__bundler_msg { font-family: 'Quicksand', system-ui, sans-serif; font-size: 22px; letter-spacing: .01em; color: #4A443C; animation: __bundler_pulse 1.6s ease-in-out infinite; }
+    @keyframes __bundler_pulse { 0%,100% { opacity: .55 } 50% { opacity: 1 } }
+    @media (prefers-reduced-motion: reduce) { #__bundler_msg { animation: none; opacity: .8 } }
     #__bundler_placeholder { color: #999; font-size: 14px; }
   </style>
   <noscript>
@@ -20,7 +22,7 @@
 </head>
 <body>
   <div id="__bundler_thumbnail">
-<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="800" fill="#FFFFFF"></rect><circle cx="600" cy="355" r="175" fill="#F2E7DB"></circle><rect x="480" y="165" width="240" height="46" rx="12" fill="#D08A6F"></rect><text x="600" y="615" font-family="Quicksand, sans-serif" font-size="128" fill="#4A443C" text-anchor="middle">nimova</text></svg>
+<div id="__bundler_msg">hang on, loading&hellip;</div>
 </div>
   <div id="__bundler_loading">Unpacking...</div>
 
