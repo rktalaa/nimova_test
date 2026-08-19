@@ -1,0 +1,47 @@
+<script>
+/* nimova version switcher — three parallel homepage directions.
+   The bundle calls document.documentElement.replaceWith(), wiping the DOM,
+   so re-attach on every mutation of `document` (which itself survives). */
+(function () {
+  var PAGES = [
+    { file: 'index.html',  label: 'Home'   },
+    { file: 'a_home.html', label: 'A_home' },
+    { file: 'b_home.html', label: 'B_home' }
+  ];
+  var here = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  if (here === '') here = 'index.html';
+
+  function build() {
+    var bar = document.createElement('div');
+    bar.id = '__ver_switch';
+    bar.style.cssText =
+      'position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:2147483000;' +
+      'display:flex;gap:4px;padding:5px;border-radius:999px;background:rgba(247,241,231,.97);' +
+      "border:1px solid rgba(74,68,60,.18);box-shadow:0 4px 18px rgba(74,68,60,.16);" +
+      "font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:14px;backdrop-filter:blur(6px)";
+    PAGES.forEach(function (p) {
+      var on = p.file.toLowerCase() === here;
+      var a = document.createElement('a');
+      a.textContent = p.label;
+      a.href = p.file;
+      a.setAttribute('aria-current', on ? 'page' : 'false');
+      a.style.cssText =
+        'padding:8px 16px;border-radius:999px;text-decoration:none;white-space:nowrap;line-height:1;' +
+        (on ? 'background:#D08A6F;color:#F7F1E7;' : 'color:#4A443C;background:transparent;');
+      bar.appendChild(a);
+    });
+    return bar;
+  }
+
+  function inject() {
+    if (!document.body) return;
+    if (document.getElementById('__ver_switch')) return;
+    document.body.appendChild(build());
+  }
+
+  new MutationObserver(inject).observe(document, { childList: true, subtree: true });
+  document.addEventListener('DOMContentLoaded', inject);
+  setInterval(inject, 600);
+  inject();
+})();
+</script>

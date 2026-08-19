@@ -5,12 +5,21 @@ Claude Design exports do not carry these fixes and have regressed multiple
 times (see CLAUDE.md). Run this on every fresh export before pushing:
 
     python3 tools/fix-export.py <raw-export.html> <output.html>
+    python3 tools/fix-export.py --switcher <raw-export.html> index.html
+
+Pass --switcher when the output is one of the three homepage variants
+(index.html, a_home.html, b_home.html) so the floating version switcher is
+re-appended; a fresh export never carries it.
 
 Idempotent — safe to re-run on an already-fixed file.
 """
 import json
+import os
 import re
 import sys
+
+SWITCHER = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                        "version-switcher.html")
 
 LOAD_CSS_OLD = "#__bundler_loading { position: fixed;"
 LOAD_CSS_NEW = "#__bundler_loading { display: none; position: fixed;"
@@ -72,7 +81,12 @@ def fix_template(tpl, log):
     if fixed:
         log.append(f"resolved {len(fixed)} in-script asset path(s) to uuids: {', '.join(fixed)}")
 
-    leftover = sorted(set(re.findall(r'assets/[A-Za-z0-9_.-]+', tpl)))
+    # A path used as the `|| "assets/…"` fallback beside a window.__resources
+    # lookup is deliberate: the page declares that image with an
+    # <meta name="ext-resource-dependency"> tag and resolves it through the
+    # resource map at runtime. Only flag paths with no such safety net.
+    declared = set(re.findall(r'__resources\.\w+\)\s*\|\|\s*"(assets/[^"]+)"', tpl))
+    leftover = sorted(set(re.findall(r'assets/[A-Za-z0-9_.-]+', tpl)) - declared)
     if leftover:
         log.append(f"WARNING: unresolved asset path(s) remain: {', '.join(leftover)}")
     return tpl
@@ -89,10 +103,27 @@ def encode_template(tpl):
     return json.dumps(tpl, ensure_ascii=False).replace("</", "<\\u002F")
 
 
+def add_switcher(src, log):
+    """Re-append the three-way homepage version switcher."""
+    if "__ver_switch" in src:
+        log.append("version switcher already present")
+        return src
+    block = open(SWITCHER, encoding="utf-8").read().strip()
+    i = src.rfind("</body>")
+    if i == -1:
+        log.append("WARNING: no </body> — version switcher NOT added")
+        return src
+    log.append("re-appended the version switcher")
+    return src[:i].rstrip("\n") + "\n" + block + "\n\n" + src[i:]
+
+
 def main():
-    if len(sys.argv) != 3:
+    argv = sys.argv[1:]
+    want_switcher = "--switcher" in argv
+    argv = [a for a in argv if a != "--switcher"]
+    if len(argv) != 2:
         sys.exit(__doc__)
-    src = open(sys.argv[1], encoding="utf-8").read()
+    src = open(argv[0], encoding="utf-8").read()
     log = []
 
     src = fix_shell(src, log)
@@ -103,13 +134,16 @@ def main():
     tpl = fix_template(json.loads(m.group(2)), log)
     src = src[:m.start(2)] + encode_template(tpl) + src[m.end(2):]
 
-    open(sys.argv[2], "w", encoding="utf-8").write(src)
+    if want_switcher:
+        src = add_switcher(src, log)
+
+    open(argv[1], "w", encoding="utf-8").write(src)
     if log:
         for line in log:
             print("  " + line)
     else:
         print("  no changes needed — already fixed")
-    print(f"  wrote {sys.argv[2]} ({len(src):,} bytes)")
+    print(f"  wrote {argv[1]} ({len(src):,} chars)")
 
 
 if __name__ == "__main__":
