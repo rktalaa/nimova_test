@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0}
+body{background:#FFFFFF;color:#4A443C;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#4A443C;text-decoration:none}
+a:hover{color:#D08A6F}
+::selection{background:#F2E7DB}
+input,button{font-family:inherit}
+</style>
+</helmet>
+<div style="background:#FFFFFF;color:#4A443C;font-family:'Hanken Grotesk',system-ui,sans-serif">
+
+<div style="background:#4A443C;color:#FBF7F1;text-align:center;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:11px 24px">Free shipping over AED 200 · 30-day returns</div>
+
+<header style="position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(74,68,60,.12)">
+<div style="max-width:1320px;margin:0 auto;padding:4px clamp(14px,4vw,40px);display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:0 clamp(10px,2vw,20px)">
+<a href="nimova%20Home.dc.html" style="grid-column:1;grid-row:1;display:flex;flex-direction:column;gap:3px;padding:6px 0">
+<span style="font-family:'Quicksand',sans-serif;font-size:clamp(25px,4.6vw,33px);font-weight:500;line-height:1">nimova</span>
+<span style="border-top:1px solid rgba(208,138,111,.85);padding-top:5px;font-family:'Quicksand',sans-serif;font-size:clamp(9px,1.2vw,11px);letter-spacing:.015em;color:#4A443C;text-align:center">baby essentials</span>
+</a>
+<nav style="grid-column:2;grid-row:1;display:flex;flex-wrap:wrap;justify-content:center;gap:0 clamp(10px,1.6vw,20px);font-size:clamp(14px,1.6vw,15px);white-space:nowrap">
+<a href="nimova%20Home.dc.html#range" style="padding:12px 0;display:inline-block">Shop</a>
+<a href="nimova%20Home.dc.html#watch" style="padding:12px 0;display:inline-block">Watch</a>
+<a href="nimova%20Home.dc.html#journal" style="padding:12px 0;display:inline-block">Journal</a>
+</nav>
+<div style="grid-column:3;grid-row:1;display:flex;gap:14px;justify-content:flex-end;align-items:center;font-size:15px;white-space:nowrap">
+<a href="#buy" style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(74,68,60,.28);border-radius:999px;padding:8px 15px" style-hover="border-color:#D08A6F;color:#D08A6F">Bag<span style="font-size:13px;color:#8d8478">{{ bagCount }}</span></a>
+</div>
+</div>
+</header>
+
+<div style="max-width:1320px;margin:0 auto;padding:20px clamp(20px,5vw,40px) 0;font-size:14px;color:#8d8478;display:flex;gap:8px;flex-wrap:wrap">
+<a href="nimova%20Home.dc.html">Home</a><span>/</span><a href="nimova%20Home.dc.html#range">Feeding &amp; weaning</a><span>/</span><span style="color:#4A443C">3-in-1 Baby Bowl</span></div>
+
+<section id="buy" style="max-width:1320px;margin:0 auto;padding:clamp(24px,4vw,40px) clamp(20px,5vw,40px) clamp(48px,6vw,72px);display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,56px);align-items:flex-start">
+
+<div style="flex:1 1 460px;min-width:0;display:flex;flex-direction:column;gap:14px">
+<div style="background:#FAF8F4;aspect-ratio:1/1;overflow:hidden;display:flex;align-items:center;justify-content:center">
+{{ mainImage }}
+</div>
+<div style="display:flex;gap:12px;flex-wrap:wrap">
+<button onClick="{{ pick0 }}" style="all:unset;cursor:pointer;flex:1 1 90px;max-width:110px;aspect-ratio:1/1;background:#FAF8F4;overflow:hidden;border:{{ thumbBorder0 }}">
+<img src="assets/opt-p-sb-ag1.jpg" alt="3-in-1 bowl with lid on, apple green" style="width:100%;height:100%;object-fit:contain;display:block">
+</button>
+<button onClick="{{ pick1 }}" style="all:unset;cursor:pointer;flex:1 1 90px;max-width:110px;aspect-ratio:1/1;background:#FAF8F4;overflow:hidden;border:{{ thumbBorder1 }}">
+<img src="assets/opt-p-sb-ag.jpg" alt="Bowl, straw filter, suction base and lid" style="width:100%;height:100%;object-fit:contain;display:block">
+</button>
+<button onClick="{{ pick2 }}" style="all:unset;cursor:pointer;flex:1 1 90px;max-width:110px;aspect-ratio:1/1;background:#FAF8F4;overflow:hidden;border:{{ thumbBorder2 }}">
+<img src="assets/opt-p-sb-ag2.jpg" alt="Lid off, stainless steel interior and straw filter" style="width:100%;height:100%;object-fit:contain;display:block">
+</button>
+<button onClick="{{ pick3 }}" style="all:unset;cursor:pointer;flex:1 1 90px;max-width:110px;aspect-ratio:1/1;background:#FAF8F4;overflow:hidden;border:{{ thumbBorder3 }}">
+<img src="assets/opt-p-sb-ww.jpg" alt="3-in-1 bowl in warm white" style="width:100%;height:100%;object-fit:contain;display:block">
+</button>
+</div>
+</div>
+
+<div style="flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:18px">
+<div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#D08A6F">feeding &amp; weaning · 6 months +</div>
+<h1 style="font-family:'Quicksand',sans-serif;font-weight:500;font-size:clamp(32px,3.8vw,46px);line-height:1.1;margin:0;letter-spacing:-.01em">3-in-1 Baby Bowl</h1>
+<p style="font-size:19px;line-height:1.55;color:#6d655b;margin:0;max-width:44ch">A stainless steel bowl, a soup cup with a straw and built-in filter, and a spill-proof lid that turns it into a snack bowl.</p>
+<div style="display:flex;align-items:center;gap:12px">
+<span style="color:#D08A6F;font-size:15px;letter-spacing:.18em">★★★★★</span>
+<span style="font-size:15px;color:#8d8478">4.8 · 126 reviews</span></div>
+<div style="display:flex;align-items:baseline;gap:14px">
+<span style="font-family:'Quicksand',sans-serif;font-size:32px">AED 95</span>
+<span style="font-size:15px;color:#8d8478">or 4 × AED 23.75 with Tabby</span></div>
+
+<div style="display:flex;flex-direction:column;gap:10px;padding-top:6px">
+<span style="font-size:14px;color:#6d655b">Colour: <span style="color:#4A443C">{{ colourName }}</span></span>
+<div style="display:flex;gap:12px">
+<button onClick="{{ colour0 }}" style="all:unset;cursor:pointer;width:38px;height:38px;border-radius:999px;background:#B9C77E;box-shadow:{{ colourRing0 }}"></button>
+<button onClick="{{ colour1 }}" style="all:unset;cursor:pointer;width:38px;height:38px;border-radius:999px;background:#F0EAE0;box-shadow:{{ colourRing1 }}"></button>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:10px">
+<span style="font-size:14px;color:#6d655b">Size</span>
+<span style="display:inline-flex;align-self:flex-start;border:1px solid rgba(74,68,60,.28);border-radius:999px;padding:10px 20px;font-size:16px">One size · 350 ml</span></div>
+
+<div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:8px">
+<div style="display:inline-flex;align-items:center;border:1px solid rgba(74,68,60,.28);border-radius:999px;overflow:hidden">
+<button onClick="{{ dec }}" style="all:unset;cursor:pointer;padding:14px 18px;font-size:18px;line-height:1">−</button>
+<span style="min-width:28px;text-align:center;font-size:17px">{{ qty }}</span>
+<button onClick="{{ inc }}" style="all:unset;cursor:pointer;padding:14px 18px;font-size:18px;line-height:1">+</button>
+</div>
+<button onClick="{{ addToBag }}" style="flex:1 1 220px;background:#D08A6F;color:#FBF7F1;border:none;font-size:17px;font-weight:500;padding:17px 30px;border-radius:999px;cursor:pointer;transition:background .2s ease" style-hover="background:#4A443C">{{ addLabel }}</button>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:9px;padding-top:14px;font-size:16px;color:#6d655b">
+<span>Free shipping over AED 200 · delivered in 2–4 days</span>
+<span>Food-grade, BPA-free, tested to EN and ASTM</span>
+<span>Dishwasher safe · lid and straw are removable</span></div>
+
+<div style="display:flex;flex-direction:column;margin-top:14px;border-top:1px solid rgba(74,68,60,.18)">
+
+<button onClick="{{ toggle4 }}" style="all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid rgba(74,68,60,.18);font-family:'Quicksand',sans-serif;font-size:21px">
+<span>Description</span><span style="font-size:22px;color:#D08A6F;line-height:1">{{ sign4 }}</span>
+</button>
+<sc-if value="{{ open4 }}" hint-placeholder-val="{{ true }}">
+<div style="padding:18px 0 24px;border-bottom:1px solid rgba(74,68,60,.18);display:flex;flex-direction:column;gap:12px;font-size:17px;line-height:1.55;color:#6d655b">
+<span>A single set that carries a baby from first purées to picking up their own snacks. The stainless steel bowl holds heat, the silicone base grips the tray, and the straw lid turns it into a soup cup.</span>
+<span>Swap the straw lid for the snack lid and it travels — no decanting, no second container.</span></div>
+</sc-if>
+
+<button onClick="{{ toggle5 }}" style="all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid rgba(74,68,60,.18);font-family:'Quicksand',sans-serif;font-size:21px">
+<span>Size &amp; weight</span><span style="font-size:22px;color:#D08A6F;line-height:1">{{ sign5 }}</span>
+</button>
+<sc-if value="{{ open5 }}" hint-placeholder-val="{{ false }}">
+<div style="padding:18px 0 24px;border-bottom:1px solid rgba(74,68,60,.18);display:flex;flex-direction:column;gap:12px;font-size:17px;line-height:1.55;color:#6d655b">
+<span>Bowl: 170 × 121 × 60 mm · 350 ml capacity</span>
+<span>Net weight: 170 g · shipped weight 320 g</span>
+<span>Straw length 95 mm · lid diameter 121 mm</span></div>
+</sc-if>
+
+<button onClick="{{ toggle6 }}" style="all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid rgba(74,68,60,.18);font-family:'Quicksand',sans-serif;font-size:21px">
+<span>How to use</span><span style="font-size:22px;color:#D08A6F;line-height:1">{{ sign6 }}</span>
+</button>
+<sc-if value="{{ open6 }}" hint-placeholder-val="{{ false }}">
+<div style="padding:18px 0 24px;border-bottom:1px solid rgba(74,68,60,.18);display:flex;flex-direction:column;gap:12px;font-size:17px;line-height:1.55;color:#6d655b">
+<span>Press the bowl onto a clean, flat tray and push down until the base seals.</span>
+<span>Fit the straw lid for soup and smoothies, or the snack lid for finger food.</span>
+<span>Release by lifting the tab at the edge of the base — never pull the bowl.</span></div>
+</sc-if>
+
+<button onClick="{{ toggle0 }}" style="all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid rgba(74,68,60,.18);font-family:'Quicksand',sans-serif;font-size:21px">
+<span>What's in the box</span><span style="font-size:22px;color:#D08A6F;line-height:1">{{ sign0 }}</span>
+</button>
+<sc-if value="{{ open0 }}" hint-placeholder-val="{{ false }}">
+<div style="padding:18px 0 24px;border-bottom:1px solid rgba(74,68,60,.18);display:flex;flex-direction:column;gap:12px;font-size:17px;line-height:1.55;color:#6d655b">
+<span>One 350 ml stainless steel bowl with silicone suction base</span>
+<span>One soup cup insert with straw and built-in filter</span>
+<span>One spill-proof snack lid</span>
+<span>One travel-safe outer lid</span></div>
+</sc-if>
+
+<button onClick="{{ toggle1 }}" style="all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid rgba(74,68,60,.18);font-family:'Quicksand',sans-serif;font-size:21px">
+<span>Materials &amp; safety</span><span style="font-size:22px;color:#D08A6F;line-height:1">{{ sign1 }}</span>
+</button>
+<sc-if value="{{ open1 }}" hint-placeholder-val="{{ false }}">
+<div style="padding:18px 0 24px;border-bottom:1px solid rgba(74,68,60,.18);display:flex;flex-direction:column;gap:12px;font-size:17px;line-height:1.55;color:#6d655b">
+<span>304 food-grade stainless steel inner, BPA-free silicone outer</span>
+<span>Independent lab testing to EN 14372 and ASTM F2285</span>
+<span>Batch traceability on every production run</span></div>
+</sc-if>
+
+<button onClick="{{ toggle2 }}" style="all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid rgba(74,68,60,.18);font-family:'Quicksand',sans-serif;font-size:21px">
+<span>Care &amp; cleaning</span><span style="font-size:22px;color:#D08A6F;line-height:1">{{ sign2 }}</span>
+</button>
+<sc-if value="{{ open2 }}" hint-placeholder-val="{{ false }}">
+<div style="padding:18px 0 24px;border-bottom:1px solid rgba(74,68,60,.18);display:flex;flex-direction:column;gap:12px;font-size:17px;line-height:1.55;color:#6d655b">
+<span>Top-rack dishwasher safe. Pull the straw and filter apart first.</span>
+<span>Sterilise by steam or cold water. Not for microwave use with the lid on.</span>
+<span>The suction base releases by lifting the tab, not by pulling the bowl.</span></div>
+</sc-if>
+
+<button onClick="{{ toggle3 }}" style="all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid rgba(74,68,60,.18);font-family:'Quicksand',sans-serif;font-size:21px">
+<span>Shipping &amp; returns</span><span style="font-size:22px;color:#D08A6F;line-height:1">{{ sign3 }}</span>
+</button>
+<sc-if value="{{ open3 }}" hint-placeholder-val="{{ false }}">
+<div style="padding:18px 0 24px;border-bottom:1px solid rgba(74,68,60,.18);display:flex;flex-direction:column;gap:12px;font-size:17px;line-height:1.55;color:#6d655b">
+<span>UAE delivery in 2–4 working days. GCC in 4–7.</span>
+<span>Free over AED 200, otherwise AED 20 flat.</span>
+<span>30 days to return, unused and in its box. We cover the return shipping.</span></div>
+</sc-if>
+
+</div>
+</div>
+</section>
+
+<section id="features" style="padding:clamp(48px,6vw,80px) clamp(20px,5vw,40px);border-top:1px solid rgba(74,68,60,.12)">
+<div style="max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(24px,3vw,40px)">
+<div style="display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px">
+<div>
+<div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#D08A6F;margin-bottom:14px">why parents keep it out on the counter</div>
+<h2 style="font-family:'Quicksand',sans-serif;font-weight:500;font-size:clamp(28px,3.6vw,44px);line-height:1.08;margin:0;letter-spacing:-.01em">built for the messy years</h2>
+</div>
+<p style="font-size:17px;line-height:1.6;margin:0;max-width:34ch;color:#6d655b">Four things that make the difference at the table, not on the box.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(16px,2vw,26px)">
+<div style="position:relative;aspect-ratio:1/1;background:#FAF8F4;overflow:hidden">
+<img src="assets/opt-p-sb-ag1.jpg" alt="The 3-in-1 bowl with its lid on" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center bottom;display:block" loading="lazy">
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.7) 30%,rgba(255,255,255,0) 55%)"></div>
+<div style="position:absolute;inset:0;padding:clamp(22px,3vw,38px);display:flex;gap:16px;align-items:flex-start;box-sizing:border-box">
+<div style="flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-family:'Quicksand',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.01em;font-size:clamp(24px,3vw,38px);line-height:1.02;margin:0;color:#D08A6F">One bowl,<br>three ways</h3>
+<p style="font-size:clamp(15px,1.5vw,18px);line-height:1.5;margin:0;color:#6d655b;max-width:24ch"><span style="color:#D08A6F;font-weight:600">Bowl, soup cup and snack box</span> in a single set — swap the lid and it changes job.</p>
+</div>
+<div style="flex:0 0 auto;display:flex;flex-direction:column;gap:14px;align-items:center;padding-top:4px">
+<span style="font-family:'Quicksand',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#D08A6F;border:1px solid rgba(208,138,111,.55);border-radius:999px;padding:7px 12px;text-align:center;white-space:nowrap">3-in-1</span>
+<span style="font-family:'Quicksand',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#D08A6F;border:1px solid rgba(208,138,111,.55);border-radius:999px;padding:7px 12px;text-align:center;white-space:nowrap">350 ml</span></div>
+</div>
+</div>
+<div style="position:relative;aspect-ratio:1/1;background:#FAF8F4;overflow:hidden">
+<img src="assets/opt-p-sb-ag2.jpg" alt="The straw filter sitting in the bowl" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center bottom;display:block" loading="lazy">
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.7) 30%,rgba(255,255,255,0) 55%)"></div>
+<div style="position:absolute;inset:0;padding:clamp(22px,3vw,38px);display:flex;gap:16px;align-items:flex-start;box-sizing:border-box">
+<div style="flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-family:'Quicksand',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.01em;font-size:clamp(24px,3vw,38px);line-height:1.02;margin:0;color:#D08A6F">Soup through<br>a straw</h3>
+<p style="font-size:clamp(15px,1.5vw,18px);line-height:1.5;margin:0;color:#6d655b;max-width:24ch"><span style="color:#D08A6F;font-weight:600">The built-in filter</span> keeps the lumps in the bowl and the straw clear.</p>
+</div>
+<div style="flex:0 0 auto;display:flex;flex-direction:column;gap:14px;align-items:center;padding-top:4px">
+<span style="font-family:'Quicksand',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#D08A6F;border:1px solid rgba(208,138,111,.55);border-radius:999px;padding:7px 12px;text-align:center;white-space:nowrap">No lumps</span>
+<span style="font-family:'Quicksand',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#D08A6F;border:1px solid rgba(208,138,111,.55);border-radius:999px;padding:7px 12px;text-align:center;white-space:nowrap">Detachable</span></div>
+</div>
+</div>
+<div style="position:relative;aspect-ratio:1/1;background:#FAF8F4;overflow:hidden">
+<img src="assets/opt-p-sb-ag3.jpg" alt="The suction base gripping a surface" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center bottom;display:block" loading="lazy">
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.7) 30%,rgba(255,255,255,0) 55%)"></div>
+<div style="position:absolute;inset:0;padding:clamp(22px,3vw,38px);display:flex;gap:16px;align-items:flex-start;box-sizing:border-box">
+<div style="flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-family:'Quicksand',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.01em;font-size:clamp(24px,3vw,38px);line-height:1.02;margin:0;color:#D08A6F">Stays put,<br>no flips</h3>
+<p style="font-size:clamp(15px,1.5vw,18px);line-height:1.5;margin:0;color:#6d655b;max-width:24ch"><span style="color:#D08A6F;font-weight:600">Strong suction base</span> seals to the tray and lifts off by the tab.</p>
+</div>
+<div style="flex:0 0 auto;display:flex;flex-direction:column;gap:14px;align-items:center;padding-top:4px">
+<span style="font-family:'Quicksand',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#D08A6F;border:1px solid rgba(208,138,111,.55);border-radius:999px;padding:7px 12px;text-align:center;white-space:nowrap">Suction base</span>
+<span style="font-family:'Quicksand',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#D08A6F;border:1px solid rgba(208,138,111,.55);border-radius:999px;padding:7px 12px;text-align:center;white-space:nowrap">Easy release</span></div>
+</div>
+</div>
+<div style="position:relative;aspect-ratio:1/1;background:#FAF8F4;overflow:hidden">
+<img src="assets/opt-p-sb-ww.jpg" alt="The bowl in warm white with its orange lid" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center bottom;display:block" loading="lazy">
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.7) 30%,rgba(255,255,255,0) 55%)"></div>
+<div style="position:absolute;inset:0;padding:clamp(22px,3vw,38px);display:flex;gap:16px;align-items:flex-start;box-sizing:border-box">
+<div style="flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-family:'Quicksand',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.01em;font-size:clamp(24px,3vw,38px);line-height:1.02;margin:0;color:#D08A6F">Easy<br>to clean</h3>
+<p style="font-size:clamp(15px,1.5vw,18px);line-height:1.5;margin:0;color:#6d655b;max-width:24ch"><span style="color:#D08A6F;font-weight:600">Every part comes apart</span> — dishwasher, boiling water or steam steriliser.</p>
+</div>
+<div style="flex:0 0 auto;display:flex;flex-direction:column;gap:14px;align-items:center;padding-top:4px">
+<span style="font-family:'Quicksand',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#D08A6F;border:1px solid rgba(208,138,111,.55);border-radius:999px;padding:7px 12px;text-align:center;white-space:nowrap">Dishwasher</span>
+<span style="font-family:'Quicksand',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#D08A6F;border:1px solid rgba(208,138,111,.55);border-radius:999px;padding:7px 12px;text-align:center;white-space:nowrap">Sterilise</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="details" style="padding:clamp(48px,6vw,80px) clamp(20px,5vw,40px);border-top:1px solid rgba(74,68,60,.12)">
+<div style="max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(28px,3.2vw,42px)">
+<div style="display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px">
+<div style="display:flex;flex-direction:column;gap:14px">
+<span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#D08A6F">product details</span>
+<h2 style="font-family:'Quicksand',sans-serif;font-weight:500;font-size:clamp(28px,3.6vw,44px);line-height:1.08;margin:0;letter-spacing:-.01em">the all-in-one feeding bowl</h2>
+</div>
+<p style="font-size:17px;line-height:1.6;margin:0;max-width:36ch;color:#6d655b">For independent eating, sipping and snacking — one set that keeps up with all three.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(400px,100%),1fr));gap:clamp(22px,2.6vw,34px)">
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;align-items:baseline;gap:12px">
+<span style="font-family:'Quicksand',sans-serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#D08A6F">Page 1</span>
+<span style="font-family:'Quicksand',sans-serif;font-size:clamp(18px,1.9vw,22px);line-height:1.2">the all-in-one feeding bowl</span>
+</div>
+<img src="assets/opt-detail-page-1.jpg" alt="the all-in-one feeding bowl" style="width:100%;height:auto;display:block;border:1px solid rgba(74,68,60,.10)" loading="lazy">
+
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;align-items:baseline;gap:12px">
+<span style="font-family:'Quicksand',sans-serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#D08A6F">Page 2</span>
+<span style="font-family:'Quicksand',sans-serif;font-size:clamp(18px,1.9vw,22px);line-height:1.2">product information</span>
+</div>
+<img src="assets/opt-detail-page-2.jpg" alt="product information" style="width:100%;height:auto;display:block;border:1px solid rgba(74,68,60,.10)" loading="lazy">
+
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;align-items:baseline;gap:12px">
+<span style="font-family:'Quicksand',sans-serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#D08A6F">Page 3</span>
+<span style="font-family:'Quicksand',sans-serif;font-size:clamp(18px,1.9vw,22px);line-height:1.2">thoughtful details for growing babies</span>
+</div>
+<img src="assets/opt-detail-page-3.jpg" alt="thoughtful details for growing babies" style="width:100%;height:auto;display:block;border:1px solid rgba(74,68,60,.10)" loading="lazy">
+
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;align-items:baseline;gap:12px">
+<span style="font-family:'Quicksand',sans-serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#D08A6F">Page 4</span>
+<span style="font-family:'Quicksand',sans-serif;font-size:clamp(18px,1.9vw,22px);line-height:1.2">snack guard and suction base</span>
+</div>
+<img src="assets/opt-detail-page-4.jpg" alt="snack guard and suction base" style="width:100%;height:auto;display:block;border:1px solid rgba(74,68,60,.10)" loading="lazy">
+<span style="font-size:15px;line-height:1.55;color:#6d655b">Petal snack guard keeps treats in the bowl · a strong suction base means it will not be flipped over · food-grade silicone straw, odourless and safe.</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;align-items:baseline;gap:12px">
+<span style="font-family:'Quicksand',sans-serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#D08A6F">Page 5</span>
+<span style="font-family:'Quicksand',sans-serif;font-size:clamp(18px,1.9vw,22px);line-height:1.2">materials, heat and sterilising</span>
+</div>
+<img src="assets/opt-detail-page-5.jpg" alt="materials, heat and sterilising" style="width:100%;height:auto;display:block;border:1px solid rgba(74,68,60,.10)" loading="lazy">
+
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;align-items:baseline;gap:12px">
+<span style="font-family:'Quicksand',sans-serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#D08A6F">Page 6</span>
+<span style="font-family:'Quicksand',sans-serif;font-size:clamp(18px,1.9vw,22px);line-height:1.2">one bowl, three ways</span>
+</div>
+<img src="assets/opt-detail-page-6.jpg" alt="one bowl, three ways" style="width:100%;height:auto;display:block;border:1px solid rgba(74,68,60,.10)" loading="lazy">
+<span style="font-size:15px;line-height:1.55;color:#6d655b">Straw cup + snack bowl + suction bowl — safe materials, multi-purpose, strong suction, easy to clean.</span>
+</div>
+</div>
+</div>
+</section>
+
+<section style="background:#F6EFE4;padding:clamp(44px,6vw,72px) clamp(20px,5vw,40px)">
+<div style="max-width:1320px;margin:0 auto;display:flex;flex-wrap:wrap;gap:22px">
+<div style="flex:1 1 260px;background:#FFFFFF;padding:clamp(28px,3.5vw,38px);display:flex;flex-direction:column;gap:10px;box-sizing:border-box">
+<div style="font-family:'Quicksand',sans-serif;font-size:26px;line-height:1.15">Bowl at dinner</div>
+<p style="font-size:17px;line-height:1.55;color:#6d655b;margin:0">The suction base holds to the tray, so it stays put through the part where they test whether it does.</p>
+</div>
+<div style="flex:1 1 260px;background:#FFFFFF;padding:clamp(28px,3.5vw,38px);display:flex;flex-direction:column;gap:10px;box-sizing:border-box">
+<div style="font-family:'Quicksand',sans-serif;font-size:26px;line-height:1.15">Soup cup at pre-meal time</div>
+<p style="font-size:17px;line-height:1.55;color:#6d655b;margin:0">Drop in the straw insert and the same bowl becomes a soup cup, with a filter that keeps the lumps out.</p>
+</div>
+<div style="flex:1 1 260px;background:#FFFFFF;padding:clamp(28px,3.5vw,38px);display:flex;flex-direction:column;gap:10px;box-sizing:border-box">
+<div style="font-family:'Quicksand',sans-serif;font-size:26px;line-height:1.15">Box at snack time</div>
+<p style="font-size:17px;line-height:1.55;color:#6d655b;margin:0">Spill-proof lid on and it becomes a snack box for the mid-day bite — no worry of food spilling while they eat straight from the bowl.</p>
+</div>
+</div>
+</section>
+
+<section style="padding:clamp(48px,6vw,80px) clamp(20px,5vw,40px)">
+<div style="max-width:1320px;margin:0 auto">
+<h2 style="font-family:'Quicksand',sans-serif;font-weight:500;font-size:clamp(28px,3.6vw,44px);line-height:1.1;margin:0 0 32px;letter-spacing:-.01em">goes well with</h2>
+<div style="display:flex;flex-wrap:wrap;gap:22px">
+<a href="nimova%20Home.dc.html#range" style="flex:1 1 250px;background:#FAF8F4;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease" style-hover="transform:translateY(-4px);box-shadow:0 18px 34px rgba(74,68,60,.10)">
+<div style="aspect-ratio:1/1;background:#FAF8F4;display:flex;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;overflow:hidden">
+<img src="assets/deer-plate.jpg" alt="Divided silicone plate" style="width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;display:block">
+</div>
+<div style="padding:22px 20px 26px;display:flex;flex-direction:column;gap:8px">
+<span style="font-family:'Quicksand',sans-serif;font-size:22px">SoftStart Divided Plate</span>
+<span style="font-size:17px">AED 85</span></div>
+</a>
+<a href="nimova%20Home.dc.html#range" style="flex:1 1 250px;background:#FAF8F4;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease" style-hover="transform:translateY(-4px);box-shadow:0 18px 34px rgba(74,68,60,.10)">
+<div style="aspect-ratio:1/1;background:#FAF8F4;display:flex;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;overflow:hidden">
+<img src="assets/bib-yellow.jpg" alt="Silicone catch bib" style="width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;display:block">
+</div>
+<div style="padding:22px 20px 26px;display:flex;flex-direction:column;gap:8px">
+<span style="font-family:'Quicksand',sans-serif;font-size:22px">CatchAll Silicone Bib</span>
+<span style="font-size:17px">AED 45–65</span></div>
+</a>
+<a href="nimova%20Home.dc.html#range" style="flex:1 1 250px;background:#FAF8F4;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease" style-hover="transform:translateY(-4px);box-shadow:0 18px 34px rgba(74,68,60,.10)">
+<div style="aspect-ratio:1/1;background:#FAF8F4;display:flex;align-items:center;justify-content:center;padding:26px;box-sizing:border-box;overflow:hidden">
+<img src="assets/cutlery.jpg" alt="Spoon and fork set" style="width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;display:block">
+</div>
+<div style="padding:22px 20px 26px;display:flex;flex-direction:column;gap:8px">
+<span style="font-family:'Quicksand',sans-serif;font-size:22px">FirstHold Spoon &amp; Fork</span>
+<span style="font-size:17px">AED 55</span></div>
+</a>
+</div>
+</div>
+</section>
+
+<footer style="border-top:1px solid rgba(74,68,60,.12);padding:clamp(44px,5vw,64px) clamp(20px,5vw,40px) 70px">
+<div style="max-width:1320px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px;align-items:flex-end">
+<div style="display:flex;flex-direction:column;gap:5px;align-items:stretch;width:fit-content">
+<span style="font-family:'Quicksand',sans-serif;font-size:clamp(30px,4vw,40px);font-weight:500;line-height:1">nimova</span>
+<span style="border-top:1px solid rgba(208,138,111,.85);padding-top:7px;font-family:'Quicksand',sans-serif;font-size:15px;letter-spacing:.015em;color:#4A443C;text-align:center">baby essentials</span></div>
+<div style="display:flex;flex-direction:column;gap:8px;text-align:right;font-size:16px;color:#6d655b">
+<a href="mailto:hello@nimova.com">hello@nimova.com</a>
+<span>nimova FZ LLC · Dubai</span></div>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { img: 0, colour: 0, qty: 1, added: false, open: [false, false, false, false, true, false, false] };
+
+  renderVals() {
+    const imgs = [
+      ["assets/opt-p-sb-ag1.jpg", "3-in-1 bowl with lid on, apple green"],
+      ["assets/opt-p-sb-ag.jpg", "Bowl, straw filter, suction base and lid"],
+      ["assets/opt-p-sb-ag2.jpg", "Lid off, stainless steel interior and straw filter"],
+      ["assets/opt-p-sb-ww.jpg", "3-in-1 bowl in warm white"]
+    ];
+    const [src, alt] = imgs[this.state.img];
+    const ring = (i) => this.state.colour === i ? "0 0 0 2px #FFFFFF, 0 0 0 4px #4A443C" : "0 0 0 1px rgba(74,68,60,.22)";
+    const border = (i) => this.state.img === i ? "2px solid #4A443C" : "2px solid transparent";
+    const toggle = (i) => () => this.setState((s) => {
+      const open = s.open.slice(); open[i] = !open[i]; return { open };
+    });
+    const v = {
+      bagCount: this.state.added ? this.state.qty : 0,
+      mainImage: React.createElement("img", { src, alt, style: { width: "100%", height: "100%", objectFit: "contain", display: "block" } }),
+      colourName: this.state.colour === 0 ? "Apple Green" : "Warm White",
+      qty: this.state.qty,
+      addLabel: this.state.added ? "Added to bag" : "Add to bag",
+      inc: () => this.setState((s) => ({ qty: Math.min(9, s.qty + 1), added: false })),
+      dec: () => this.setState((s) => ({ qty: Math.max(1, s.qty - 1), added: false })),
+      addToBag: () => this.setState({ added: true }),
+      colour0: () => this.setState({ colour: 0 }),
+      colour1: () => this.setState({ colour: 1 }),
+      colourRing0: ring(0),
+      colourRing1: ring(1)
+    };
+    imgs.forEach((_, i) => {
+      v["pick" + i] = () => this.setState({ img: i });
+      v["thumbBorder" + i] = border(i);
+    });
+    this.state.open.forEach((o, i) => {
+      v["open" + i] = o;
+      v["sign" + i] = o ? "−" : "+";
+      v["toggle" + i] = toggle(i);
+    });
+    return v;
+  }
+}
+</script>
+</body>
+</html>

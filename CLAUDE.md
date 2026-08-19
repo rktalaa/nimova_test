@@ -14,12 +14,24 @@ as base64, ~1–1.6 MB each). Design filenames are NOT the deployed filenames.
 | `product.html` | Product page. |
 | `a_home.html`, `b_home.html` | Teammates' alternative homepage directions. **Never overwrite from an export** — they are edited independently. |
 | `.nojekyll` | **Required.** See below. |
+| `tools/fix-export.py` | Applies the three export fixes below. |
+| `src/` | The imported Claude Design source for the product page: `nimova Product.dc.html`, `support.js` and the 14 `assets/` images it references. Reference copies — the deployed page embeds its own. |
 | `CNAME` | Custom domain. Deleting it takes the site off `d2c-test.talaabrands.team`. |
 
 ## Re-apply these to every fresh export
 
-Claude Design exports do not carry these fixes. Both have regressed multiple
-times — always re-apply before pushing.
+Claude Design exports do not carry these fixes. They have regressed multiple
+times — always re-apply before pushing. **Use the tool, don't hand-patch:**
+
+    python3 tools/fix-export.py <raw-export.html> product.html
+
+It applies all three fixes below and is idempotent. It re-encodes the
+`__bundler/template` JSON string, and must escape the slash in every `</`
+as a `\u002F` unicode escape and write non-ASCII characters literally —
+that is what the exporter does, and the tool round-trips an unmodified
+export byte for byte. Encode it any other way and a literal `</script>`
+ends up inside the template `<script>` element, closing it early and
+breaking the entire page.
 
 **1. Link rewrite.** Exports link to the design filename, which 404s:
 
@@ -33,6 +45,15 @@ placeholder inside `#__bundler_thumbnail`. Replace it with:
 Also set `#__bundler_thumbnail` background to `#F4EDE1` (not `#FFFFFF`), add
 `display: none` to `#__bundler_loading` to hide the "Unpacking..." badge, and
 style `#__bundler_msg` in Quicksand 22px `#4A443C`.
+
+**3. In-script image paths.** The bundler rewrites `<img src>` attributes to
+resource uuids, but it cannot see image paths that live inside the dc logic
+script. On the product page the `imgs` array in `renderVals()` ships literal
+`assets/opt-p-sb-*.jpg` paths, which 404 on the deployed site — the main
+gallery image renders blank and every thumbnail click swaps in another broken
+image. The fix maps each path to its uuid by matching the `alt` text against
+the corresponding `<img>` tag, so the loader's uuid substitution turns them
+into blob URLs like every other asset.
 
 ## Why `.nojekyll` is required
 
