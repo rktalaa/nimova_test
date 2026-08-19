@@ -3,20 +3,27 @@
 Static site served by **GitHub Pages** from `main` (root) at
 **https://d2c-test.talaabrands.team**.
 
-Pages are single-file bundles exported from Claude Design (all assets inlined
-as base64, ~1–1.6 MB each). Design filenames are NOT the deployed filenames.
+Design filenames are NOT the deployed filenames.
+
+Two page shapes live here:
+
+- **Bundles** — single files exported from Claude Design, all assets inlined as
+  base64 (~1–1.6 MB each). `product.html`, `a_home.html`, `b_home.html`.
+- **Native** — the dc source served directly, with `support.js` and the images
+  as real files under `src/`. `index.html` only. See "Why index.html is native".
 
 ## Files — do not delete
 
 | File | Purpose |
 |---|---|
-| `index.html` | Homepage. Exported from `nimova Home.dc.html`. |
+| `index.html` | Homepage. Built **native** from `src/nimova Home.dc.html` by `tools/build-native.py`. Not a bundle — `tools/fix-export.py` does not apply to it. |
 | `product.html` | Product page. |
-| `a_home.html`, `b_home.html` | Teammates' alternative homepage directions. **Never overwrite from an export** — they are edited independently. |
+| `a_home.html`, `b_home.html` | Teammates' alternative homepage directions, and the last copies of the **previous** homepage design. **Never overwrite from an export** — they are edited independently. |
 | `.nojekyll` | **Required.** See below. |
-| `tools/fix-export.py` | Applies the three export fixes below. |
+| `tools/fix-export.py` | Applies the three export fixes below. Bundles only. |
+| `tools/build-native.py` | Builds a native page from a dc source. |
 | `tools/version-switcher.html` | The switcher script, re-injected by `--switcher`. |
-| `src/` | The imported Claude Design source for the product page: `nimova Product.dc.html`, `support.js` and the 14 `assets/` images it references. Reference copies — the deployed page embeds its own. |
+| `src/` | Imported Claude Design sources: `nimova Home.dc.html`, `nimova Product.dc.html`, `support.js` and the 26 `assets/` images they reference. **`index.html` serves `src/support.js` and `src/assets/` at runtime — do not delete or move them.** The bundles embed their own copies. |
 | `CNAME` | Custom domain. Deleting it takes the site off `d2c-test.talaabrands.team`. |
 
 ## Re-apply these to every fresh export
@@ -75,14 +82,29 @@ The bundle calls `document.documentElement.replaceWith()` on render, wiping the
 DOM, so the switcher re-attaches via a `MutationObserver` on `document`.
 Preserve this script when replacing any of those three files.
 
-## Re-exporting the homepage
+## Why index.html is native
 
-`deploy/index.html` in the Design project is ~1.3 MB, and the design MCP's
-`get_file` truncates at 256 KiB — so the homepage bundle cannot be pulled
-down through the MCP. Download the project zip from claude.ai/design instead
-(it contains `deploy/index.html` and `deploy/product.html`), then:
+The Home redesign (hero slideshow with video, `category`/`film`/`instagram`
+sections, عربي toggle) exists **only as dc source**. No exporter build of it
+exists anywhere in the Design project: `deploy/index.html`, the project's own
+`index.html`, `nimova Home.html` and `site/index.html` are all the older
+design, and `deploy/` is a stored folder that re-downloading does not
+regenerate. The MCP cannot fetch a bundle either — `get_file` truncates at
+256 KiB and the bundles are ~1.3 MB.
 
-    python3 tools/fix-export.py --switcher deploy/index.html index.html
+So `index.html` is built straight from the source instead:
+
+    python3 tools/build-native.py "src/nimova Home.dc.html" index.html --switcher
+
+That rewrites `./support.js` and the 37 `assets/…` references to point at
+`src/`, then appends the version switcher. Nothing is inlined and no asset is
+duplicated. React and Google Fonts load from their CDNs, which a bundle would
+have inlined — so unlike the bundles, this page needs network access to
+unpkg.com and fonts.googleapis.com to render fully.
+
+If a real export of the Home page ever becomes available, prefer it: rebuild
+with `tools/fix-export.py --switcher <export> index.html` and drop the native
+build.
 
 ## Custom domain
 
