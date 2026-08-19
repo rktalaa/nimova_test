@@ -18,8 +18,10 @@ import os
 import re
 import sys
 
-SWITCHER = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                        "version-switcher.html")
+HERE = os.path.dirname(os.path.abspath(__file__))
+SWITCHER = os.path.join(HERE, "version-switcher.html")
+sys.path.insert(0, HERE)
+from links import rewrite_links  # noqa: E402
 
 LOAD_CSS_OLD = "#__bundler_loading { position: fixed;"
 LOAD_CSS_NEW = "#__bundler_loading { display: none; position: fixed;"
@@ -60,10 +62,7 @@ def fix_shell(src, log):
 
 def fix_template(tpl, log):
     """Link rewrite + resolve asset paths left inside the dc logic script."""
-    if "nimova%20Home.dc.html" in tpl:
-        n = tpl.count("nimova%20Home.dc.html")
-        tpl = tpl.replace("nimova%20Home.dc.html", "index.html")
-        log.append(f"rewrote {n} design-filename link(s) -> index.html")
+    tpl = rewrite_links(tpl, log)
 
     # The bundler rewrites <img src> attributes to uuids but cannot see image
     # paths inside the dc logic script, so those ship as literal 'assets/...'

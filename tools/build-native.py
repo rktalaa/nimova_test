@@ -18,8 +18,10 @@ import os
 import re
 import sys
 
-SWITCHER = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                        "version-switcher.html")
+HERE = os.path.dirname(os.path.abspath(__file__))
+SWITCHER = os.path.join(HERE, "version-switcher.html")
+sys.path.insert(0, HERE)
+from links import rewrite_links  # noqa: E402
 
 
 def main():
@@ -34,12 +36,18 @@ def main():
     if not base:
         sys.exit("error: source must live in a subdirectory (e.g. src/)")
     src = open(src_path, encoding="utf-8").read()
+    log = []
 
     # ./support.js -> src/support.js
     src, n_js = re.subn(r'"\./support\.js"', f'"{base}/support.js"', src)
     # every "assets/… -> "src/assets/…  (img src, meta content, JS fallbacks)
     src, n_assets = re.subn(r'"assets/', f'"{base}/assets/', src)
-    print(f"  rewrote {n_js} support.js ref, {n_assets} asset refs -> {base}/")
+    log.append(f"rewrote {n_js} support.js ref, {n_assets} asset refs -> {base}/")
+
+    # Pages link to each other by design filename, which 404s once deployed.
+    src = rewrite_links(src, log)
+    for line in log:
+        print("  " + line)
 
     leftover = re.findall(r'"(?:\./)?(?:assets/|support\.js)', src)
     if leftover:

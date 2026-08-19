@@ -22,6 +22,7 @@ Two page shapes live here:
 | `.nojekyll` | **Required.** See below. |
 | `tools/fix-export.py` | Applies the three export fixes below. Bundles only. |
 | `tools/build-native.py` | Builds a native page from a dc source. |
+| `tools/links.py` | Design-filename → deployed-filename map, shared by both tools. |
 | `tools/version-switcher.html` | The switcher script, re-injected by `--switcher`. |
 | `src/` | Imported Claude Design sources: `nimova Home.dc.html`, `nimova Product.dc.html`, `support.js` and the 26 `assets/` images they reference. **`index.html` serves `src/support.js` and `src/assets/` at runtime — do not delete or move them.** The bundles embed their own copies. |
 | `CNAME` | Custom domain. Deleting it takes the site off `d2c-test.talaabrands.team`. |
@@ -45,9 +46,14 @@ export byte for byte. Encode it any other way and a literal `</script>`
 ends up inside the template `<script>` element, closing it early and
 breaking the entire page.
 
-**1. Link rewrite.** Exports link to the design filename, which 404s:
+**1. Link rewrite.** Pages link to each other by design filename, which 404s:
 
-    nimova%20Home.dc.html  ->  index.html
+    nimova%20Home.dc.html     ->  index.html
+    nimova%20Product.dc.html  ->  product.html
+
+The map lives in `tools/links.py` and both tools rewrite through it, so add
+any newly deployed page there. A link to a design page that is *not* deployed
+is reported as unresolved rather than silently rewritten.
 
 **2. Loading screen.** Exports ship a full-screen `<svg viewBox="0 0 1200 800">`
 placeholder inside `#__bundler_thumbnail`. Replace it with:
@@ -97,7 +103,8 @@ So `index.html` is built straight from the source instead:
     python3 tools/build-native.py "src/nimova Home.dc.html" index.html --switcher
 
 That rewrites `./support.js` and the 37 `assets/…` references to point at
-`src/`, then appends the version switcher. Nothing is inlined and no asset is
+`src/`, rewrites the design-filename links via `tools/links.py`, then appends
+the version switcher. Nothing is inlined and no asset is
 duplicated. React and Google Fonts load from their CDNs, which a bundle would
 have inlined — so unlike the bundles, this page needs network access to
 unpkg.com and fonts.googleapis.com to render fully.
