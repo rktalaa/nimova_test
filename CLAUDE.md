@@ -8,18 +8,18 @@ Design filenames are NOT the deployed filenames.
 Two page shapes live here:
 
 - **Bundles** — single files exported from Claude Design, all assets inlined as
-  base64 (~1–1.6 MB each). `product.html`, `b_home.html`.
+  base64 (~1–1.6 MB each). `b_home.html`.
 - **Native** — the dc source served directly, with `support.js` and the images
-  as real files under a source directory. `index.html` (from `src/`) and
-  `a_home.html` + `a_product.html` (from `src-a/`). See "Why the native pages
-  are native".
+  as real files under a source directory. `index.html` + `product.html` (from
+  `src/`) and `a_home.html` + `a_product.html` (from `src-a/`). See "Why the
+  native pages are native".
 
 ## Files — do not delete
 
 | File | Purpose |
 |---|---|
 | `index.html` | Homepage. Built **native** from `src/nimova Home.dc.html` by `tools/build-native.py`. Not a bundle — `tools/fix-export.py` does not apply to it. |
-| `product.html` | Product page for the `index.html` design. Bundle. |
+| `product.html` | Product page for the `index.html` design. Built **native** from `src/nimova Product.dc.html`. Was a 1.6 MB bundle until 2026-08-20 — see "Why product.html was converted". |
 | `a_home.html` | The **A direction** homepage. Built **native** from `src-a/Nimova Home.dc.html`. Replaced the old bundle on 2026-08-20; `b_home.html` still holds that previous design (the two files were byte-identical). |
 | `a_product.html` | The A direction's PDP, built **native** from `src-a/Nimova PDP.dc.html`. `a_home.html` links to it, so it is not optional. Not in the version switcher — the switcher is homepages only. |
 | `b_home.html` | A teammate's alternative homepage direction, and the last copy of the **previous** homepage design. **Never overwrite from an export** — it is edited independently. |
@@ -136,6 +136,27 @@ loudly. That is the same class of bug as export fix 3 above.
 If a real export of any of these pages ever becomes available, prefer it:
 rebuild with `tools/fix-export.py --switcher <export> <page>` and drop the
 native build.
+
+## Why product.html was converted
+
+`product.html` is the one page where both shapes were available, and it was
+switched from the bundle to a native build on 2026-08-20:
+
+    python3 tools/build-native.py "src/nimova Product.dc.html" product.html
+
+1,614,280 -> 33,837 bytes, a 48x reduction, with no unpack step and so no
+loading screen at all. It also sidesteps export fix 3 entirely: the in-script
+`imgs` array that breaks the gallery in a bundle needs no special handling
+when the paths stay real files.
+
+The trade-off, and the reason this contradicts the "prefer a real export"
+line above: the native page loads React from unpkg.com and the fonts from
+fonts.googleapis.com at runtime, where the bundle inlined both. It therefore
+needs network access to those hosts to render, and will not work offline.
+
+To go back, the last bundle is commit `42c71d0`:
+
+    git show 42c71d0:product.html > product.html
 
 ## Known outstanding — A direction
 
