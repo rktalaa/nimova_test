@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="src-a/support.js"></script>
+<script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
@@ -54,7 +54,7 @@
   </header>
 
   <section data-screen-label="Hero" data-reveal="0" style="position: relative; width: 100%; min-height: 660px; overflow: hidden; background: #EFEEEE;">
-    <img src="src-a/img/hero-plate-band.png" alt="Nimova divided suction plate, side view showing the suction base and release tab" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 100% 50%; transform: {{ heroFlip }};">
+    <img src="img/hero-plate-band.png" alt="Nimova divided suction plate, side view showing the suction base and release tab" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 100% 50%; transform: {{ heroFlip }};">
     <div style="position: relative; max-width: 1240px; margin: 0 auto; padding: 96px 32px; min-height: 660px; display: flex; align-items: center;">
       <div style="max-width: 30ch;">
         <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 28px;">
@@ -176,7 +176,7 @@
   <section data-screen-label="Materials" data-reveal="1" style="border-top: 1px solid #E7E2DC;">
     <div style="max-width: 1240px; margin: 0 auto; padding: 96px 32px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 72px; align-items: center;">
       <div style="background: #F1EEEA;">
-        <img src="src-a/img/spoons.png" alt="Two Nimova silicone first spoons, sage and cream" style="width: 100%; height: 460px; object-fit: cover;">
+        <img src="img/spoons.png" alt="Two Nimova silicone first spoons, sage and cream" style="width: 100%; height: 460px; object-fit: cover;">
       </div>
       <div>
         <div style="font-size: 13px; line-height: 18px; color: #6B635B; letter-spacing: 0.06em; margin-bottom: 24px;">{{ t.materialsEyebrow }}</div>
@@ -303,7 +303,7 @@
         </sc-if>
       </div>
       <div style="background: #F1EEEA;">
-        <img src="src-a/img/pattern-sage.png" alt="Nimova rabbit pattern, sage" style="width: 100%; height: 340px; object-fit: cover;">
+        <img src="img/pattern-sage.png" alt="Nimova rabbit pattern, sage" style="width: 100%; height: 340px; object-fit: cover;">
       </div>
     </div>
   </section>
@@ -372,17 +372,17 @@
 const MARKERS_FULL = ['4M', '6M', '9M', '12M', '18M+'];
 const MARKERS_LIGHT = ['6M', '12M', '18M+'];
 
-const PDP = 'a_product.html';
+const PDP = 'Nimova%20PDP.dc.html';
 
 const PRODUCTS = [
-  { id: 'spoons', img: 'src-a/img/spoons.png', en: 'First spoons, pair', ar: 'ملعقتا البداية', price: 39, from: 0, to: 2, cat: 'spoons', sku: 'bowl' },
-  { id: 'bib-catch', img: 'src-a/img/bib-catch-sage.png', en: 'Silicone catch bib', ar: 'مريلة سيليكون بجيب', price: 55, from: 0, to: 4, cat: 'bibs', sku: 'bib' },
-  { id: 'plate', img: 'src-a/img/plate-topview.png', en: 'Divided suction plate', ar: 'طبق مقسّم بقاعدة شفط', price: 89, from: 1, to: 4, cat: 'plates', sku: 'plate' },
-  { id: 'bowl', img: 'src-a/img/bowl-sage.png', en: 'Suction bowl', ar: 'وعاء بقاعدة شفط', price: 79, from: 1, to: 4, cat: 'plates', sku: 'bowl' },
-  { id: 'sippy', img: 'src-a/img/sippy-sage.png', en: 'Sippy cup with handles', ar: 'كوب تعليمي بمقبضين', price: 65, from: 1, to: 3, cat: 'cups', sku: 'cup' },
-  { id: 'spout', img: 'src-a/img/spoutcup-sage.png', en: 'Spout cup', ar: 'كوب بفتحة شرب', price: 59, from: 2, to: 4, cat: 'cups', sku: 'cup' },
-  { id: 'bib-sleeve', img: 'src-a/img/bib-sleeve-sage.png', en: 'Long-sleeve smock bib', ar: 'مريلة بأكمام طويلة', price: 79, from: 2, to: 4, cat: 'bibs', sku: 'bib' },
-  { id: 'bottle', img: 'src-a/img/bottle-sage.png', en: 'Straw bottle, 240 ml', ar: 'زجاجة بشفّاطة، ٢٤٠ مل', price: 89, from: 3, to: 4, cat: 'cups', sku: 'cup' }
+  { id: 'spoons', img: 'img/spoons.png', en: 'First spoons, pair', ar: 'ملعقتا البداية', price: 39, from: 0, to: 2, cat: 'spoons', sku: 'bowl' },
+  { id: 'bib-catch', img: 'img/bib-catch-sage.png', en: 'Silicone catch bib', ar: 'مريلة سيليكون بجيب', price: 55, from: 0, to: 4, cat: 'bibs', sku: 'bib' },
+  { id: 'plate', img: 'img/plate-topview.png', en: 'Divided suction plate', ar: 'طبق مقسّم بقاعدة شفط', price: 89, from: 1, to: 4, cat: 'plates', sku: 'plate' },
+  { id: 'bowl', img: 'img/bowl-sage.png', en: 'Suction bowl', ar: 'وعاء بقاعدة شفط', price: 79, from: 1, to: 4, cat: 'plates', sku: 'bowl' },
+  { id: 'sippy', img: 'img/sippy-sage.png', en: 'Sippy cup with handles', ar: 'كوب تعليمي بمقبضين', price: 65, from: 1, to: 3, cat: 'cups', sku: 'cup' },
+  { id: 'spout', img: 'img/spoutcup-sage.png', en: 'Spout cup', ar: 'كوب بفتحة شرب', price: 59, from: 2, to: 4, cat: 'cups', sku: 'cup' },
+  { id: 'bib-sleeve', img: 'img/bib-sleeve-sage.png', en: 'Long-sleeve smock bib', ar: 'مريلة بأكمام طويلة', price: 79, from: 2, to: 4, cat: 'bibs', sku: 'bib' },
+  { id: 'bottle', img: 'img/bottle-sage.png', en: 'Straw bottle, 240 ml', ar: 'زجاجة بشفّاطة، ٢٤٠ مل', price: 89, from: 3, to: 4, cat: 'cups', sku: 'cup' }
 ];
 
 const COPY = {
@@ -399,24 +399,24 @@ const COPY = {
     copyright: '© 2026 Nimova',
     nav: [{ label: 'Shop by age', href: '#ages' }, { label: 'The range', href: '#range' }, { label: 'The routine', href: '#range' }, { label: 'Replacement parts', href: '#range' }],
     categories: [
-      { label: 'Bibs', img: 'src-a/img/bib-catch-cream.png' },
-      { label: 'Plates and bowls', img: 'src-a/img/plate-topview-cream.png' },
-      { label: 'Cups and bottles', img: 'src-a/img/spoutcup-cream.png' },
-      { label: 'Spoons', img: 'src-a/img/spoons.png' },
-      { label: 'Mealtime sets', img: 'src-a/img/bowl-cream.png' },
-      { label: 'Replacement parts', img: 'src-a/img/sippy-cream.png' }
+      { label: 'Bibs', img: 'img/bib-catch-cream.png' },
+      { label: 'Plates and bowls', img: 'img/plate-topview-cream.png' },
+      { label: 'Cups and bottles', img: 'img/spoutcup-cream.png' },
+      { label: 'Spoons', img: 'img/spoons.png' },
+      { label: 'Mealtime sets', img: 'img/bowl-cream.png' },
+      { label: 'Replacement parts', img: 'img/sippy-cream.png' }
     ],
     materialSpecs: ['Food-grade silicone, no BPA', 'Dishwasher, top rack', 'Microwave and steriliser safe', 'Tested to SABER and ECAS'],
     cleanParts: [
-      { n: '01', label: 'Plate, lifted off the base', img: 'src-a/img/plate-topview.png' },
-      { n: '02', label: 'Suction base, removed', img: 'src-a/img/bowl-cream.png' },
-      { n: '03', label: 'Lid and spout, separated', img: 'src-a/img/spoutcup-cream.png' }
+      { n: '01', label: 'Plate, lifted off the base', img: 'img/plate-topview.png' },
+      { n: '02', label: 'Suction base, removed', img: 'img/bowl-cream.png' },
+      { n: '03', label: 'Lid and spout, separated', img: 'img/spoutcup-cream.png' }
     ],
     routine: [
-      { step: '01', name: 'Silicone catch bib', moment: 'Before the food arrives', img: 'src-a/img/bib-catch-sage.png' },
-      { step: '02', name: 'Divided suction plate', moment: 'The main course', img: 'src-a/img/plate-topview.png' },
-      { step: '03', name: 'Suction bowl', moment: 'Yoghurt and purée', img: 'src-a/img/bowl-sage.png' },
-      { step: '04', name: 'Sippy cup with handles', moment: 'Water, throughout', img: 'src-a/img/sippy-sage.png' }
+      { step: '01', name: 'Silicone catch bib', moment: 'Before the food arrives', img: 'img/bib-catch-sage.png' },
+      { step: '02', name: 'Divided suction plate', moment: 'The main course', img: 'img/plate-topview.png' },
+      { step: '03', name: 'Suction bowl', moment: 'Yoghurt and purée', img: 'img/bowl-sage.png' },
+      { step: '04', name: 'Sippy cup with handles', moment: 'Water, throughout', img: 'img/sippy-sage.png' }
     ],
     fShop: ['Shop by age', 'Bibs', 'Plates and bowls', 'Cups and bottles', 'Replacement parts'],
     fHelp: ['Delivery and returns', 'Care and cleaning', 'Certification', 'Contact us'],
@@ -439,24 +439,24 @@ const COPY = {
     copyright: '© ٢٠٢٦ نيموفا',
     nav: [{ label: 'حسب العمر', href: '#ages' }, { label: 'المجموعة', href: '#range' }, { label: 'الروتين', href: '#range' }, { label: 'قطع الاستبدال', href: '#range' }],
     categories: [
-      { label: 'المرايل', img: 'src-a/img/bib-catch-cream.png' },
-      { label: 'الأطباق والأوعية', img: 'src-a/img/plate-topview-cream.png' },
-      { label: 'الأكواب والزجاجات', img: 'src-a/img/spoutcup-cream.png' },
-      { label: 'الملاعق', img: 'src-a/img/spoons.png' },
-      { label: 'أطقم الطعام', img: 'src-a/img/bowl-cream.png' },
-      { label: 'قطع الاستبدال', img: 'src-a/img/sippy-cream.png' }
+      { label: 'المرايل', img: 'img/bib-catch-cream.png' },
+      { label: 'الأطباق والأوعية', img: 'img/plate-topview-cream.png' },
+      { label: 'الأكواب والزجاجات', img: 'img/spoutcup-cream.png' },
+      { label: 'الملاعق', img: 'img/spoons.png' },
+      { label: 'أطقم الطعام', img: 'img/bowl-cream.png' },
+      { label: 'قطع الاستبدال', img: 'img/sippy-cream.png' }
     ],
     materialSpecs: ['سيليكون غذائي، خالٍ من BPA', 'آمن في غسّالة الأطباق، الرف العلوي', 'آمن في الميكروويف والمعقّم', 'مطابق لـ SABER و ECAS'],
     cleanParts: [
-      { n: '٠١', label: 'الطبق، مرفوعًا عن القاعدة', img: 'src-a/img/plate-topview.png' },
-      { n: '٠٢', label: 'قاعدة الشفط، منفصلة', img: 'src-a/img/bowl-cream.png' },
-      { n: '٠٣', label: 'الغطاء وفتحة الشرب، منفصلين', img: 'src-a/img/spoutcup-cream.png' }
+      { n: '٠١', label: 'الطبق، مرفوعًا عن القاعدة', img: 'img/plate-topview.png' },
+      { n: '٠٢', label: 'قاعدة الشفط، منفصلة', img: 'img/bowl-cream.png' },
+      { n: '٠٣', label: 'الغطاء وفتحة الشرب، منفصلين', img: 'img/spoutcup-cream.png' }
     ],
     routine: [
-      { step: '٠١', name: 'مريلة سيليكون بجيب', moment: 'قبل وصول الطعام', img: 'src-a/img/bib-catch-sage.png' },
-      { step: '٠٢', name: 'طبق مقسّم بقاعدة شفط', moment: 'الطبق الرئيسي', img: 'src-a/img/plate-topview.png' },
-      { step: '٠٣', name: 'وعاء بقاعدة شفط', moment: 'الزبادي والمهروس', img: 'src-a/img/bowl-sage.png' },
-      { step: '٠٤', name: 'كوب تعليمي بمقبضين', moment: 'الماء، على مدار الوجبة', img: 'src-a/img/sippy-sage.png' }
+      { step: '٠١', name: 'مريلة سيليكون بجيب', moment: 'قبل وصول الطعام', img: 'img/bib-catch-sage.png' },
+      { step: '٠٢', name: 'طبق مقسّم بقاعدة شفط', moment: 'الطبق الرئيسي', img: 'img/plate-topview.png' },
+      { step: '٠٣', name: 'وعاء بقاعدة شفط', moment: 'الزبادي والمهروس', img: 'img/bowl-sage.png' },
+      { step: '٠٤', name: 'كوب تعليمي بمقبضين', moment: 'الماء، على مدار الوجبة', img: 'img/sippy-sage.png' }
     ],
     fShop: ['حسب العمر', 'المرايل', 'الأطباق والأوعية', 'الأكواب والزجاجات', 'قطع الاستبدال'],
     fHelp: ['التوصيل والإرجاع', 'العناية والتنظيف', 'الشهادات', 'تواصلي معنا'],
@@ -530,7 +530,7 @@ class Component extends DCLogic {
 
     const igCount = this.props.instagramPosts == null ? 4 : this.props.instagramPosts;
     const threshold = this.props.instagramGate == null ? 8 : this.props.instagramGate;
-    const igImgs = ['src-a/img/plate-side-sage.png', 'src-a/img/bowl-cream.png', 'src-a/img/sippy-cream.png', 'src-a/img/spoons.png', 'src-a/img/bib-sleeve-cream.png', 'src-a/img/bottle-cream.png', 'src-a/img/spoutcup-sage.png', 'src-a/img/pattern-sage.png'];
+    const igImgs = ['img/plate-side-sage.png', 'img/bowl-cream.png', 'img/sippy-cream.png', 'img/spoons.png', 'img/bib-sleeve-cream.png', 'img/bottle-cream.png', 'img/spoutcup-sage.png', 'img/pattern-sage.png'];
 
     const routineTotal = c.price(55 + 89 + 79 + 65);
 
@@ -557,53 +557,5 @@ class Component extends DCLogic {
 }
 
 </script>
-<script>
-/* nimova version switcher — three parallel homepage directions.
-   The bundle calls document.documentElement.replaceWith(), wiping the DOM,
-   so re-attach on every mutation of `document` (which itself survives). */
-(function () {
-  var PAGES = [
-    { file: 'index.html',  label: 'Home'   },
-    { file: 'a_home.html', label: 'A_home' },
-    { file: 'b_home.html', label: 'B_home' }
-  ];
-  var here = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-  if (here === '') here = 'index.html';
-
-  function build() {
-    var bar = document.createElement('div');
-    bar.id = '__ver_switch';
-    bar.style.cssText =
-      'position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:2147483000;' +
-      'display:flex;gap:4px;padding:5px;border-radius:999px;background:rgba(247,241,231,.97);' +
-      "border:1px solid rgba(74,68,60,.18);box-shadow:0 4px 18px rgba(74,68,60,.16);" +
-      "font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:14px;backdrop-filter:blur(6px)";
-    PAGES.forEach(function (p) {
-      var on = p.file.toLowerCase() === here;
-      var a = document.createElement('a');
-      a.textContent = p.label;
-      a.href = p.file;
-      a.setAttribute('aria-current', on ? 'page' : 'false');
-      a.style.cssText =
-        'padding:8px 16px;border-radius:999px;text-decoration:none;white-space:nowrap;line-height:1;' +
-        (on ? 'background:#D08A6F;color:#F7F1E7;' : 'color:#4A443C;background:transparent;');
-      bar.appendChild(a);
-    });
-    return bar;
-  }
-
-  function inject() {
-    if (!document.body) return;
-    if (document.getElementById('__ver_switch')) return;
-    document.body.appendChild(build());
-  }
-
-  new MutationObserver(inject).observe(document, { childList: true, subtree: true });
-  document.addEventListener('DOMContentLoaded', inject);
-  setInterval(inject, 600);
-  inject();
-})();
-</script>
-
 </body>
 </html>

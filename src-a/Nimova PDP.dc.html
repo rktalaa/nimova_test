@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #FAF9F7; }
+  * { box-sizing: border-box; }
+  body { -webkit-font-smoothing: antialiased; }
+  a { color: #2E2A26; text-decoration: none; }
+  a:hover { color: #8A7D72; }
+  [dir="rtl"] { font-size: 110%; }
+  [dir="rtl"] * { letter-spacing: normal !important; font-style: normal !important; }
+  img { display: block; }
+  button { font: inherit; }
+</style>
+</helmet>
+<div dir="{{ dir }}" style="font-family: Poppins, 'IBM Plex Sans Arabic', system-ui, sans-serif; background: #FAF9F7; color: #2E2A26; min-height: 100vh; text-wrap: pretty; padding-bottom: 88px;">
+
+  <div style="background: #F1EEEA; border-bottom: 1px solid #E7E2DC;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 10px 32px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: #8A7D72;">PROTOTYPE — SKU</span>
+      <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+        <sc-for list="{{ skuTabs }}" as="s" hint-placeholder-count="4">
+          <button onClick="{{ s.onClick }}" style="border-radius: 4px; padding: 6px 14px; font-size: 13px; cursor: pointer; white-space: nowrap; flex: none; border: 1px solid {{ s.border }}; background: {{ s.bg }}; color: {{ s.color }};">{{ s.label }}</button>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <header style="border-bottom: 1px solid #E7E2DC; background: #FAF9F7; position: sticky; top: 0; z-index: 20;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 32px; height: 72px; display: flex; align-items: center; gap: 48px;">
+      <a href="{{ homeHref }}" style="font-size: 22px; font-weight: 500; letter-spacing: 0.02em;">nimova</a>
+      <nav style="display: flex; gap: 28px; font-size: 14px; color: #6B635B;">
+        <sc-for list="{{ nav }}" as="n" hint-placeholder-count="4">
+          <a href="{{ homeHref }}" style="color: #6B635B;">{{ n }}</a>
+        </sc-for>
+      </nav>
+      <div style="margin-inline-start: auto; display: flex; align-items: center; gap: 20px;">
+        <button onClick="{{ toggleLocale }}" style="background: none; border: 1px solid #C9C2BA; border-radius: 4px; padding: 7px 14px; font-size: 13px; color: #2E2A26; cursor: pointer;" style-hover="border-color: #8A7D72;">{{ t.switchTo }}</button>
+        <span style="font-size: 14px; color: #6B635B;">{{ t.bag }}</span>
+      </div>
+    </div>
+  </header>
+
+  <div style="max-width: 1240px; margin: 0 auto; padding: 20px 32px 0; font-size: 13px; line-height: 18px; color: #6B635B; display: flex; gap: 8px;">
+    <a href="{{ homeHref }}" style="color: #6B635B;">{{ t.home }}</a>
+    <span style="color: #C9C2BA;">/</span>
+    <span>{{ breadcrumb }}</span>
+  </div>
+
+  <section data-screen-label="Above the fold" style="max-width: 1240px; margin: 0 auto; padding: 24px 32px 80px;">
+    <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 64px; align-items: start;">
+
+      <div>
+        <div style="background: #F1EEEA; position: relative; overflow: hidden;">
+          <sc-if value="{{ mainShot.isImg }}" hint-placeholder-val="{{ true }}">
+            <img src="{{ mainShot.src }}" alt="{{ mainShot.label }}" loading="lazy" style="width: 100%; height: 560px; object-fit: cover;">
+          </sc-if>
+          <sc-if value="{{ mainShot.isPh }}" hint-placeholder-val="{{ false }}">
+            <div style="width: 100%; height: 560px; display: flex; align-items: center; justify-content: center; background-color: #F1EEEA; background-image: repeating-linear-gradient(135deg, #E7E2DC 0 1px, transparent 1px 9px);">
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: #8A7D72; background: #FAF9F7; padding: 8px 14px;">{{ mainShot.label }}</span>
+            </div>
+          </sc-if>
+          <div style="position: absolute; bottom: 0; inset-inline-start: 0; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.06em; color: #6B635B; background: #FAF9F7; padding: 6px 12px;">{{ mainShot.tag }}</div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 12px;">
+          <sc-for list="{{ gallery }}" as="g" hint-placeholder-count="4">
+            <button onClick="{{ g.onClick }}" style="padding: 0; cursor: pointer; background: #F1EEEA; border: 1px solid {{ g.border }}; overflow: hidden;">
+              <sc-if value="{{ g.isImg }}" hint-placeholder-val="{{ true }}">
+                <img src="{{ g.src }}" alt="{{ g.label }}" loading="lazy" style="width: 100%; height: 96px; object-fit: cover;">
+              </sc-if>
+              <sc-if value="{{ g.isPh }}" hint-placeholder-val="{{ false }}">
+                <div style="width: 100%; height: 96px; background-image: repeating-linear-gradient(135deg, #E7E2DC 0 1px, transparent 1px 9px);"></div>
+              </sc-if>
+            </button>
+          </sc-for>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid #E7E2DC; margin-top: 28px;">
+          <sc-for list="{{ care }}" as="c" hint-placeholder-count="4">
+            <div style="padding: 20px 16px; border-inline-start: {{ c.divider }}; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center;">
+              <span dir="ltr" style="width: 38px; height: 38px; border: 1px solid #C9C2BA; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #8A7D72; unicode-bidi: isolate;">{{ c.mark }}</span>
+              <span style="font-size: 13px; line-height: 18px; color: #2E2A26;">{{ c.label }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div>
+        <h1 style="margin: 0 0 12px; font-size: 32px; line-height: 40px; font-weight: 300; letter-spacing: -0.01em;">{{ sku.title }}</h1>
+        <div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 8px;">
+          <span style="font-size: 28px; line-height: 34px; font-weight: 600;">{{ sku.price }}</span>
+          <span style="font-size: 13px; line-height: 18px; color: #6B635B;">{{ t.inclusive }}</span>
+        </div>
+        <button onClick="{{ toggleTooltip }}" style="background: none; border: none; padding: 0; cursor: pointer; font-size: 13px; line-height: 18px; color: #6B635B; border-bottom: 1px solid #C9C2BA;">{{ t.whatsIncluded }}</button>
+        <sc-if value="{{ tooltipOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top: 12px; border: 1px solid #C9C2BA; border-radius: 4px; padding: 16px 18px; font-size: 14px; line-height: 22px; color: #2E2A26; background: #FFFFFF; max-width: 44ch;">{{ t.tooltipBody }}</div>
+        </sc-if>
+
+        <div style="margin-top: 32px; padding-top: 28px; border-top: 1px solid #E7E2DC;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: #8A7D72; margin-bottom: 20px;">{{ t.stageLabel }}</div>
+          <div style="position: relative;">
+            <div style="height: 1px; background: #8A7D72; opacity: 0.45;"></div>
+            <div style="position: absolute; top: 0; height: 3px; margin-top: -1px; background: #8A7D72; inset-inline-start: {{ sku.fillStart }}; width: {{ sku.fillWidth }};"></div>
+            <div style="display: grid; grid-template-columns: repeat(5, 1fr); margin-top: -4px;">
+              <sc-for list="{{ spine }}" as="m" hint-placeholder-count="5">
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                  <span style="width: 7px; height: 7px; border-radius: 50%; background: {{ m.dot }};"></span>
+                  <span dir="ltr" style="font-size: 13px; line-height: 18px; color: {{ m.color }}; unicode-bidi: isolate;">{{ m.label }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="margin-top: 20px; font-size: 14px; line-height: 22px; color: #6B635B;">{{ sku.adjacency }}</div>
+        </div>
+
+        <div style="margin-top: 32px; padding-top: 28px; border-top: 1px solid #E7E2DC;">
+          <div style="font-size: 13px; line-height: 18px; color: #6B635B; margin-bottom: 14px;">{{ colourLine }}</div>
+          <div style="display: flex; gap: 12px;">
+            <sc-for list="{{ colours }}" as="c" hint-placeholder-count="2">
+              <button onClick="{{ c.onClick }}" style="cursor: pointer; padding: 4px; border-radius: 50%; background: none; border: 1px solid {{ c.ring }};">
+                <span style="display: block; width: 30px; height: 30px; border-radius: 50%; background: {{ c.swatch }};"></span>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+
+        <sc-if value="{{ hasSizes }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top: 28px;">
+            <div style="font-size: 13px; line-height: 18px; color: #6B635B; margin-bottom: 14px;">{{ sizeLine }}</div>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <sc-for list="{{ sizes }}" as="s" hint-placeholder-count="2">
+                <button dir="ltr" onClick="{{ s.onClick }}" style="border-radius: 4px; padding: 10px 18px; font-size: 14px; cursor: pointer; white-space: nowrap; flex: none; unicode-bidi: isolate; border: 1px solid {{ s.border }}; background: {{ s.bg }}; color: {{ s.color }};">{{ s.label }}</button>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+
+        <div style="margin-top: 32px; padding-top: 28px; border-top: 1px solid #E7E2DC;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: #8A7D72; margin-bottom: 22px;">{{ t.deliveryLabel }}</div>
+          <div style="display: flex; flex-direction: column; gap: 0;">
+            <sc-for list="{{ timeline }}" as="d" hint-placeholder-count="3">
+              <div style="display: flex; gap: 16px; align-items: flex-start;">
+                <div style="display: flex; flex-direction: column; align-items: center; flex: none; width: 9px;">
+                  <span style="width: 9px; height: 9px; border-radius: 50%; background: {{ d.dot }}; margin-top: 6px;"></span>
+                  <span style="width: 1px; height: {{ d.railHeight }}; background: #C9C2BA;"></span>
+                </div>
+                <div style="padding-bottom: 18px;">
+                  <div style="font-size: 15px; line-height: 22px;">{{ d.step }}</div>
+                  <div style="font-size: 13px; line-height: 18px; color: #6B635B; margin-top: 2px;">{{ d.date }}</div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+          <div style="font-size: 13px; line-height: 18px; color: #6B635B;">{{ t.deliveryNote }}</div>
+        </div>
+
+        <div style="margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="#top" style="flex: 1 1 200px; text-align: center; background: #2E2A26; color: #FFFFFF; border-radius: 4px; padding: 16px 28px; font-size: 15px;" style-hover="background: #8A7D72; color: #FFFFFF;">{{ primaryCta }}</a>
+          <a href="#top" style="flex: 0 1 auto; text-align: center; background: none; color: #2E2A26; border: 1px solid #C9C2BA; border-radius: 4px; padding: 16px 24px; font-size: 15px;" style-hover="border-color: #8A7D72;">{{ t.saveForLater }}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Feature sequence" style="border-top: 1px solid #E7E2DC; background: #FFFFFF;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 88px 32px 96px; display: flex; flex-direction: column; gap: 72px;">
+      <sc-for list="{{ features }}" as="f" hint-placeholder-count="3">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+          <div style="background: #F1EEEA; order: {{ f.imgOrder }};">
+            <sc-if value="{{ f.isImg }}" hint-placeholder-val="{{ true }}">
+              <img src="{{ f.src }}" alt="{{ f.claim }}" loading="lazy" style="width: 100%; height: 400px; object-fit: cover;">
+            </sc-if>
+            <sc-if value="{{ f.isPh }}" hint-placeholder-val="{{ false }}">
+              <div style="width: 100%; height: 400px; display: flex; align-items: center; justify-content: center; background-image: repeating-linear-gradient(135deg, #E7E2DC 0 1px, transparent 1px 9px);">
+                <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: #8A7D72; background: #FAF9F7; padding: 8px 14px;">{{ f.label }}</span>
+              </div>
+            </sc-if>
+          </div>
+          <div style="order: {{ f.textOrder }};">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: #8A7D72; margin-bottom: 20px;">{{ f.n }}</div>
+            <h2 style="margin: 0 0 16px; font-size: 28px; line-height: 36px; font-weight: 400; max-width: 26ch;">{{ f.claim }}</h2>
+            <p style="margin: 0; font-size: 16px; line-height: 26px; color: #6B635B; max-width: 44ch;">{{ f.body }}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <sc-if value="{{ hasSurfaceTest }}" hint-placeholder-val="{{ false }}">
+    <section data-screen-label="Surface test" style="border-top: 1px solid #E7E2DC; background: #F1EEEA;">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 88px 32px 96px;">
+        <div style="max-width: 60ch; margin-bottom: 48px;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: #8A7D72; margin-bottom: 18px;">{{ t.surfaceLabel }}</div>
+          <h2 style="margin: 0 0 16px; font-size: 28px; line-height: 36px; font-weight: 400;">{{ surface.title }}</h2>
+          <p style="margin: 0; font-size: 16px; line-height: 26px; color: #6B635B;">{{ surface.intro }}</p>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+          <div style="background: #FFFFFF; padding: 32px;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 22px;">
+              <span style="width: 7px; height: 7px; border-radius: 50%; background: {{ accentA }};"></span>
+              <span style="font-size: 16px; line-height: 26px;">{{ surface.gripsTitle }}</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <sc-for list="{{ surface.grips }}" as="s" hint-placeholder-count="5">
+                <div style="font-size: 14px; line-height: 22px; color: #6B635B; padding-bottom: 12px; border-bottom: 1px solid #F1EEEA;">{{ s }}</div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="background: #FFFFFF; padding: 32px;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 22px;">
+              <span style="width: 7px; height: 7px; border-radius: 50%; background: {{ accentB }};"></span>
+              <span style="font-size: 16px; line-height: 26px;">{{ surface.noGripsTitle }}</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <sc-for list="{{ surface.noGrips }}" as="s" hint-placeholder-count="5">
+                <div style="font-size: 14px; line-height: 22px; color: #6B635B; padding-bottom: 12px; border-bottom: 1px solid #F1EEEA;">{{ s }}</div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 28px; font-size: 14px; line-height: 22px; color: #2E2A26; max-width: 70ch;">{{ surface.note }}</div>
+      </div>
+    </section>
+  </sc-if>
+
+  <section data-screen-label="Spec modules" style="border-top: 1px solid #E7E2DC;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 88px 32px 96px; display: flex; flex-direction: column; gap: 72px;">
+      <sc-for list="{{ specTables }}" as="tb" hint-placeholder-count="2">
+        <div style="display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: start;">
+          <div>
+            <h2 style="margin: 0 0 14px; font-size: 28px; line-height: 36px; font-weight: 400;">{{ tb.title }}</h2>
+            <p style="margin: 0; font-size: 16px; line-height: 26px; color: #6B635B; max-width: 36ch;">{{ tb.intro }}</p>
+          </div>
+          <div style="border-top: 1px solid #2E2A26;">
+            <sc-for list="{{ tb.rows }}" as="r" hint-placeholder-count="4">
+              <div style="display: flex; gap: 32px; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid #E7E2DC;">
+                <span style="font-size: 15px; line-height: 24px; color: #6B635B;">{{ r.k }}</span>
+                <span style="font-size: 15px; line-height: 24px; text-align: end;">{{ r.v }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
+        <sc-for list="{{ diagrams }}" as="d" hint-placeholder-count="2">
+          <div>
+            <div style="background: #F1EEEA; display: flex; align-items: center; justify-content: center; height: 320px; background-image: repeating-linear-gradient(135deg, #E7E2DC 0 1px, transparent 1px 9px);">
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: #8A7D72; background: #FAF9F7; padding: 8px 14px; text-align: center;">{{ d.label }}</span>
+            </div>
+            <div style="margin-top: 14px; font-size: 14px; line-height: 22px; color: #6B635B;">{{ d.caption }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Accordions" style="border-top: 1px solid #E7E2DC; background: #FFFFFF;">
+    <div style="max-width: 900px; margin: 0 auto; padding: 88px 32px 96px;">
+      <div style="border-top: 1px solid #2E2A26;">
+        <sc-for list="{{ accordions }}" as="a" hint-placeholder-count="8">
+          <div style="border-bottom: 1px solid #E7E2DC;">
+            <button onClick="{{ a.onClick }}" style="width: 100%; background: none; border: none; padding: 22px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; cursor: pointer; text-align: start; color: #2E2A26;">
+              <span style="font-size: 16px; line-height: 26px;">{{ a.title }}</span>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; color: #8A7D72; flex: none;">{{ a.sign }}</span>
+            </button>
+            <sc-if value="{{ a.open }}" hint-placeholder-val="{{ false }}">
+              <div style="padding: 0 0 26px; max-width: 68ch;">
+                <p style="margin: 0; font-size: 15px; line-height: 26px; color: #6B635B;">{{ a.body }}</p>
+                <sc-for list="{{ a.rows }}" as="r" hint-placeholder-count="0">
+                  <div style="display: flex; gap: 24px; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #F1EEEA; font-size: 14px; line-height: 22px;">
+                    <span style="color: #6B635B;">{{ r.k }}</span>
+                    <span style="text-align: end;">{{ r.v }}</span>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Replacement parts" style="border-top: 1px solid #E7E2DC;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 72px 32px 80px;">
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin-bottom: 36px; flex-wrap: wrap;">
+        <h2 style="margin: 0; font-size: 28px; line-height: 36px; font-weight: 400;">{{ t.partsTitle }}</h2>
+        <span style="font-size: 14px; line-height: 22px; color: #6B635B;">{{ t.partsNote }}</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+        <sc-for list="{{ parts }}" as="p" hint-placeholder-count="3">
+          <div style="border: 1px solid #E7E2DC; border-radius: 8px; padding: 24px; display: flex; align-items: baseline; justify-content: space-between; gap: 16px;">
+            <div>
+              <div style="font-size: 15px; line-height: 24px;">{{ p.name }}</div>
+              <div style="font-size: 13px; line-height: 18px; color: #6B635B; margin-top: 4px;">{{ p.cadence }}</div>
+            </div>
+            <div style="font-size: 15px; line-height: 24px; font-weight: 600; white-space: nowrap;">{{ p.price }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Reviews" style="border-top: 1px solid #E7E2DC; background: #F1EEEA;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 80px 32px 88px;">
+      <div style="display: flex; align-items: baseline; gap: 20px; margin-bottom: 40px; flex-wrap: wrap;">
+        <h2 style="margin: 0; font-size: 28px; line-height: 36px; font-weight: 400;">{{ t.reviewsTitle }}</h2>
+        <span style="font-size: 14px; line-height: 22px; color: #6B635B;">{{ t.reviewsNote }}</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+        <sc-for list="{{ reviews }}" as="r" hint-placeholder-count="3">
+          <div dir="{{ r.dir }}" style="background: #FAF9F7; padding: 28px; border-radius: 8px; display: flex; flex-direction: column; gap: 14px;">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #8A7D72; letter-spacing: 0.08em;">{{ r.score }}</div>
+            <p style="margin: 0; font-size: 15px; line-height: 26px; color: #2E2A26;">{{ r.body }}</p>
+            <div style="font-size: 13px; line-height: 18px; color: #6B635B; margin-top: auto;">{{ r.meta }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Completes the routine" style="border-top: 1px solid #E7E2DC; background: #FFFFFF;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 88px 32px 96px;">
+      <h2 style="margin: 0 0 40px; font-size: 28px; line-height: 36px; font-weight: 400;">{{ t.crossTitle }}</h2>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+        <sc-for list="{{ crossSell }}" as="x" hint-placeholder-count="3">
+          <button onClick="{{ x.onClick }}" style="text-align: start; background: none; border: none; padding: 0; cursor: pointer; color: #2E2A26;">
+            <div style="background: #F1EEEA; overflow: hidden;">
+              <img src="{{ x.img }}" alt="{{ x.name }}" loading="lazy" style="width: 100%; height: 300px; object-fit: cover; transition: opacity 240ms ease-out;" style-hover="opacity: 0.88;">
+            </div>
+            <div style="margin-top: 16px; font-size: 13px; line-height: 18px; color: #6B635B;"><span dir="ltr" style="display: inline-block; unicode-bidi: isolate;">{{ x.stage }}</span></div>
+            <div style="margin-top: 6px; display: flex; align-items: baseline; justify-content: space-between; gap: 16px;">
+              <span style="font-size: 16px; line-height: 26px;">{{ x.name }}</span>
+              <span style="font-size: 16px; line-height: 26px; font-weight: 600; white-space: nowrap;">{{ x.price }}</span>
+            </div>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <div style="position: fixed; bottom: 0; inset-inline-start: 0; inset-inline-end: 0; background: #FAF9F7; border-top: 1px solid #C9C2BA; z-index: 30;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; gap: 24px;">
+      <div style="min-width: 0;">
+        <div style="font-size: 14px; line-height: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ sku.title }}</div>
+        <div style="font-size: 13px; line-height: 18px; color: #6B635B; display: flex; gap: 8px; white-space: nowrap;">
+          <span>{{ stickyPrice }}</span>
+          <span style="color: #C9C2BA;">·</span>
+          <span dir="ltr" style="unicode-bidi: isolate;">{{ stickyStage }}</span>
+        </div>
+      </div>
+      <a href="#top" style="margin-inline-start: auto; flex: none; background: #2E2A26; color: #FFFFFF; border-radius: 4px; padding: 14px 28px; font-size: 15px;" style-hover="background: #8A7D72; color: #FFFFFF;">{{ primaryCta }}</a>
+    </div>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;sku&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;bib&quot;, &quot;plate&quot;, &quot;bowl&quot;, &quot;cup&quot;], &quot;default&quot;: &quot;plate&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;SKU&quot; },
+  &quot;locale&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;English (LTR)&quot;, &quot;Arabic (RTL)&quot;], &quot;default&quot;: &quot;English (LTR)&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Locale&quot; },
+  &quot;commerceWired&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Commerce&quot; },
+  &quot;accentUse&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;Peach and sage&quot;, &quot;Sage only&quot;, &quot;Peach only&quot;], &quot;default&quot;: &quot;Peach and sage&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Accents&quot; }
+}">
+const MARKERS = ['4M', '6M', '9M', '12M', '18M+'];
+const SW = { sage: '#A8B5A0', cream: '#EFE6D9' };
+
+const SKUS = ['bib', 'plate', 'bowl', 'cup'];
+
+const DATA = {
+  bib: {
+    price: 79, from: 2, to: 4, colours: ['sage', 'cream'],
+    sizes: { en: ['9–18M', '18–36M'], ar: ['9–18M', '18–36M'] },
+    shots: [
+      { ph: 1, label: 'IN USE — toddler at high chair, bib on' },
+      { img: 'img/bib-sleeve-sage.png' },
+      { ph: 1, label: 'SCALE — bib held against an adult hand' },
+      { img: 'img/bib-sleeve-cream.png' }
+    ],
+    care: { en: [['DW', 'Dishwasher, top rack'], ['ST', 'Steriliser safe'], ['MW', 'Not for microwave'], ['9M', 'From 9 months']], ar: [['DW', 'غسّالة أطباق، الرف العلوي'], ['ST', 'آمنة في المعقّم'], ['MW', 'غير مناسبة للميكروويف'], ['9M', 'من 9 أشهر']] },
+    en: {
+      title: 'Long-sleeve smock bib', crumb: 'Bibs / Long-sleeve smock bib',
+      adjacency: 'Before this: the silicone catch bib, 4M+. After this: nothing — this is the last bib they need.',
+      features: [
+        { claim: 'Sleeves, because the mess is on the arms', body: 'A catch bib stops what falls. It does nothing about the forearm that went into the yoghurt. Full sleeves with elastic cuffs close the gap.', img: 'img/bib-sleeve-sage.png' },
+        { claim: 'A front pocket that stays open', body: 'The hem folds forward into a channel that holds its shape, so dropped food lands in the pocket instead of the lap.', ph: 'DETAIL — catch pocket, front three-quarter' },
+        { claim: 'Rolls into its own pouch', body: 'A matching wet bag in the same print. Rolled, it is the size of a folded muslin — restaurant bag, nursery bag, glovebox.', ph: 'IN USE — bib rolled beside matching pouch' }
+      ],
+      specTables: [
+        { title: 'Size chart', intro: 'Two sizes by age and height. If your child is between, size up — the cuffs take up the slack.', rows: [['9–18M — height', '70 to 82 cm'], ['9–18M — chest', '48 cm'], ['9–18M — sleeve', '22 cm'], ['18–36M — height', '82 to 96 cm'], ['18–36M — chest', '54 cm'], ['18–36M — sleeve', '27 cm']] },
+        { title: 'Coverage', intro: 'What the bib covers, measured from the shoulder seam down.', rows: [['Chest and stomach', 'Full'], ['Forearms to wrist', 'Full'], ['Back', 'Upper back only'], ['Lap', 'To the pocket line'], ['Fabric', 'Coated polyester, water-resistant']] }
+      ],
+      diagrams: [
+        { label: 'DIAGRAM — coverage map, front and back', caption: 'Front and back coverage shaded, with the pocket line marked.' },
+        { label: 'DETAIL — cuff elastic and neck snaps', caption: 'Three neck snaps for growth; soft elastic at the wrist.' }
+      ],
+      parts: [['Matching wet pouch', 'Sold on its own', 25], ['Neck snap repair kit', 'If a snap gives', 15], ['Cuff elastic set', 'After heavy use', 12]]
+    },
+    ar: {
+      title: 'مريلة بأكمام طويلة', crumb: 'المرايل / مريلة بأكمام طويلة',
+      adjacency: 'قبلها: مريلة السيليكون بجيب، من 4 أشهر. بعدها: لا شيء — هذه آخر مريلة يحتاجها.',
+      features: [
+        { claim: 'أكمام، لأن الفوضى على الذراعين', body: 'المريلة القصيرة توقف ما يسقط، لكنها لا تفعل شيئًا للذراع التي غاصت في الزبادي. الأكمام الكاملة بأربطة مطاطية تسدّ الفرق.', img: 'img/bib-sleeve-sage.png' },
+        { claim: 'جيب أمامي يبقى مفتوحًا', body: 'الحاشية تُثنى للأمام لتشكّل قناة تحفظ شكلها، فيسقط الطعام في الجيب لا على الحضن.', ph: 'DETAIL — catch pocket, front three-quarter' },
+        { claim: 'تُلفّ داخل حقيبتها', body: 'حقيبة مبطّنة بنفس النقشة. ملفوفة، بحجم قماش قطني مطوي — للمطعم، للحضانة، لصندوق السيارة.', ph: 'IN USE — bib rolled beside matching pouch' }
+      ],
+      specTables: [
+        { title: 'جدول المقاسات', intro: 'مقاسان حسب العمر والطول. إن كان طفلك بين مقاسين، اختاري الأكبر — الأربطة تعوّض الفرق.', rows: [['الطول، المقاس الأصغر', '70 إلى 82 سم'], ['الصدر، المقاس الأصغر', '48 سم'], ['الكم، المقاس الأصغر', '22 سم'], ['الطول، المقاس الأكبر', '82 إلى 96 سم'], ['الصدر، المقاس الأكبر', '54 سم'], ['الكم، المقاس الأكبر', '27 سم']] },
+        { title: 'التغطية', intro: 'ما تغطّيه المريلة، مقاسًا من خط الكتف نزولًا.', rows: [['الصدر والبطن', 'كامل'], ['الذراعان إلى الرسغ', 'كامل'], ['الظهر', 'أعلى الظهر فقط'], ['الحضن', 'إلى خط الجيب'], ['القماش', 'بوليستر مطلي، مقاوم للماء']] }
+      ],
+      diagrams: [
+        { label: 'DIAGRAM — coverage map, front and back', caption: 'مناطق التغطية أمامًا وخلفًا، مع تحديد خط الجيب.' },
+        { label: 'DETAIL — cuff elastic and neck snaps', caption: 'ثلاثة أزرار للرقبة تنمو مع الطفل، ومطاط ناعم عند الرسغ.' }
+      ],
+      parts: [['حقيبة مطابقة', 'تُشترى منفردة', 25], ['طقم إصلاح أزرار الرقبة', 'إن تعطّل زر', 15], ['طقم مطاط الأكمام', 'بعد استخدام مكثف', 12]]
+    }
+  },
+
+  plate: {
+    price: 89, from: 1, to: 4, colours: ['sage', 'cream'], sizes: null,
+    shots: [
+      { ph: 1, label: 'IN USE — plate on a table, child feeding themselves' },
+      { img: 'img/plate-side-sage.png' },
+      { img: 'img/plate-topview.png' },
+      { img: 'img/plate-topview-cream.png' }
+    ],
+    care: { en: [['DW', 'Dishwasher, top rack'], ['ST', 'Steriliser safe'], ['MW', 'Microwave safe'], ['6M', 'From 6 months']], ar: [['DW', 'غسّالة أطباق، الرف العلوي'], ['ST', 'آمن في المعقّم'], ['MW', 'آمن في الميكروويف'], ['6M', 'من 6 أشهر']] },
+    surface: {
+      en: {
+        title: 'Where it grips, and where it does not', intro: 'Suction fails on texture, not on weight. Most returns in this category are a surface mismatch, so here is the honest list.',
+        gripsTitle: 'Grips', noGripsTitle: 'Does not grip',
+        grips: ['Sealed stone, quartz and granite', 'Glass and glazed ceramic tile', 'Laminate and melamine tabletops', 'High-chair trays, plastic or coated', 'Sealed and varnished wood'],
+        noGrips: ['Raw, oiled or waxed wood', 'Matte-etched or textured stone', 'Woven placemats and cloth', 'Rattan, cane and any weave', 'Silicone mats — the two slide together'],
+        note: 'Press the centre, not the rim, and the surface should be dry. If it does not hold on your table, tell us and we will take it back — that is a surface problem, not a use problem.'
+      },
+      ar: {
+        title: 'أين يثبت، وأين لا يثبت', intro: 'الشفط يفشل بسبب الملمس لا الوزن. معظم حالات الإرجاع في هذه الفئة سببها سطح غير مناسب، وهذه القائمة الصريحة.',
+        gripsTitle: 'يثبت على', noGripsTitle: 'لا يثبت على',
+        grips: ['الحجر المعالج والكوارتز والغرانيت', 'الزجاج وبلاط السيراميك المزجّج', 'أسطح اللامينيت والميلامين', 'صواني كراسي الطعام، بلاستيك أو مطلية', 'الخشب المعالج والمطلي'],
+        noGrips: ['الخشب الخام أو المزيّت أو المشمّع', 'الحجر المطفي أو المحفور', 'المفارش المنسوجة والقماش', 'الخيزران والقصب وأي نسيج', 'حصائر السيليكون — ينزلق الاثنان معًا'],
+        note: 'اضغطي المنتصف لا الحافة، وليكن السطح جافًا. إن لم يثبت على طاولتك فأخبرينا وسنستعيده — هذه مشكلة سطح لا مشكلة استخدام.'
+      }
+    },
+    en: {
+      title: 'Divided suction plate', crumb: 'Plates and bowls / Divided suction plate',
+      adjacency: 'Before this: the suction bowl, for purée at 6M. After this: the open plate, once suction is no longer needed.',
+      features: [
+        { claim: 'The base is the product', body: 'A single-piece silicone ring under the plate, not a printed-on pad. Press once and the plate becomes part of the table.', img: 'img/plate-side-sage.png' },
+        { claim: 'Three compartments, one wall height', body: 'Low enough for a spoon to be loaded against, high enough that purée stays where it was put.', img: 'img/plate-topview.png' },
+        { claim: 'A tab you can find without looking', body: 'One raised tab breaks the seal in a single pull. No prying at the rim, no plate arriving in your lap.', ph: 'DETAIL — release tab being pulled' }
+      ],
+      specTables: [
+        { title: 'Compartment capacities', intro: 'Measured to the wall line, not to the brim.', rows: [['Large compartment', '320 ml'], ['Small compartment, left', '190 ml'], ['Small compartment, right', '190 ml'], ['Total', '700 ml'], ['Plate diameter', '21.5 cm'], ['Wall height', '2.4 cm']] },
+        { title: 'Release mechanism', intro: 'How the seal is made and broken, and what to expect over time.', rows: [['Seal type', 'Continuous silicone ring'], ['Release', 'Single raised tab'], ['Pull force to release', 'About 1.5 kg'], ['Toddler-defeatable', 'From roughly 18 months'], ['Expected seal life', 'Unchanged; silicone does not fatigue']] }
+      ],
+      diagrams: [
+        { label: 'DIAGRAM — cutaway through base and seal', caption: 'Cutaway showing the ring, the air gap, and the tab channel.' },
+        { label: 'DETAIL — release tab, macro', caption: 'The tab sits proud of the rim so it can be found by touch.' }
+      ],
+      parts: [['Suction base ring', 'Not usually needed', 25], ['Travel lid', 'Sold on its own', 29], ['Two-plate set', 'For a second table', 165]]
+    },
+    ar: {
+      title: 'طبق مقسّم بقاعدة شفط', crumb: 'الأطباق والأوعية / طبق مقسّم بقاعدة شفط',
+      adjacency: 'قبله: الوعاء اللاصق، للمهروس من 6 أشهر. بعده: الطبق المفتوح، عندما لا يعود الشفط ضروريًا.',
+      features: [
+        { claim: 'القاعدة هي المنتج', body: 'حلقة سيليكون واحدة أسفل الطبق، لا لاصق مطبوع. اضغطي مرة واحدة فيصبح الطبق جزءًا من الطاولة.', img: 'img/plate-side-sage.png' },
+        { claim: 'ثلاثة أقسام، بارتفاع جدار واحد', body: 'منخفض بما يكفي لتحميل الملعقة عليه، ومرتفع بما يكفي ليبقى المهروس في مكانه.', img: 'img/plate-topview.png' },
+        { claim: 'لسان تجدينه بلا نظر', body: 'لسان واحد بارز يفكّ الشفط بسحبة واحدة. لا حاجة للعبث بالحافة، ولا طبق يهبط في حضنك.', ph: 'DETAIL — release tab being pulled' }
+      ],
+      specTables: [
+        { title: 'سعة الأقسام', intro: 'مقاسة إلى خط الجدار لا إلى الحافة.', rows: [['القسم الكبير', '320 مل'], ['القسم الصغير، يسار', '190 مل'], ['القسم الصغير، يمين', '190 مل'], ['الإجمالي', '700 مل'], ['قطر الطبق', '21.5 سم'], ['ارتفاع الجدار', '2.4 سم']] },
+        { title: 'آلية الفكّ', intro: 'كيف يُصنع الشفط ويُفكّ، وما يمكن توقّعه مع الوقت.', rows: [['نوع الإحكام', 'حلقة سيليكون متصلة'], ['الفكّ', 'لسان بارز واحد'], ['قوة السحب اللازمة', 'نحو 1.5 كجم'], ['يمكن للطفل فكّه', 'من نحو 18 شهرًا'], ['عمر الإحكام', 'ثابت؛ السيليكون لا يتعب']] }
+      ],
+      diagrams: [
+        { label: 'DIAGRAM — cutaway through base and seal', caption: 'مقطع يوضّح الحلقة وفراغ الهواء وقناة اللسان.' },
+        { label: 'DETAIL — release tab, macro', caption: 'اللسان بارز عن الحافة ليُعرف باللمس.' }
+      ],
+      parts: [['حلقة قاعدة الشفط', 'لا تُحتاج عادة', 25], ['غطاء للتنقّل', 'يُشترى منفردًا', 29], ['طقم طبقين', 'لطاولة ثانية', 165]]
+    }
+  },
+
+  bowl: {
+    price: 79, from: 1, to: 4, colours: ['sage', 'cream'], sizes: null,
+    shots: [
+      { ph: 1, label: 'IN USE — bowl on a table, spoon loaded' },
+      { img: 'img/bowl-sage.png' },
+      { ph: 1, label: 'SCALE — bowl held in an adult hand' },
+      { img: 'img/bowl-cream.png' }
+    ],
+    care: { en: [['DW', 'Dishwasher, top rack'], ['ST', 'Steriliser safe'], ['MW', 'Microwave safe'], ['6M', 'From 6 months']], ar: [['DW', 'غسّالة أطباق، الرف العلوي'], ['ST', 'آمن في المعقّم'], ['MW', 'آمن في الميكروويف'], ['6M', 'من 6 أشهر']] },
+    surface: {
+      en: {
+        title: 'Where it grips, and where it does not', intro: 'The bowl uses the same base as the plate, so the same list applies. Suction fails on texture, not on weight.',
+        gripsTitle: 'Grips', noGripsTitle: 'Does not grip',
+        grips: ['Sealed stone, quartz and granite', 'Glass and glazed ceramic tile', 'Laminate and melamine tabletops', 'High-chair trays, plastic or coated', 'Sealed and varnished wood'],
+        noGrips: ['Raw, oiled or waxed wood', 'Matte-etched or textured stone', 'Woven placemats and cloth', 'Rattan, cane and any weave', 'Silicone mats — the two slide together'],
+        note: 'Press the centre, not the rim, and the surface should be dry. If it does not hold on your table, tell us and we will take it back.'
+      },
+      ar: {
+        title: 'أين يثبت، وأين لا يثبت', intro: 'الوعاء يستخدم القاعدة نفسها المستخدمة في الطبق، فتنطبق القائمة ذاتها. الشفط يفشل بسبب الملمس لا الوزن.',
+        gripsTitle: 'يثبت على', noGripsTitle: 'لا يثبت على',
+        grips: ['الحجر المعالج والكوارتز والغرانيت', 'الزجاج وبلاط السيراميك المزجّج', 'أسطح اللامينيت والميلامين', 'صواني كراسي الطعام، بلاستيك أو مطلية', 'الخشب المعالج والمطلي'],
+        noGrips: ['الخشب الخام أو المزيّت أو المشمّع', 'الحجر المطفي أو المحفور', 'المفارش المنسوجة والقماش', 'الخيزران والقصب وأي نسيج', 'حصائر السيليكون — ينزلق الاثنان معًا'],
+        note: 'اضغطي المنتصف لا الحافة، وليكن السطح جافًا. إن لم يثبت على طاولتك فأخبرينا وسنستعيده.'
+      }
+    },
+    en: {
+      title: 'Suction bowl', crumb: 'Plates and bowls / Suction bowl',
+      adjacency: 'Before this: spoon-feeding from a hand-held bowl. After this: the divided plate, once meals have parts.',
+      features: [
+        { claim: 'One high side to load against', body: 'The rim rises on one edge so a spoon can be filled without a second hand steadying the bowl.', img: 'img/bowl-sage.png' },
+        { claim: 'Deep enough for the whole portion', body: '350 ml is a full breakfast. Refilling mid-meal is when things get thrown.', img: 'img/bowl-cream.png' },
+        { claim: 'Lid on, and it is a container', body: 'The travel lid seals to the rim, so the same bowl carries the portion out and holds the leftovers in the fridge.', ph: 'IN USE — lid sealed, bowl in a bag' }
+      ],
+      specTables: [
+        { title: 'Capacity and size', intro: 'Measured to the wall line, not to the brim.', rows: [['Capacity to wall line', '350 ml'], ['Capacity to brim', '410 ml'], ['Diameter', '13.5 cm'], ['Height, low side', '5.2 cm'], ['Height, high side', '7.0 cm'], ['Weight', '215 g']] },
+        { title: 'Release mechanism', intro: 'How the seal is made and broken.', rows: [['Seal type', 'Continuous silicone ring'], ['Release', 'Single raised tab'], ['Pull force to release', 'About 1.4 kg'], ['Toddler-defeatable', 'From roughly 18 months'], ['With lid fitted', 'Fridge and freezer safe']] }
+      ],
+      diagrams: [
+        { label: 'DIAGRAM — cutaway through base and seal', caption: 'The same base assembly used on the divided plate.' },
+        { label: 'DETAIL — travel lid, seated and lifted', caption: 'The lid seats inside the rim rather than over it.' }
+      ],
+      parts: [['Travel lid', 'Sold on its own', 25], ['Suction base ring', 'Not usually needed', 25], ['Two-bowl set', 'For a second table', 145]]
+    },
+    ar: {
+      title: 'وعاء بقاعدة شفط', crumb: 'الأطباق والأوعية / وعاء بقاعدة شفط',
+      adjacency: 'قبله: الإطعام من وعاء محمول باليد. بعده: الطبق المقسّم، عندما تصبح الوجبة أجزاء.',
+      features: [
+        { claim: 'جانب مرتفع لتحميل الملعقة', body: 'الحافة ترتفع من جهة واحدة فتُملأ الملعقة دون يد ثانية تثبّت الوعاء.', img: 'img/bowl-sage.png' },
+        { claim: 'عميق بما يكفي للحصة كاملة', body: '350 مل تعني فطورًا كاملًا. إعادة الملء في منتصف الوجبة هي اللحظة التي يُرمى فيها كل شيء.', img: 'img/bowl-cream.png' },
+        { claim: 'بالغطاء، يصبح حاوية', body: 'غطاء التنقّل يُحكم على الحافة، فيحمل الوعاء نفسه الحصة خارجًا ويحفظ الباقي في الثلاجة.', ph: 'IN USE — lid sealed, bowl in a bag' }
+      ],
+      specTables: [
+        { title: 'السعة والمقاس', intro: 'مقاسة إلى خط الجدار لا إلى الحافة.', rows: [['السعة إلى خط الجدار', '350 مل'], ['السعة إلى الحافة', '410 مل'], ['القطر', '13.5 سم'], ['الارتفاع، الجهة المنخفضة', '5.2 سم'], ['الارتفاع، الجهة المرتفعة', '7.0 سم'], ['الوزن', '215 جم']] },
+        { title: 'آلية الفكّ', intro: 'كيف يُصنع الشفط ويُفكّ.', rows: [['نوع الإحكام', 'حلقة سيليكون متصلة'], ['الفكّ', 'لسان بارز واحد'], ['قوة السحب اللازمة', 'نحو 1.4 كجم'], ['يمكن للطفل فكّه', 'من نحو 18 شهرًا'], ['مع الغطاء', 'آمن في الثلاجة والفريزر']] }
+      ],
+      diagrams: [
+        { label: 'DIAGRAM — cutaway through base and seal', caption: 'نفس مجموعة القاعدة المستخدمة في الطبق المقسّم.' },
+        { label: 'DETAIL — travel lid, seated and lifted', caption: 'الغطاء يجلس داخل الحافة لا فوقها.' }
+      ],
+      parts: [['غطاء التنقّل', 'يُشترى منفردًا', 25], ['حلقة قاعدة الشفط', 'لا تُحتاج عادة', 25], ['طقم وعاءين', 'لطاولة ثانية', 145]]
+    }
+  },
+
+  cup: {
+    price: 65, from: 1, to: 3, colours: ['sage', 'cream'], sizes: null,
+    shots: [
+      { ph: 1, label: 'IN USE — both hands on the handles, drinking' },
+      { img: 'img/sippy-sage.png' },
+      { img: 'img/spoutcup-sage.png' },
+      { img: 'img/sippy-cream.png' }
+    ],
+    care: { en: [['DW', 'Dishwasher, top rack'], ['ST', 'Steriliser safe'], ['MW', 'Microwave safe, no lid'], ['6M', 'From 6 months']], ar: [['DW', 'غسّالة أطباق، الرف العلوي'], ['ST', 'آمن في المعقّم'], ['MW', 'آمن في الميكروويف بدون غطاء'], ['6M', 'من 6 أشهر']] },
+    en: {
+      title: 'Training sippy cup', crumb: 'Cups and bottles / Training sippy cup',
+      adjacency: 'Before this: a spoon of water from your cup. After this: the straw bottle at 12M, then an open cup.',
+      features: [
+        { claim: 'Slow on purpose', body: 'The spout meters about 8 ml a second. Faster than that and a first drinker coughs, which is how cups get refused.', img: 'img/sippy-sage.png' },
+        { claim: 'Two handles set wide', body: 'Wide enough for two fists to grip without overlapping, angled so the wrist does not have to turn.', img: 'img/sippy-cream.png' },
+        { claim: 'Three parts, no fourth', body: 'Cup, collar, spout. Nothing to lose, nothing with a hidden seam, and every part sold on its own.', ph: 'DIAGRAM — exploded parts, cup / collar / spout' }
+      ],
+      specTables: [
+        { title: 'Flow and spout', intro: 'Why the spout is soft silicone rather than hard plastic, and how fast it runs.', rows: [['Flow rate', 'About 8 ml per second'], ['Spout material', 'Food-grade silicone, 40 Shore A'], ['Why soft', 'Gives against emerging teeth'], ['Bite-through resistance', 'Tested to 300 cycles'], ['Leak on tip-over', 'Drips, does not pour'], ['Capacity', '200 ml']] },
+        { title: 'Replacement cadence', intro: 'Silicone that goes in a mouth is a wear part. Replace on schedule, not on failure.', rows: [['Spout', 'Every 2 to 3 months'], ['Collar seal', 'Every 6 months'], ['Cup body', 'Only if damaged'], ['Replace early if', 'Cloudy, tacky, or bitten through'], ['Sterilising', 'Does not shorten spout life']] }
+      ],
+      diagrams: [
+        { label: 'DIAGRAM — exploded view, three parts', caption: 'Cup, collar and spout, separated in order of assembly.' },
+        { label: 'DETAIL — spout cross-section and flow slit', caption: 'The slit opens under suction and closes at rest.' }
+      ],
+      parts: [['Spout, pair', 'Every 2 to 3 months', 19], ['Collar seal', 'Every 6 months', 12], ['Handle set', 'If a handle cracks', 15]]
+    },
+    ar: {
+      title: 'كوب تعليمي بمقبضين', crumb: 'الأكواب والزجاجات / كوب تعليمي بمقبضين',
+      adjacency: 'قبله: ملعقة ماء من كوبك. بعده: زجاجة الشفّاطة من 12 شهرًا، ثم الكوب المفتوح.',
+      features: [
+        { claim: 'بطيء بقصد', body: 'الفتحة تمرّر نحو 8 مل في الثانية. أسرع من ذلك يجعل الطفل يكحّ، وهكذا تُرفض الأكواب.', img: 'img/sippy-sage.png' },
+        { claim: 'مقبضان متباعدان', body: 'متباعدان بما يكفي ليقبض عليهما كفّان دون تداخل، وبزاوية تُعفي الرسغ من الالتفاف.', img: 'img/sippy-cream.png' },
+        { claim: 'ثلاثة أجزاء، لا رابع', body: 'كوب، طوق، فتحة شرب. لا شيء يُفقد، ولا وصلة مخفية، وكل جزء يُشترى منفردًا.', ph: 'DIAGRAM — exploded parts, cup / collar / spout' }
+      ],
+      specTables: [
+        { title: 'التدفّق وفتحة الشرب', intro: 'لماذا الفتحة من سيليكون طري لا بلاستيك صلب، وما سرعة تدفّقها.', rows: [['معدّل التدفّق', 'نحو 8 مل في الثانية'], ['مادة الفتحة', 'سيليكون غذائي، 40 شور A'], ['لماذا طرية', 'تتراجع أمام الأسنان الطالعة'], ['مقاومة العضّ', 'مُختبرة إلى 300 دورة'], ['التسريب عند الانقلاب', 'يقطر ولا ينسكب'], ['السعة', '200 مل']] },
+        { title: 'دورية الاستبدال', intro: 'السيليكون الذي يدخل الفم قطعة استهلاكية. استبدليه بالجدول لا عند التلف.', rows: [['فتحة الشرب', 'كل 2 إلى 3 أشهر'], ['حشوة الطوق', 'كل 6 أشهر'], ['جسم الكوب', 'فقط إن تضرّر'], ['استبدلي أبكر إن', 'أصبح معتمًا أو لزجًا أو معضوضًا'], ['التعقيم', 'لا يقصّر عمر الفتحة']] }
+      ],
+      diagrams: [
+        { label: 'DIAGRAM — exploded view, three parts', caption: 'الكوب والطوق والفتحة، مفصولة بترتيب التركيب.' },
+        { label: 'DETAIL — spout cross-section and flow slit', caption: 'الشقّ يفتح مع الشفط ويُغلق عند السكون.' }
+      ],
+      parts: [['فتحة شرب، زوج', 'كل 2 إلى 3 أشهر', 19], ['حشوة الطوق', 'كل 6 أشهر', 12], ['طقم مقابض', 'إن تشقّق مقبض', 15]]
+    }
+  }
+};
+
+const REVIEWS = [
+  { locale: 'ar', score: '5 / 5', body: 'ثبت على طاولة الرخام من أول مرة، وبنتي ما قدرت تشيله. الشحن وصل الرياض بثلاثة أيام ولا دفعنا شي إضافي.', meta: { en: 'Nouf — Riyadh, KSA', ar: 'نوف — الرياض، السعودية' } },
+  { locale: 'en', score: '4 / 5', body: 'Works perfectly on our quartz counter, does nothing on the teak dining table — which the page told us, so no complaints. Wish the lid came in the box.', meta: { en: 'Hannah — Dubai, UAE', ar: 'هناء — دبي، الإمارات' } },
+  { locale: 'ar', score: '5 / 5', body: 'اللسان سهل جدًا للأم وصعب على الطفل، وهذا بالضبط المطلوب. غسلته بغسالة الأطباق أكثر من شهر ولا تغيّر لونه.', meta: { en: 'Maryam — Sharjah, UAE', ar: 'مريم — الشارقة، الإمارات' } }
+];
+
+const UI = {
+  en: {
+    home: 'Home', switchTo: 'العربية', bag: 'Bag (0)', inclusive: 'shipping, duties and VAT included',
+    whatsIncluded: "What's included in the price?",
+    tooltipBody: 'The price you see is the price you pay. Shipping to the UAE and Saudi Arabia, customs duties and VAT are all included. Nothing is collected by the courier on arrival.',
+    stageLabel: 'STAGE', deliveryLabel: 'DELIVERY', surfaceLabel: 'SURFACE TEST',
+    deliveryNote: 'Dates shown for Dubai. Riyadh and Jeddah add one working day.',
+    saveForLater: 'Save for later', notifyMe: 'Notify me when it ships', addToBag: 'Add to bag',
+    colour: 'Colour', size: 'Size',
+    partsTitle: 'Replacement parts', partsNote: 'Every wear part sold on its own, so the product outlasts its silicone.',
+    reviewsTitle: 'Reviews', reviewsNote: 'Shown in the language they were written in.',
+    crossTitle: 'Completes the routine',
+    nav: ['Shop by age', 'The range', 'The routine', 'Replacement parts'],
+    steps: ['Order placed', 'Dispatched from Dubai', 'Delivered'],
+    accTitles: ['Description', 'Size and fit', 'Materials', 'Care and cleaning', 'How to use safely', "What's in the box", 'Shipping and returns', 'FAQ'],
+    price: v => 'AED ' + v,
+    stage: (a, b) => a === b ? MARKERS[a] : MARKERS[a] + ' – ' + MARKERS[b],
+    date: d => d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' })
+  },
+  ar: {
+    home: 'الرئيسية', switchTo: 'English', bag: 'الحقيبة (0)', inclusive: 'يشمل الشحن والرسوم والضريبة',
+    whatsIncluded: 'ما الذي يشمله السعر؟',
+    tooltipBody: 'السعر الذي تريه هو السعر الذي تدفعينه. الشحن إلى الإمارات والسعودية والرسوم الجمركية والضريبة كلها مشمولة. لا يُطلب منك أي مبلغ عند الاستلام.',
+    stageLabel: 'المرحلة', deliveryLabel: 'التوصيل', surfaceLabel: 'اختبار الأسطح',
+    deliveryNote: 'التواريخ لدبي. الرياض وجدة تضيفان يوم عمل واحدًا.',
+    saveForLater: 'احفظيه لاحقًا', notifyMe: 'أبلغيني عند التوفّر', addToBag: 'أضيفي إلى الحقيبة',
+    colour: 'اللون', size: 'المقاس',
+    partsTitle: 'قطع الاستبدال', partsNote: 'كل قطعة استهلاكية تُشترى منفردة، ليبقى المنتج أطول من سيليكونه.',
+    reviewsTitle: 'التقييمات', reviewsNote: 'معروضة باللغة التي كُتبت بها.',
+    crossTitle: 'يكمل الروتين',
+    nav: ['حسب العمر', 'المجموعة', 'الروتين', 'قطع الاستبدال'],
+    steps: ['تم الطلب', 'أُرسل من دبي', 'تم التوصيل'],
+    accTitles: ['الوصف', 'المقاس والملاءمة', 'المواد', 'العناية والتنظيف', 'الاستخدام الآمن', 'محتويات العلبة', 'الشحن والإرجاع', 'أسئلة متكرّرة'],
+    price: v => v + ' د.إ',
+    stage: (a, b) => a === b ? MARKERS[a] : MARKERS[a] + ' – ' + MARKERS[b],
+    date: d => d.toLocaleDateString('ar-AE', { weekday: 'short', day: 'numeric', month: 'long', numberingSystem: 'latn' })
+  }
+};
+
+const ACC_BODIES = {
+  en: {
+    bib: ['A coated long-sleeve smock that covers the chest, the stomach and both forearms, with a front pocket that catches what falls. For the stage where a toddler feeds themselves and the mess moves from the bib to the arms.', 'Two sizes, 9–18M and 18–36M. Three neck snaps allow for growth. If your child is between sizes, size up — the cuffs take up the slack.', 'Coated polyester shell, water-resistant, with soft elastic at the cuffs and neck. No PVC and no phthalates. The print is a dye, not a transfer, so it does not peel.', 'Dishwasher, top rack, or rinse and hang. Steriliser safe. Do not tumble dry — heat stiffens the coating.', 'Never leave a bib on a sleeping child. Check the neck snaps before each use and stop using the bib if one no longer holds.', 'One long-sleeve bib, one matching wet pouch. No packaging beyond a paper band.', 'Shipped from Dubai. UAE 1–3 working days, Saudi Arabia 2–5. Returns accepted for 30 days, unworn, and we pay the return shipping.', 'Does it fit over clothes in winter? Yes, the 18–36M size fits over a long-sleeve top. Does the pocket hold liquid? It holds a spill, not a glass of water.'],
+    plate: ['A three-compartment silicone plate on a single-piece suction base. Made for the stage where a child eats what the family eats, in parts, and the plate needs to stay on the table.', 'One size, 21.5 cm across, 2.4 cm walls. Fits every high-chair tray we have tested and sits flat on a standard dining table.', 'Food-grade silicone throughout, no BPA, no fillers. Nothing rigid anywhere in the mouth path. Tested to SABER and ECAS.', 'Dishwasher, top rack. Microwave and steriliser safe. Silicone attracts lint in a dry cupboard — a rinse before use is normal.', 'Always place on a dry, sealed, non-textured surface, and press the centre rather than the rim. Never use the plate as a lid on hot liquid.', 'One divided plate. No lid — the travel lid is sold on its own.', 'Shipped from Dubai. UAE 1–3 working days, Saudi Arabia 2–5. Returns accepted for 30 days, including opened, if suction does not hold on your surface.', 'Will a toddler pull it off? From about 18 months, yes — by then they usually do not need it. Does it stain from turmeric? It can tint; a sun day clears it.'],
+    bowl: ['A deep silicone bowl on the same suction base as the divided plate, with one raised side to load a spoon against. For purée and for the first months of self-feeding.', 'One size, 13.5 cm across, 350 ml to the wall line. The high side sits at 7 cm, the low side at 5.2 cm.', 'Food-grade silicone throughout, no BPA, no fillers. Nothing rigid anywhere in the mouth path. Tested to SABER and ECAS.', 'Dishwasher, top rack. Microwave and steriliser safe. With the travel lid fitted it is fridge and freezer safe.', 'Always place on a dry, sealed, non-textured surface, and press the centre rather than the rim. Never microwave with the lid sealed.', 'One suction bowl. No lid — the travel lid is sold on its own.', 'Shipped from Dubai. UAE 1–3 working days, Saudi Arabia 2–5. Returns accepted for 30 days, including opened, if suction does not hold on your surface.', 'Can it go in the freezer? Yes, with the lid on. Does the high side make it tip? No — the base is wider than the bowl.'],
+    cup: ['A three-part training cup with two wide handles and a soft silicone spout metered to run slowly. For the transition from being given water to drinking it unaided.', 'One size, 200 ml. Handles set 9.5 cm apart, for two fists rather than one.', 'Silicone body and spout, food-grade, 40 Shore A at the spout. Polypropylene collar. No BPA. Tested to SABER and ECAS.', 'Dishwasher, top rack, disassembled. Steriliser safe. Microwave safe with the lid off only.', 'Replace the spout every two to three months, and immediately if it is bitten through, cloudy or tacky. Never let a child walk with the cup in their mouth.', 'One cup, one collar, one spout. Spare spouts sold as a pair.', 'Shipped from Dubai. UAE 1–3 working days, Saudi Arabia 2–5. Returns accepted for 30 days, unused, on hygiene grounds.', 'Is it leak-proof? It is drip-resistant, not sealed — a tipped cup drips, it does not pour. Why not a valve? A valve is a crevice, and a crevice cannot be inspected.']
+  },
+  ar: {
+    bib: ['مريلة بأكمام طويلة من قماش مطلي تغطّي الصدر والبطن والذراعين، بجيب أمامي يلتقط ما يسقط. للمرحلة التي يأكل فيها الطفل بنفسه وتنتقل الفوضى من المريلة إلى الذراعين.', 'مقاسان، 9–18 شهرًا و18–36 شهرًا. ثلاثة أزرار للرقبة تسمح بالنمو. إن كان طفلك بين مقاسين فاختاري الأكبر.', 'قماش بوليستر مطلي مقاوم للماء، بمطاط ناعم عند الأكمام والرقبة. خالٍ من PVC والفثالات. النقشة صباغة لا طبعة لاصقة، فلا تتقشّر.', 'غسّالة أطباق على الرف العلوي، أو اشطفيها وعلّقيها. آمنة في المعقّم. لا تُجفّف بالمجفّف — الحرارة تُقسّي الطلاء.', 'لا تتركي المريلة على طفل نائم. تحقّقي من أزرار الرقبة قبل كل استخدام وتوقّفي عن استخدامها إن لم يثبت أحدها.', 'مريلة واحدة بأكمام طويلة، وحقيبة مبطّنة مطابقة. لا تغليف سوى شريط ورقي.', 'تُشحن من دبي. الإمارات 1–3 أيام عمل، السعودية 2–5. الإرجاع متاح 30 يومًا إن لم تُستخدم، ونتحمّل شحن الإرجاع.', 'هل تُلبس فوق ملابس الشتاء؟ نعم، مقاس 18–36 يُلبس فوق قميص بأكمام. هل يحمل الجيب سائلًا؟ يحمل انسكابًا لا كوب ماء.'],
+    plate: ['طبق سيليكون بثلاثة أقسام على قاعدة شفط من قطعة واحدة. للمرحلة التي يأكل فيها الطفل ما تأكله الأسرة، مقسّمًا، ويحتاج الطبق أن يبقى على الطاولة.', 'مقاس واحد، 21.5 سم قطرًا وجدار 2.4 سم. يناسب كل صواني كراسي الطعام التي اختبرناها ويستوي على طاولة عادية.', 'سيليكون غذائي بالكامل، خالٍ من BPA وبلا حشوات. لا جزء صلب في مسار الفم. مطابق لـ SABER و ECAS.', 'غسّالة أطباق على الرف العلوي. آمن في الميكروويف والمعقّم. السيليكون يجذب الوبر في الخزانة الجافة — شطفه قبل الاستخدام أمر طبيعي.', 'ضعيه دائمًا على سطح جاف ومعالج وغير خشن، واضغطي المنتصف لا الحافة. لا تستخدمي الطبق غطاءً على سائل ساخن.', 'طبق مقسّم واحد. بلا غطاء — غطاء التنقّل يُشترى منفردًا.', 'يُشحن من دبي. الإمارات 1–3 أيام عمل، السعودية 2–5. الإرجاع متاح 30 يومًا، حتى بعد الفتح، إن لم يثبت الشفط على سطحك.', 'هل يستطيع الطفل نزعه؟ من نحو 18 شهرًا، نعم — وعندها لا يكون بحاجته. هل يتصبّغ من الكركم؟ قد يتلوّن؛ يوم في الشمس يزيله.'],
+    bowl: ['وعاء سيليكون عميق على نفس قاعدة الشفط المستخدمة في الطبق المقسّم، بجانب مرتفع لتحميل الملعقة. للمهروس ولأشهر الأكل الأولى بنفسه.', 'مقاس واحد، 13.5 سم قطرًا، و350 مل إلى خط الجدار. الجهة المرتفعة 7 سم والمنخفضة 5.2 سم.', 'سيليكون غذائي بالكامل، خالٍ من BPA وبلا حشوات. لا جزء صلب في مسار الفم. مطابق لـ SABER و ECAS.', 'غسّالة أطباق على الرف العلوي. آمن في الميكروويف والمعقّم. مع غطاء التنقّل يصبح آمنًا في الثلاجة والفريزر.', 'ضعيه دائمًا على سطح جاف ومعالج وغير خشن، واضغطي المنتصف لا الحافة. لا تضعيه في الميكروويف والغطاء محكم.', 'وعاء واحد بقاعدة شفط. بلا غطاء — غطاء التنقّل يُشترى منفردًا.', 'يُشحن من دبي. الإمارات 1–3 أيام عمل، السعودية 2–5. الإرجاع متاح 30 يومًا، حتى بعد الفتح، إن لم يثبت الشفط على سطحك.', 'هل يدخل الفريزر؟ نعم، بالغطاء. هل يميل بسبب الجانب المرتفع؟ لا — القاعدة أوسع من الوعاء.'],
+    cup: ['كوب تعليمي من ثلاثة أجزاء بمقبضين واسعين وفتحة شرب من سيليكون طري مُعايرة لتتدفّق ببطء. للانتقال من أن يُسقى الطفل إلى أن يشرب بنفسه.', 'مقاس واحد، 200 مل. المقبضان متباعدان 9.5 سم، لكفّين لا لكفّ واحد.', 'الجسم والفتحة من سيليكون غذائي، 40 شور A عند الفتحة. الطوق من بولي بروبيلين. خالٍ من BPA. مطابق لـ SABER و ECAS.', 'غسّالة أطباق على الرف العلوي بعد التفكيك. آمن في المعقّم. آمن في الميكروويف بدون الغطاء فقط.', 'استبدلي فتحة الشرب كل شهرين إلى ثلاثة، وفورًا إن عُضّت أو أصبحت معتمة أو لزجة. لا تتركي الطفل يسير والكوب في فمه.', 'كوب واحد، طوق واحد، فتحة شرب واحدة. الفتحات الاحتياطية تُباع زوجًا.', 'يُشحن من دبي. الإمارات 1–3 أيام عمل، السعودية 2–5. الإرجاع متاح 30 يومًا إن لم يُستخدم، لأسباب صحية.', 'هل هو مانع للتسريب؟ مقاوم للتقطير لا محكم — الكوب المائل يقطر ولا ينسكب. لماذا بلا صمّام؟ الصمّام زاوية مغلقة، والزاوية المغلقة لا يمكن فحصها.']
+  }
+};
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    let urlSku = null, urlLocale = null;
+    try {
+      const q = new URLSearchParams(window.location.search);
+      urlSku = q.get('sku');
+      urlLocale = q.get('locale');
+    } catch (e) {}
+    this.state = {
+      locale: (urlLocale === 'ar' || props.locale === 'Arabic (RTL)') ? 'ar' : 'en',
+      sku: SKUS.includes(urlSku) ? urlSku : (SKUS.includes(props.sku) ? props.sku : 'plate'),
+      shot: 0, colour: 0, size: 0, open: -1, tooltip: false
+    };
+  }
+
+  accents() {
+    const mode = this.props.accentUse || 'Peach and sage';
+    if (mode === 'Sage only') return { a: '#A8B5A0', b: '#A8B5A0' };
+    if (mode === 'Peach only') return { a: '#F2C9B8', b: '#F2C9B8' };
+    return { a: '#A8B5A0', b: '#F2C9B8' };
+  }
+
+  pick(sku) { this.setState({ sku, shot: 0, colour: 0, size: 0, open: -1 }); }
+
+  renderVals() {
+    const L = this.state.locale;
+    const isAr = L === 'ar';
+    const u = UI[L];
+    const key = this.state.sku;
+    const d = DATA[key];
+    const s = d[L];
+    const acc = this.accents();
+
+    const shots = d.shots.map((sh, i) => ({
+      isImg: !sh.ph, isPh: !!sh.ph, src: sh.img || '', label: sh.label || s.title,
+      border: this.state.shot === i ? '#2E2A26' : '#E7E2DC',
+      onClick: () => this.setState({ shot: i })
+    }));
+    const active = shots[Math.min(this.state.shot, shots.length - 1)];
+    const mainShot = Object.assign({}, active, {
+      tag: active.isPh ? (isAr ? 'صورة مطلوبة' : 'shot needed') : (this.state.shot === 0 ? (isAr ? 'قيد الاستخدام' : 'in use') : s.title)
+    });
+
+    const base = new Date(2026, 7, 19);
+    const dates = [0, 1, 3].map(n => { const x = new Date(base); x.setDate(x.getDate() + n); return u.date(x); });
+    const timeline = u.steps.map((step, i) => ({
+      step, date: dates[i], dot: i === 0 ? '#2E2A26' : acc.a,
+      railHeight: i === u.steps.length - 1 ? '0px' : '34px'
+    }));
+
+    const spine = MARKERS.map((label, i) => {
+      const on = i >= d.from && i <= d.to;
+      return { label, dot: on ? acc.a : '#C9C2BA', color: on ? '#2E2A26' : '#C9C2BA' };
+    });
+
+    const wired = this.props.commerceWired === true;
+
+    const accTitles = u.accTitles;
+    const bodies = ACC_BODIES[L][key];
+    const accordions = accTitles.map((title, i) => ({
+      title, body: bodies[i], sign: this.state.open === i ? '−' : '+',
+      open: this.state.open === i, rows: [],
+      onClick: () => this.setState({ open: this.state.open === i ? -1 : i })
+    }));
+
+    const cross = SKUS.filter(k => k !== key).map(k => {
+      const o = DATA[k];
+      const firstImg = o.shots.find(x => x.img);
+      return {
+        name: o[L].title, price: u.price(o.price), stage: u.stage(o.from, o.to),
+        img: firstImg ? firstImg.img : 'img/pattern-sage.png',
+        onClick: () => { this.pick(k); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+      };
+    });
+
+    return {
+      dir: isAr ? 'rtl' : 'ltr', isEn: !isAr, isAr, t: u,
+      toggleLocale: () => this.setState({ locale: isAr ? 'en' : 'ar' }),
+      homeHref: 'Nimova%20Home.dc.html?locale=' + L,
+      accentA: acc.a, accentB: acc.b, nav: u.nav, breadcrumb: s.crumb,
+      skuTabs: SKUS.map(k => ({
+        label: DATA[k][L].title, onClick: () => this.pick(k),
+        bg: this.state.sku === k ? '#2E2A26' : 'transparent',
+        color: this.state.sku === k ? '#FFFFFF' : '#6B635B',
+        border: this.state.sku === k ? '#2E2A26' : '#C9C2BA'
+      })),
+      sku: {
+        title: s.title, price: u.price(d.price), adjacency: s.adjacency,
+        fillStart: (d.from / 4 * 100).toFixed(1) + '%',
+        fillWidth: ((d.to - d.from) / 4 * 100).toFixed(1) + '%'
+      },
+      gallery: shots, mainShot, spine,
+      care: d.care[L].map((c, i) => ({ mark: c[0], label: c[1], divider: i === 0 ? 'none' : '1px solid #E7E2DC' })),
+      colourLine: u.colour + ' — ' + (isAr ? (this.state.colour === 0 ? 'سيج' : 'كريمي') : (this.state.colour === 0 ? 'Sage' : 'Cream')),
+      colours: d.colours.map((c, i) => ({
+        swatch: SW[c], ring: this.state.colour === i ? '#2E2A26' : 'transparent',
+        onClick: () => this.setState({ colour: i })
+      })),
+      hasSizes: !!d.sizes,
+      sizeLine: u.size,
+      sizes: (d.sizes ? d.sizes[L] : []).map((label, i) => ({
+        label, onClick: () => this.setState({ size: i }),
+        bg: this.state.size === i ? '#2E2A26' : 'transparent',
+        color: this.state.size === i ? '#FFFFFF' : '#6B635B',
+        border: this.state.size === i ? '#2E2A26' : '#C9C2BA'
+      })),
+      timeline,
+      tooltipOpen: this.state.tooltip,
+      toggleTooltip: () => this.setState({ tooltip: !this.state.tooltip }),
+      primaryCta: wired ? u.addToBag : u.notifyMe,
+      stickyPrice: u.price(d.price), stickyStage: u.stage(d.from, d.to),
+      features: s.features.map((f, i) => ({
+        n: (isAr ? '0' : '0') + (i + 1), claim: f.claim, body: f.body,
+        isImg: !!f.img, isPh: !f.img, src: f.img || '', label: f.ph || '',
+        imgOrder: i % 2 === 0 ? 1 : 2, textOrder: i % 2 === 0 ? 2 : 1
+      })),
+      hasSurfaceTest: !!d.surface,
+      surface: d.surface ? d.surface[L] : { grips: [], noGrips: [] },
+      specTables: s.specTables.map(tb => ({ title: tb.title, intro: tb.intro, rows: tb.rows.map(r => ({ k: r[0], v: r[1] })) })),
+      diagrams: s.diagrams,
+      accordions,
+      parts: s.parts.map(p => ({ name: p[0], cadence: p[1], price: u.price(p[2]) })),
+      reviews: REVIEWS.map(r => ({ dir: r.locale === 'ar' ? 'rtl' : 'ltr', score: r.score, body: r.body, meta: r.meta[L] })),
+      crossSell: cross
+    };
+  }
+}
+
+</script>
+</body>
+</html>

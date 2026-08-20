@@ -13,9 +13,16 @@ that a link to it is reported as unresolved rather than silently rewritten.
 LINK_MAP = {
     "nimova%20Home.dc.html": "index.html",
     "nimova%20Product.dc.html": "product.html",
+    # The "A" direction is a second, separate pair of design sources whose
+    # filenames differ only by capitalisation and the Product/PDP wording.
+    # Matching is case-sensitive, so these do not collide with the pair above.
+    "Nimova%20Home.dc.html": "a_home.html",
+    "Nimova%20PDP.dc.html": "a_product.html",
     # Unencoded spaces, in case an export ever emits them.
     "nimova Home.dc.html": "index.html",
     "nimova Product.dc.html": "product.html",
+    "Nimova Home.dc.html": "a_home.html",
+    "Nimova PDP.dc.html": "a_product.html",
 }
 
 
