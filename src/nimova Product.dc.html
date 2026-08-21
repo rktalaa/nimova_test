@@ -22,20 +22,25 @@ input,button{font-family:inherit}
 </helmet>
 <div style="background:#FFFFFF;color:#4A443C;font-family:'Hanken Grotesk',system-ui,sans-serif">
 
-<div style="background:#4A443C;color:#FBF7F1;text-align:center;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:11px 24px">Free shipping over AED 200 · 30-day returns</div>
+<div style="background:#4A443C;color:#FBF7F1">
+<div style="max-width:1320px;margin:0 auto;padding:9px clamp(16px,4vw,40px);display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 14px;font-size:14px;text-align:center">
+<span>Free UAE delivery on orders over AED 200</span>
+<a href="#shipping" style="color:#FBF7F1;border-bottom:1px solid rgba(251,247,241,.5);padding-bottom:1px">View delivery information</a>
+</div>
+</div>
 
 <header style="position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(74,68,60,.12)">
-<div style="max-width:1320px;margin:0 auto;padding:4px clamp(14px,4vw,40px);display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:0 clamp(10px,2vw,20px)">
-<a href="nimova%20Home.dc.html" style="grid-column:1;grid-row:1;display:flex;flex-direction:column;gap:3px;padding:6px 0">
+<div style="max-width:1320px;margin:0 auto;padding:6px clamp(14px,4vw,40px);display:flex;flex-wrap:wrap;align-items:center;gap:4px clamp(12px,2vw,20px)">
+<a href="nimova%20Home.dc.html" style="flex:0 0 auto;display:flex;flex-direction:column;gap:3px;padding:6px 0">
 <span style="font-family:'Quicksand',sans-serif;font-size:clamp(25px,4.6vw,33px);font-weight:500;line-height:1">nimova</span>
 <span style="border-top:1px solid rgba(126,149,115,.85);padding-top:5px;font-family:'Quicksand',sans-serif;font-size:clamp(9px,1.2vw,11px);letter-spacing:.015em;color:#4A443C;text-align:center">baby essentials</span>
 </a>
-<nav style="grid-column:2;grid-row:1;display:flex;flex-wrap:wrap;justify-content:center;gap:0 clamp(10px,1.6vw,20px);font-size:clamp(14px,1.6vw,15px);white-space:nowrap">
+<nav style="flex:1 1 220px;min-width:0;display:flex;flex-wrap:wrap;gap:0 clamp(10px,1.6vw,20px);font-size:clamp(14px,1.6vw,15px);white-space:nowrap">
 <a href="nimova%20Home.dc.html#range" style="padding:12px 0;display:inline-block">Shop</a>
-<a href="nimova%20Home.dc.html#watch" style="padding:12px 0;display:inline-block">Watch</a>
+<a href="nimova%20Home.dc.html#why" style="padding:12px 0;display:inline-block">Why nimova</a>
 <a href="nimova%20Home.dc.html#journal" style="padding:12px 0;display:inline-block">Journal</a>
 </nav>
-<div style="grid-column:3;grid-row:1;display:flex;gap:14px;justify-content:flex-end;align-items:center;font-size:15px;white-space:nowrap">
+<div style="flex:0 0 auto;display:flex;gap:14px;justify-content:flex-end;align-items:center;font-size:15px;white-space:nowrap">
 <a href="#buy" style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(74,68,60,.28);border-radius:999px;padding:8px 15px" style-hover="border-color:#7E9573;color:#7E9573">Bag<span style="font-size:13px;color:#8d8478">{{ bagCount }}</span></a>
 </div>
 </div>
@@ -198,13 +203,13 @@ input,button{font-family:inherit}
 <span>The suction base releases by lifting the tab, not by pulling the bowl.</span></div>
 </sc-if>
 
-<button onClick="{{ toggle3 }}" style="all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid rgba(74,68,60,.18);font-family:'Quicksand',sans-serif;font-size:21px">
+<button id="shipping" onClick="{{ toggle3 }}" style="all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid rgba(74,68,60,.18);font-family:'Quicksand',sans-serif;font-size:21px">
 <span>Shipping &amp; returns</span><span style="font-size:22px;color:#7E9573;line-height:1">{{ sign3 }}</span>
 </button>
 <sc-if value="{{ open3 }}" hint-placeholder-val="{{ false }}">
 <div style="padding:18px 0 24px;border-bottom:1px solid rgba(74,68,60,.18);display:flex;flex-direction:column;gap:12px;font-size:17px;line-height:1.55;color:#6d655b">
-<span>UAE delivery in 2–4 working days. GCC in 4–7.</span>
-<span>Free over AED 200, otherwise AED 20 flat.</span>
+<span>UAE delivery in 2–4 working days, tracked.</span>
+<span>Free over AED 200, otherwise AED 20 flat. Prices include VAT.</span>
 <span>30 days to return, unused and in its box. We cover the return shipping.</span></div>
 </sc-if>
 
@@ -221,53 +226,46 @@ input,button{font-family:inherit}
 </div>
 <p style="font-size:17px;line-height:1.6;margin:0;max-width:34ch;color:#6d655b">Four things that make the difference at the table, not on the box.</p>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:clamp(16px,2vw,26px)">
-<div style="display:flex;flex-direction:column;background:#FAF8F4;overflow:hidden">
-<div style="padding:clamp(20px,2.4vw,30px) clamp(20px,2.4vw,30px) clamp(14px,1.6vw,20px);display:flex;flex-direction:column;gap:12px">
-<div style="display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start;justify-content:space-between">
-<h3 style="font-family:'Quicksand',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.01em;font-size:clamp(22px,2.6vw,32px);line-height:1.02;margin:0;color:#7E9573">One bowl,<br>three ways</h3>
-<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end"><span style="font-family:'Quicksand',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7E9573;border:1px solid rgba(126,149,115,.55);border-radius:999px;padding:7px 12px;white-space:nowrap">3-in-1</span><span style="font-family:'Quicksand',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7E9573;border:1px solid rgba(126,149,115,.55);border-radius:999px;padding:7px 12px;white-space:nowrap">350 ml</span></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:clamp(12px,1.4vw,18px)">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr));align-items:stretch;background:#FAF8F4;overflow:hidden;min-width:0">
+<div style="padding:clamp(16px,1.8vw,22px);display:flex;flex-direction:column;gap:9px;min-width:0">
+<h3 style="font-family:'Quicksand',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.01em;font-size:clamp(17px,1.7vw,21px);line-height:1.06;margin:0;color:#5F7357">One bowl,<br>three ways</h3>
+<div style="display:flex;flex-wrap:wrap;gap:6px"><span style="font-family:'Quicksand',sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:#5F7357;border:1px solid rgba(126,149,115,.5);border-radius:999px;padding:5px 9px;white-space:nowrap">3-in-1</span><span style="font-family:'Quicksand',sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:#5F7357;border:1px solid rgba(126,149,115,.5);border-radius:999px;padding:5px 9px;white-space:nowrap">350 ml</span></div>
+<p style="font-size:15px;line-height:1.45;margin:0;color:#6d655b"><span style="color:#5F7357;font-weight:600">Bowl, soup cup and snack box</span> — swap the lid, it changes job.</p>
 </div>
-<p style="font-size:clamp(15px,1.5vw,17px);line-height:1.5;margin:0;color:#6d655b;max-width:38ch"><span style="color:#7E9573;font-weight:600">Bowl, soup cup and snack box</span> in a single set — swap the lid and it changes job.</p>
-</div>
-<div style="position:relative;aspect-ratio:16/11;background:#FFFFFF">
+<div style="position:relative;background:#FFFFFF;min-height:150px">
 <img src="assets/opt-p-sb-ag1.jpg" alt="The 3-in-1 bowl with its lid on" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block" loading="lazy">
 </div>
 </div>
-<div style="display:flex;flex-direction:column;background:#FAF8F4;overflow:hidden">
-<div style="padding:clamp(20px,2.4vw,30px) clamp(20px,2.4vw,30px) clamp(14px,1.6vw,20px);display:flex;flex-direction:column;gap:12px">
-<div style="display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start;justify-content:space-between">
-<h3 style="font-family:'Quicksand',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.01em;font-size:clamp(22px,2.6vw,32px);line-height:1.02;margin:0;color:#7E9573">Soup through<br>a straw</h3>
-<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end"><span style="font-family:'Quicksand',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7E9573;border:1px solid rgba(126,149,115,.55);border-radius:999px;padding:7px 12px;white-space:nowrap">No lumps</span><span style="font-family:'Quicksand',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7E9573;border:1px solid rgba(126,149,115,.55);border-radius:999px;padding:7px 12px;white-space:nowrap">Detachable</span></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr));align-items:stretch;background:#FAF8F4;overflow:hidden;min-width:0">
+<div style="padding:clamp(16px,1.8vw,22px);display:flex;flex-direction:column;gap:9px;min-width:0">
+<h3 style="font-family:'Quicksand',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.01em;font-size:clamp(17px,1.7vw,21px);line-height:1.06;margin:0;color:#5F7357">Soup through<br>a straw</h3>
+<div style="display:flex;flex-wrap:wrap;gap:6px"><span style="font-family:'Quicksand',sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:#5F7357;border:1px solid rgba(126,149,115,.5);border-radius:999px;padding:5px 9px;white-space:nowrap">No lumps</span><span style="font-family:'Quicksand',sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:#5F7357;border:1px solid rgba(126,149,115,.5);border-radius:999px;padding:5px 9px;white-space:nowrap">Detachable</span></div>
+<p style="font-size:15px;line-height:1.45;margin:0;color:#6d655b"><span style="color:#5F7357;font-weight:600">The built-in filter</span> keeps lumps in and the straw clear.</p>
 </div>
-<p style="font-size:clamp(15px,1.5vw,17px);line-height:1.5;margin:0;color:#6d655b;max-width:38ch"><span style="color:#7E9573;font-weight:600">The built-in filter</span> keeps the lumps in the bowl and the straw clear.</p>
-</div>
-<div style="position:relative;aspect-ratio:16/11;background:#FFFFFF">
+<div style="position:relative;background:#FFFFFF;min-height:150px">
 <img src="assets/opt-p-sb-ag2.jpg" alt="The straw filter sitting in the bowl" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block" loading="lazy">
 </div>
 </div>
-<div style="display:flex;flex-direction:column;background:#FAF8F4;overflow:hidden">
-<div style="padding:clamp(20px,2.4vw,30px) clamp(20px,2.4vw,30px) clamp(14px,1.6vw,20px);display:flex;flex-direction:column;gap:12px">
-<div style="display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start;justify-content:space-between">
-<h3 style="font-family:'Quicksand',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.01em;font-size:clamp(22px,2.6vw,32px);line-height:1.02;margin:0;color:#7E9573">Stays put,<br>no flips</h3>
-<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end"><span style="font-family:'Quicksand',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7E9573;border:1px solid rgba(126,149,115,.55);border-radius:999px;padding:7px 12px;white-space:nowrap">Suction base</span><span style="font-family:'Quicksand',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7E9573;border:1px solid rgba(126,149,115,.55);border-radius:999px;padding:7px 12px;white-space:nowrap">Easy release</span></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr));align-items:stretch;background:#FAF8F4;overflow:hidden;min-width:0">
+<div style="padding:clamp(16px,1.8vw,22px);display:flex;flex-direction:column;gap:9px;min-width:0">
+<h3 style="font-family:'Quicksand',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.01em;font-size:clamp(17px,1.7vw,21px);line-height:1.06;margin:0;color:#5F7357">Stays put,<br>no flips</h3>
+<div style="display:flex;flex-wrap:wrap;gap:6px"><span style="font-family:'Quicksand',sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:#5F7357;border:1px solid rgba(126,149,115,.5);border-radius:999px;padding:5px 9px;white-space:nowrap">Suction base</span><span style="font-family:'Quicksand',sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:#5F7357;border:1px solid rgba(126,149,115,.5);border-radius:999px;padding:5px 9px;white-space:nowrap">Easy release</span></div>
+<p style="font-size:15px;line-height:1.45;margin:0;color:#6d655b"><span style="color:#5F7357;font-weight:600">Strong suction base</span> seals to the tray, lifts off by the tab.</p>
 </div>
-<p style="font-size:clamp(15px,1.5vw,17px);line-height:1.5;margin:0;color:#6d655b;max-width:38ch"><span style="color:#7E9573;font-weight:600">Strong suction base</span> seals to the tray and lifts off by the tab.</p>
-</div>
-<div style="position:relative;aspect-ratio:16/11;background:#FFFFFF">
+<div style="position:relative;background:#FFFFFF;min-height:150px">
 <img src="assets/opt-p-sb-ag3.jpg" alt="The suction base gripping a surface" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block" loading="lazy">
 </div>
 </div>
-<div style="display:flex;flex-direction:column;background:#FAF8F4;overflow:hidden">
-<div style="padding:clamp(20px,2.4vw,30px) clamp(20px,2.4vw,30px) clamp(14px,1.6vw,20px);display:flex;flex-direction:column;gap:12px">
-<div style="display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start;justify-content:space-between">
-<h3 style="font-family:'Quicksand',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.01em;font-size:clamp(22px,2.6vw,32px);line-height:1.02;margin:0;color:#7E9573">Easy<br>to clean</h3>
-<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end"><span style="font-family:'Quicksand',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7E9573;border:1px solid rgba(126,149,115,.55);border-radius:999px;padding:7px 12px;white-space:nowrap">Dishwasher</span><span style="font-family:'Quicksand',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7E9573;border:1px solid rgba(126,149,115,.55);border-radius:999px;padding:7px 12px;white-space:nowrap">Sterilise</span></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr));align-items:stretch;background:#FAF8F4;overflow:hidden;min-width:0">
+<div style="padding:clamp(16px,1.8vw,22px);display:flex;flex-direction:column;gap:9px;min-width:0">
+<h3 style="font-family:'Quicksand',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.01em;font-size:clamp(17px,1.7vw,21px);line-height:1.06;margin:0;color:#5F7357">Easy<br>to clean</h3>
+<div style="display:flex;flex-wrap:wrap;gap:6px"><span style="font-family:'Quicksand',sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:#5F7357;border:1px solid rgba(126,149,115,.5);border-radius:999px;padding:5px 9px;white-space:nowrap">Dishwasher</span><span style="font-family:'Quicksand',sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:#5F7357;border:1px solid rgba(126,149,115,.5);border-radius:999px;padding:5px 9px;white-space:nowrap">Sterilise</span></div>
+<p style="font-size:15px;line-height:1.45;margin:0;color:#6d655b"><span style="color:#5F7357;font-weight:600">Every part comes apart</span> — dishwasher, boiling water or steam.</p>
 </div>
-<p style="font-size:clamp(15px,1.5vw,17px);line-height:1.5;margin:0;color:#6d655b;max-width:38ch"><span style="color:#7E9573;font-weight:600">Every part comes apart</span> — dishwasher, boiling water or steam steriliser.</p>
-</div>
-<div style="position:relative;aspect-ratio:16/11;background:#FFFFFF">
+<div style="position:relative;background:#FFFFFF;min-height:150px">
 <img src="assets/opt-p-sb-ww.jpg" alt="The bowl in warm white with its orange lid" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block" loading="lazy">
+</div>
 </div>
 </div>
 </div>
@@ -385,14 +383,43 @@ input,button{font-family:inherit}
 </div>
 </section>
 
-<footer style="border-top:1px solid rgba(74,68,60,.12);padding:clamp(44px,5vw,64px) clamp(20px,5vw,40px) 70px">
-<div style="max-width:1320px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px;align-items:flex-end">
+<footer style="border-top:1px solid rgba(74,68,60,.12);padding:clamp(44px,5vw,64px) clamp(20px,5vw,40px) clamp(36px,5vw,52px)">
+<div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr));gap:clamp(22px,3vw,40px)">
+<div style="display:flex;flex-direction:column;gap:12px;grid-column:span 2;min-width:0">
 <div style="display:flex;flex-direction:column;gap:5px;align-items:stretch;width:fit-content">
 <span style="font-family:'Quicksand',sans-serif;font-size:clamp(30px,4vw,40px);font-weight:500;line-height:1">nimova</span>
-<span style="border-top:1px solid rgba(126,149,115,.85);padding-top:7px;font-family:'Quicksand',sans-serif;font-size:15px;letter-spacing:.015em;color:#4A443C;text-align:center">baby essentials</span></div>
-<div style="display:flex;flex-direction:column;gap:8px;text-align:right;font-size:16px;color:#6d655b">
-<a href="mailto:hello@nimova.com">hello@nimova.com</a>
-<span>nimova FZ LLC · Dubai</span></div>
+<span style="border-top:1px solid rgba(126,149,115,.85);padding-top:7px;font-family:'Quicksand',sans-serif;font-size:14px;letter-spacing:.015em;color:#4A443C;text-align:center">baby essentials</span>
+</div>
+<p style="font-size:16px;line-height:1.6;color:#6d655b;margin:10px 0 0;max-width:34ch">Gulf-born baby essentials, thoughtfully designed for everyday family life.</p>
+<div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8d8478;margin-top:8px">part of the talaa house</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;font-size:16px">
+<span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8d8478;margin-bottom:4px">Customer care</span>
+<a href="mailto:hello@nimova.com">Contact us</a>
+<a href="#shipping">Delivery information</a>
+<a href="#shipping">Returns &amp; refunds</a>
+<a href="#shipping">Track your order</a>
+<a href="#shipping">FAQs</a>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;font-size:16px">
+<span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8d8478;margin-bottom:4px">Product &amp; safety</span>
+<a href="#features">Materials &amp; care</a>
+<a href="nimova%20Home.dc.html#why">Testing &amp; standards</a>
+<a href="#features">Safety information</a>
+<a href="#details">Product details</a>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;font-size:16px">
+<span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8d8478;margin-bottom:4px">Company</span>
+<a href="nimova%20Home.dc.html#why">About nimova</a>
+<a href="nimova%20Home.dc.html#journal">Journal</a>
+<a href="#shipping">Privacy policy</a>
+<a href="#shipping">Terms of sale</a>
+<a href="#shipping">Accessibility</a>
+</div>
+</div>
+<div style="max-width:1320px;margin:clamp(30px,4vw,42px) auto 0;padding-top:22px;border-top:1px solid rgba(74,68,60,.12);display:flex;flex-wrap:wrap;gap:8px 26px;justify-content:space-between;font-size:15px;color:#8d8478">
+<span>Free UAE delivery on orders over AED 200 · Prices include VAT</span>
+<span>nimova FZ LLC · Dubai, United Arab Emirates</span>
 </div>
 </footer>
 
