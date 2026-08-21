@@ -9,7 +9,7 @@
 <meta name="ext-resource-dependency" content="src/assets/reel-3.jpg" data-resource-id="reel3" />
 <meta name="ext-resource-dependency" content="src/assets/reel-4.jpg" data-resource-id="reel4" />
 <template id="__bundler_thumbnail" data-bg-color="#FFFFFF">
-<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="800" fill="#FFFFFF"/><circle cx="600" cy="355" r="175" fill="#F2E7DB"/><rect x="480" y="165" width="240" height="46" rx="12" fill="#D08A6F"/><text x="600" y="615" font-family="Quicksand, sans-serif" font-size="128" fill="#4A443C" text-anchor="middle">nimova</text></svg>
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="800" fill="#FFFFFF"/><circle cx="600" cy="355" r="175" fill="#F2E7DB"/><rect x="480" y="165" width="240" height="46" rx="12" fill="#7E9573"/><text x="600" y="615" font-family="Quicksand, sans-serif" font-size="128" fill="#4A443C" text-anchor="middle">nimova</text></svg>
 </template>
 </head>
 <body>
@@ -22,29 +22,37 @@
 html,body{margin:0;padding:0}
 body{background:#FFFFFF;color:#4A443C;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:#4A443C;text-decoration:none}
-a:hover{color:#D08A6F}
+a:hover{color:#7E9573}
 ::selection{background:#F2E7DB}
 input,button{font-family:inherit}
 </style>
 </helmet>
 <div style="background:#FFFFFF;color:#4A443C;font-family:'Hanken Grotesk',system-ui,sans-serif">
 
-<div style="background:#4A443C;color:#FBF7F1;text-align:center;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:11px 24px">Launching in the GCC · free shipping over AED 200</div>
+<div style="background:#4A443C;color:#FBF7F1">
+<div style="max-width:1320px;margin:0 auto;padding:9px clamp(16px,4vw,40px);display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 14px;font-size:14px;text-align:center">
+<span>Free UAE delivery on orders over AED 200</span>
+<a href="#delivery" style="color:#FBF7F1;border-bottom:1px solid rgba(251,247,241,.5);padding-bottom:1px">View delivery information</a>
+</div>
+</div>
 
-<header style="position:sticky;top:0;z-index:20;background:#FFFFFF;border-bottom:1px solid rgba(74,68,60,.12)">
-<div style="max-width:1320px;margin:0 auto;padding:4px clamp(14px,4vw,40px);display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:0 clamp(10px,2vw,20px)">
-<a href="#top" style="grid-column:1;grid-row:1;display:flex;flex-direction:column;gap:3px;padding:6px 0">
-<span style="font-family:'Quicksand',sans-serif;font-size:clamp(25px,4.6vw,33px);font-weight:500;line-height:1">nimova</span>
-<span style="border-top:1px solid rgba(208,138,111,.85);padding-top:5px;font-family:'Quicksand',sans-serif;font-size:clamp(9px,1.2vw,11px);letter-spacing:.015em;color:#4A443C;text-align:center">baby essentials</span>
+<header style="position:sticky;top:0;z-index:20;background:#FAF8F4;border-bottom:1px solid rgba(74,68,60,.10)">
+<div style="max-width:1320px;margin:0 auto;padding:14px clamp(16px,4vw,40px);display:flex;flex-wrap:wrap;align-items:center;gap:6px clamp(16px,3vw,44px)">
+<a href="#top" style="flex:0 0 auto;display:flex;flex-direction:column;gap:3px;padding:2px 0">
+<span style="font-family:'Quicksand',sans-serif;font-size:clamp(24px,3vw,29px);font-weight:500;line-height:1;letter-spacing:-.005em">nimova</span>
+<span style="border-top:1px solid rgba(126,149,115,.85);padding-top:5px;font-family:'Quicksand',sans-serif;font-size:clamp(9px,1.2vw,11px);letter-spacing:.015em;text-align:center">baby essentials</span>
 </a>
-<nav style="grid-column:2;grid-row:1;display:flex;flex-wrap:wrap;justify-content:center;gap:0 clamp(10px,1.6vw,20px);font-size:clamp(14px,1.6vw,15px);white-space:nowrap">
-<a href="#range" style="padding:12px 0;display:inline-block">Shop</a>
-<a href="#watch" style="padding:12px 0;display:inline-block">Watch</a>
-<a href="#journal" style="padding:12px 0;display:inline-block">Journal</a>
+<nav style="display:flex;flex-wrap:wrap;gap:0 clamp(14px,2.2vw,32px);font-size:clamp(15px,1.5vw,17px);flex:1 1 240px;min-width:0">
+<a href="#range" style="padding:10px 0;display:inline-block">Shop</a>
+<a href="#why" style="padding:10px 0;display:inline-block">Why nimova</a>
+<a href="#journal" style="padding:10px 0;display:inline-block">Journal</a>
 </nav>
-<div style="grid-column:3;grid-row:1;display:flex;gap:10px;justify-content:flex-end;align-items:center;font-size:15px;white-space:nowrap">
-<button id="langbtn" onClick="{{ toggleLang }}" style="all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(74,68,60,.28);border-radius:999px;padding:8px 14px;font-size:15px" style-hover="border-color:#D08A6F;color:#D08A6F"><span style="font-size:13px;color:#8d8478">◍</span>{{ langLabel }}</button>
-<a href="#range" style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(74,68,60,.28);border-radius:999px;padding:8px 15px" style-hover="border-color:#D08A6F;color:#D08A6F">Bag<span style="font-size:13px;color:#8d8478">0</span></a>
+<div style="display:flex;align-items:center;gap:clamp(14px,2vw,26px);flex:0 0 auto;justify-content:flex-end;white-space:nowrap">
+<button id="langbtn" onClick="{{ toggleLang }}" aria-label="{{ langAria }}" style="all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(74,68,60,.34);padding:8px 14px;font-size:15px;line-height:1" style-hover="border-color:#5F7357;color:#5F7357">
+<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18"></path></svg>
+<span>{{ langLabel }}</span>
+</button>
+<a href="#range" style="font-size:clamp(15px,1.5vw,17px)">Bag (0)</a>
 </div>
 </div>
 </header>
@@ -53,45 +61,45 @@ input,button{font-family:inherit}
 <div style="position:absolute;inset:0;opacity:{{ op0 }};transition:opacity .9s ease;pointer-events:{{ pe0 }}">
 <img src="src/assets/bowl-hero-new.jpg" alt="nimova 3-in-1 baby bowl" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
 <video src="https://videos.pexels.com/video-files/5894811/5894811-hd_1920_1080_30fps.mp4" poster="https://images.pexels.com/videos/5894811/pexels-photo-5894811.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" ref="{{ videoRef }}" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="auto" aria-label="A baby enjoying feeding time at home" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .8s ease"></video>
-<div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.94) 0%,rgba(255,255,255,.86) 38%,rgba(255,255,255,.18) 68%,rgba(255,255,255,0) 100%)"></div>
+<div data-rtl-flip="1" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.94) 0%,rgba(255,255,255,.86) 38%,rgba(255,255,255,.18) 68%,rgba(255,255,255,0) 100%)"></div>
 <div style="position:relative;height:100%;max-width:1320px;margin:0 auto;padding:clamp(36px,5vw,64px) clamp(20px,5vw,40px);display:flex;flex-direction:column;justify-content:center;box-sizing:border-box">
 <div style="max-width:min(560px,86%);display:flex;flex-direction:column;gap:clamp(14px,1.6vw,20px)">
-<span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#D08A6F">baby essentials · feeding &amp; nursing</span>
-<h1 style="font-family:'Quicksand',sans-serif;font-weight:500;font-size:clamp(32px,4.4vw,64px);line-height:1.05;letter-spacing:-.015em;margin:0;text-wrap:pretty">a name parents can trust, at a price they can live with.</h1>
-<p style="font-size:clamp(16px,1.7vw,19px);line-height:1.6;margin:0;color:#6d655b;max-width:44ch">Premium quality, attainable prices. A short range of feeding and nursing essentials, made well and priced to actually be used.</p>
+<span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#5F7357">feeding essentials for everyday family life</span>
+<h1 style="font-family:'Quicksand',sans-serif;font-weight:500;font-size:clamp(32px,4.4vw,64px);line-height:1.05;letter-spacing:-.015em;margin:0;text-wrap:pretty">made well for the meals that happen every day.</h1>
+<p style="font-size:clamp(16px,1.7vw,19px);line-height:1.6;margin:0;color:#6d655b;max-width:44ch">A focused range of practical feeding essentials, thoughtfully designed to be used, washed and used again.</p>
 <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-top:6px">
-<a href="#range" style="background:#D08A6F;color:#FAF8F4;font-size:17px;font-weight:500;padding:15px 30px;border-radius:999px" style-hover="background:#4A443C;color:#FAF8F4">Shop the range</a>
-<a href="#instagram" style="font-size:17px;border-bottom:1px solid rgba(74,68,60,.3);padding-bottom:3px">See it in real homes</a>
+<a href="#range" style="background:#5F7357;color:#FAF8F4;font-size:17px;font-weight:500;padding:15px 30px;border-radius:999px" style-hover="background:#4A443C;color:#FAF8F4">Explore the range</a>
+<a href="#watch" style="font-size:17px;border-bottom:1px solid rgba(74,68,60,.3);padding-bottom:3px">See it in use</a>
 </div>
 </div>
 </div>
 </div>
 <div style="position:absolute;inset:0;opacity:{{ op1 }};transition:opacity .9s ease;pointer-events:{{ pe1 }}">
-<img src="src/assets/bowl-flat-orange.jpeg" alt="The three parts of the 3-in-1 bowl" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
-<div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.94) 0%,rgba(255,255,255,.86) 38%,rgba(255,255,255,.18) 68%,rgba(255,255,255,0) 100%)"></div>
+<img src="src/assets/bowl-exploded.jpeg" alt="The 3-in-1 bowl shown as a steel bowl, a straw cup and a snack bowl" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+<div data-rtl-flip="1" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.94) 0%,rgba(255,255,255,.86) 38%,rgba(255,255,255,.18) 68%,rgba(255,255,255,0) 100%)"></div>
 <div style="position:relative;height:100%;max-width:1320px;margin:0 auto;padding:clamp(36px,5vw,64px) clamp(20px,5vw,40px);display:flex;flex-direction:column;justify-content:center;box-sizing:border-box">
 <div style="max-width:min(560px,86%);display:flex;flex-direction:column;gap:clamp(14px,1.6vw,20px)">
-<span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#D08A6F">the 3-in-1 bowl · new</span>
-<h2 style="font-family:'Quicksand',sans-serif;font-weight:500;font-size:clamp(32px,4.4vw,64px);line-height:1.05;letter-spacing:-.015em;margin:0;text-wrap:pretty">one bowl that keeps up with all three meals.</h2>
-<p style="font-size:clamp(16px,1.7vw,19px);line-height:1.6;margin:0;color:#6d655b;max-width:44ch">Stainless steel bowl, soup cup with straw and built-in filter, spill-proof lid that converts to a snack bowl.</p>
+<span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#5F7357">the 3-in-1 baby bowl</span>
+<h2 style="font-family:'Quicksand',sans-serif;font-weight:500;font-size:clamp(32px,4.4vw,64px);line-height:1.05;letter-spacing:-.015em;margin:0;text-wrap:pretty">one bowl, three ways through mealtime.</h2>
+<p style="font-size:clamp(16px,1.7vw,19px);line-height:1.6;margin:0;color:#6d655b;max-width:44ch">Use it as a stainless-steel bowl, a filtered straw cup or a snack bowl with the convertible lid.</p>
 <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-top:6px">
-<a href="product.html" style="background:#D08A6F;color:#FAF8F4;font-size:17px;font-weight:500;padding:15px 30px;border-radius:999px" style-hover="background:#4A443C;color:#FAF8F4">See how it works</a>
-<a href="product.html#details" style="font-size:17px;border-bottom:1px solid rgba(74,68,60,.3);padding-bottom:3px">Read the details</a>
+<a href="product.html" style="background:#5F7357;color:#FAF8F4;font-size:17px;font-weight:500;padding:15px 30px;border-radius:999px" style-hover="background:#4A443C;color:#FAF8F4">Shop the 3-in-1 Bowl</a>
+<a href="product.html#features" style="font-size:17px;border-bottom:1px solid rgba(74,68,60,.3);padding-bottom:3px">See how it works</a>
 </div>
 </div>
 </div>
 </div>
 <div style="position:absolute;inset:0;opacity:{{ op2 }};transition:opacity .9s ease;pointer-events:{{ pe2 }}">
-<img src="src/assets/unboxing.jpg" alt="The nimova starter kit, boxed" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
-<div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.94) 0%,rgba(255,255,255,.86) 38%,rgba(255,255,255,.18) 68%,rgba(255,255,255,0) 100%)"></div>
+<img src="src/assets/p-weaning-set.jpg" alt="The four pieces of the mealtime starter set" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+<div data-rtl-flip="1" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.94) 0%,rgba(255,255,255,.86) 38%,rgba(255,255,255,.18) 68%,rgba(255,255,255,0) 100%)"></div>
 <div style="position:relative;height:100%;max-width:1320px;margin:0 auto;padding:clamp(36px,5vw,64px) clamp(20px,5vw,40px);display:flex;flex-direction:column;justify-content:center;box-sizing:border-box">
 <div style="max-width:min(560px,86%);display:flex;flex-direction:column;gap:clamp(14px,1.6vw,20px)">
-<span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#D08A6F">the starter kit</span>
-<h2 style="font-family:'Quicksand',sans-serif;font-weight:500;font-size:clamp(32px,4.4vw,64px);line-height:1.05;letter-spacing:-.015em;margin:0;text-wrap:pretty">everything for the first spoon, in one box.</h2>
-<p style="font-size:clamp(16px,1.7vw,19px);line-height:1.6;margin:0;color:#6d655b;max-width:44ch">Bowl, cutlery, bib and travel case — the pieces parents buy in the same fortnight, bundled to save.</p>
+<span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#5F7357">the mealtime starter set</span>
+<h2 style="font-family:'Quicksand',sans-serif;font-weight:500;font-size:clamp(32px,4.4vw,64px);line-height:1.05;letter-spacing:-.015em;margin:0;text-wrap:pretty">four useful essentials, in one box.</h2>
+<p style="font-size:clamp(16px,1.7vw,19px);line-height:1.6;margin:0;color:#6d655b;max-width:44ch">A bowl, divided plate, catch bib and spoon-and-fork set — brought together to make starting solids simpler.</p>
 <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-top:6px">
-<a href="#bundle" style="background:#D08A6F;color:#FAF8F4;font-size:17px;font-weight:500;padding:15px 30px;border-radius:999px" style-hover="background:#4A443C;color:#FAF8F4">Shop the kit</a>
-<a href="#bundle" style="font-size:17px;border-bottom:1px solid rgba(74,68,60,.3);padding-bottom:3px">What’s inside</a>
+<a href="#bundle" style="background:#5F7357;color:#FAF8F4;font-size:17px;font-weight:500;padding:15px 30px;border-radius:999px" style-hover="background:#4A443C;color:#FAF8F4">Explore the starter set</a>
+<a href="#bundle" style="font-size:17px;border-bottom:1px solid rgba(74,68,60,.3);padding-bottom:3px">See what’s included</a>
 </div>
 </div>
 </div>
@@ -105,10 +113,10 @@ input,button{font-family:inherit}
 
 <section style="border-top:1px solid rgba(74,68,60,.12);border-bottom:1px solid rgba(74,68,60,.12);background:#F6EFE4">
 <div style="max-width:1320px;margin:0 auto;padding:clamp(16px,6vw,26px) clamp(20px,5vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:clamp(16px,3vw,32px)">
-<div style="display:flex;flex-direction:column;gap:5px"><span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#D08A6F">Food-grade</span><span style="font-size:17px;color:#6d655b">BPA-free materials, chosen first</span></div>
-<div style="display:flex;flex-direction:column;gap:5px"><span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#D08A6F">Lab tested</span><span style="font-size:17px;color:#6d655b">Independently, to EN and ASTM</span></div>
-<div style="display:flex;flex-direction:column;gap:5px"><span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#D08A6F">Factory direct</span><span style="font-size:17px;color:#6d655b">Direct from vetted factory partners</span></div>
-<div style="display:flex;flex-direction:column;gap:5px"><span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#D08A6F">Made to last</span><span style="font-size:17px;color:#6d655b">Used hard, handed down</span></div>
+<div style="display:flex;flex-direction:column;gap:5px"><span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#5F7357">Independent testing</span><span style="font-size:17px;color:#6d655b">Against standards applicable to each product</span></div>
+<div style="display:flex;flex-direction:column;gap:5px"><span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#5F7357">Made for daily use</span><span style="font-size:17px;color:#6d655b">Designed to be used, washed and used again</span></div>
+<div style="display:flex;flex-direction:column;gap:5px"><span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#5F7357">Thoughtful function</span><span style="font-size:17px;color:#6d655b">Every feature has a practical purpose</span></div>
+<div style="display:flex;flex-direction:column;gap:5px"><span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#5F7357">Clear materials</span><span style="font-size:17px;color:#6d655b">Material and care details for every product</span></div>v>
 </div>
 </section>
 
@@ -116,12 +124,12 @@ input,button{font-family:inherit}
 <div style="max-width:1320px;margin:0 auto">
 <div style="display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px;margin-bottom:clamp(24px,3vw,36px)">
 <div>
-<div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#D08A6F;margin-bottom:16px">shop by category</div>
+<div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#5F7357;margin-bottom:16px">shop by category</div>
 <h2 style="font-family:'Quicksand',sans-serif;font-weight:500;font-size:clamp(28px,3.6vw,46px);line-height:1.08;margin:0;letter-spacing:-.01em">find it by what<br>you need today</h2>
 </div>
 <a href="#range" style="font-size:17px;border-bottom:1px solid rgba(74,68,60,.3);padding-bottom:3px">Shop all</a>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:clamp(18px,2.2vw,26px)">
+<div style="display:grid;grid-auto-flow:column;grid-auto-columns:minmax(clamp(160px,23%,320px),1fr);gap:clamp(18px,2.2vw,26px);overflow-x:auto">
 <a href="#range" style="min-width:0;box-sizing:border-box;display:flex;flex-direction:column;gap:14px;transition:transform .25s ease" style-hover="transform:translateY(-4px)">
 <div style="aspect-ratio:4/3;background:#F2E7DB;overflow:hidden"><img src="src/assets/bowl-hero-new.jpg" alt="Feeding" style="width:100%;height:100%;object-fit:cover;display:block"></div>
 <div style="display:flex;flex-direction:column;gap:4px">
@@ -154,28 +162,62 @@ input,button{font-family:inherit}
 </div>
 </section>
 
-<section id="stage" style="padding:clamp(44px,5vw,64px) clamp(20px,5vw,40px) 0">
+<section id="stage" style="padding:clamp(44px,5vw,68px) clamp(20px,5vw,40px) 0">
 <div style="max-width:1320px;margin:0 auto">
-<div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:22px">
-<div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#D08A6F">shop by age</div>
+<div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:clamp(28px,3.4vw,44px)">
+<div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#5F7357">shop by age</div>
 <span style="font-size:16px;color:#6d655b">One range, every stage of eating.</span>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
-<a href="#range" style="min-width:0;box-sizing:border-box;background:#F6EFE4;padding:26px 28px;display:flex;flex-direction:column;gap:6px;transition:background .2s ease" style-hover="background:#F2E7DB">
-<span style="font-family:'Quicksand',sans-serif;font-size:26px;line-height:1.1">0–6 months</span>
-<span style="font-size:16px;color:#6d655b">Bottles, sterilising, milk storage</span>
+<div style="display:grid;grid-auto-flow:column;grid-auto-columns:minmax(clamp(140px,19%,190px),1fr);overflow-x:auto">
+<a href="#range" style="min-width:0;box-sizing:border-box;position:relative;border-top:1px solid rgba(154,174,147,.55);padding:0 clamp(6px,1vw,14px);display:flex;flex-direction:column;align-items:center;text-align:center;transition:opacity .2s ease" style-hover="opacity:.72">
+<span style="position:absolute;top:-5px;left:50%;transform:translateX(-50%);width:10px;height:10px;border-radius:50%;background:#9AAE93"></span>
+<span style="font-family:'Quicksand',sans-serif;font-size:clamp(17px,1.7vw,21px);letter-spacing:.02em;margin-top:26px">4M</span>
+<span style="width:1px;height:clamp(28px,3.4vw,46px);background:rgba(154,174,147,.55);margin-top:16px"></span>
+<span style="width:100%;aspect-ratio:1/1;background:#F6EFE4;margin-top:clamp(18px,2.2vw,26px);display:block;overflow:hidden">
+<img src="src/assets/p-cutlery.jpg" alt="A pair of nimova first spoons" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+</span>
+<span style="font-family:'Quicksand',sans-serif;font-size:clamp(17px,1.7vw,20px);line-height:1.25;margin-top:18px;min-height:2.5em;display:flex;align-items:flex-start;justify-content:center">First spoon &amp; fork</span>
+<span style="font-size:15px;color:#6d655b;margin-top:7px">Starting solids</span>
 </a>
-<a href="#range" style="min-width:0;box-sizing:border-box;background:#F6EFE4;padding:26px 28px;display:flex;flex-direction:column;gap:6px;transition:background .2s ease" style-hover="background:#F2E7DB">
-<span style="font-family:'Quicksand',sans-serif;font-size:26px;line-height:1.1">6–12 months</span>
-<span style="font-size:16px;color:#6d655b">First purées, bowls, bibs</span>
+<a href="#range" style="min-width:0;box-sizing:border-box;position:relative;border-top:1px solid rgba(154,174,147,.55);padding:0 clamp(6px,1vw,14px);display:flex;flex-direction:column;align-items:center;text-align:center;transition:opacity .2s ease" style-hover="opacity:.72">
+<span style="position:absolute;top:-5px;left:50%;transform:translateX(-50%);width:10px;height:10px;border-radius:50%;background:#9AAE93"></span>
+<span style="font-family:'Quicksand',sans-serif;font-size:clamp(17px,1.7vw,21px);letter-spacing:.02em;margin-top:26px">6M</span>
+<span style="width:1px;height:clamp(28px,3.4vw,46px);background:rgba(154,174,147,.55);margin-top:16px"></span>
+<span style="width:100%;aspect-ratio:1/1;background:#F6EFE4;margin-top:clamp(18px,2.2vw,26px);display:block;overflow:hidden">
+<img src="src/assets/p-plate-set.jpg" alt="Divided suction plate" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+</span>
+<span style="font-family:'Quicksand',sans-serif;font-size:clamp(17px,1.7vw,20px);line-height:1.25;margin-top:18px;min-height:2.5em;display:flex;align-items:flex-start;justify-content:center">Divided suction plate</span>
+<span style="font-size:15px;color:#6d655b;margin-top:7px">Self-feeding begins</span>
 </a>
-<a href="#range" style="min-width:0;box-sizing:border-box;background:#F6EFE4;padding:26px 28px;display:flex;flex-direction:column;gap:6px;transition:background .2s ease" style-hover="background:#F2E7DB">
-<span style="font-family:'Quicksand',sans-serif;font-size:26px;line-height:1.1">12–24 months</span>
-<span style="font-size:16px;color:#6d655b">Self-feeding, cutlery, straw cups</span>
+<a href="#range" style="min-width:0;box-sizing:border-box;position:relative;border-top:1px solid rgba(154,174,147,.55);padding:0 clamp(6px,1vw,14px);display:flex;flex-direction:column;align-items:center;text-align:center;transition:opacity .2s ease" style-hover="opacity:.72">
+<span style="position:absolute;top:-5px;left:50%;transform:translateX(-50%);width:10px;height:10px;border-radius:50%;background:#9AAE93"></span>
+<span style="font-family:'Quicksand',sans-serif;font-size:clamp(17px,1.7vw,21px);letter-spacing:.02em;margin-top:26px">9M</span>
+<span style="width:1px;height:clamp(28px,3.4vw,46px);background:rgba(154,174,147,.55);margin-top:16px"></span>
+<span style="width:100%;aspect-ratio:1/1;background:#F6EFE4;margin-top:clamp(18px,2.2vw,26px);display:block;overflow:hidden">
+<img src="src/assets/p-cup.jpg" alt="Spout cup with two handles" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+</span>
+<span style="font-family:'Quicksand',sans-serif;font-size:clamp(17px,1.7vw,20px);line-height:1.25;margin-top:18px;min-height:2.5em;display:flex;align-items:flex-start;justify-content:center">Spout cup</span>
+<span style="font-size:15px;color:#6d655b;margin-top:7px">Pincer grip</span>
 </a>
-<a href="#range" style="min-width:0;box-sizing:border-box;background:#F6EFE4;padding:26px 28px;display:flex;flex-direction:column;gap:6px;transition:background .2s ease" style-hover="background:#F2E7DB">
-<span style="font-family:'Quicksand',sans-serif;font-size:26px;line-height:1.1">2 years +</span>
-<span style="font-size:16px;color:#6d655b">Plates, cups, lunch boxes</span>
+<a href="#range" style="min-width:0;box-sizing:border-box;position:relative;border-top:1px solid rgba(154,174,147,.55);padding:0 clamp(6px,1vw,14px);display:flex;flex-direction:column;align-items:center;text-align:center;transition:opacity .2s ease" style-hover="opacity:.72">
+<span style="position:absolute;top:-5px;left:50%;transform:translateX(-50%);width:10px;height:10px;border-radius:50%;background:#9AAE93"></span>
+<span style="font-family:'Quicksand',sans-serif;font-size:clamp(17px,1.7vw,21px);letter-spacing:.02em;margin-top:26px">12M</span>
+<span style="width:1px;height:clamp(28px,3.4vw,46px);background:rgba(154,174,147,.55);margin-top:16px"></span>
+<span style="width:100%;aspect-ratio:1/1;background:#F6EFE4;margin-top:clamp(18px,2.2vw,26px);display:block;overflow:hidden">
+<img src="src/assets/p-straw-cup.jpg" alt="Straw cup with handles" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+</span>
+<span style="font-family:'Quicksand',sans-serif;font-size:clamp(17px,1.7vw,20px);line-height:1.25;margin-top:18px;min-height:2.5em;display:flex;align-items:flex-start;justify-content:center">Straw cup</span>
+<span style="font-size:15px;color:#6d655b;margin-top:7px">Cup without help</span>
+</a>
+<a href="#range" style="min-width:0;box-sizing:border-box;position:relative;border-top:1px solid rgba(154,174,147,.55);padding:0 clamp(6px,1vw,14px);display:flex;flex-direction:column;align-items:center;text-align:center;transition:opacity .2s ease" style-hover="opacity:.72">
+<span style="position:absolute;top:-5px;left:50%;transform:translateX(-50%);width:10px;height:10px;border-radius:50%;background:#9AAE93"></span>
+<span style="font-family:'Quicksand',sans-serif;font-size:clamp(17px,1.7vw,21px);letter-spacing:.02em;margin-top:26px">18M+</span>
+<span style="width:1px;height:clamp(28px,3.4vw,46px);background:rgba(154,174,147,.55);margin-top:16px"></span>
+<span style="width:100%;aspect-ratio:1/1;background:#F6EFE4;margin-top:clamp(18px,2.2vw,26px);display:block;overflow:hidden">
+<img src="src/assets/p-bib-green.jpg" alt="Silicone catch bib" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+</span>
+<span style="font-family:'Quicksand',sans-serif;font-size:clamp(17px,1.7vw,20px);line-height:1.25;margin-top:18px;min-height:2.5em;display:flex;align-items:flex-start;justify-content:center">Catch-all silicone bib</span>
+<span style="font-size:15px;color:#6d655b;margin-top:7px">Full table</span>
 </a>
 </div>
 </div>
@@ -185,114 +227,82 @@ input,button{font-family:inherit}
 <div style="max-width:1320px;margin:0 auto">
 <div style="display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:44px;flex-wrap:wrap">
 <div>
-<div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#D08A6F;margin-bottom:18px">the range</div>
-<h2 style="font-family:'Quicksand',sans-serif;font-weight:500;font-size:clamp(30px,3.9vw,52px);line-height:1.08;margin:0;letter-spacing:-.01em">from the first feed<br>to the first meal</h2>
+<div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#5F7357;margin-bottom:18px">the range</div>
+<h2 style="font-family:'Quicksand',sans-serif;font-weight:500;font-size:clamp(30px,3.9vw,52px);line-height:1.08;margin:0;letter-spacing:-.01em">from first tastes<br>to self-feeding</h2>
 </div>
-<p style="font-size:18px;line-height:1.6;margin:0;max-width:42ch;color:#6d655b">Two categories, bought again and again through the same eighteen months. <span style="color:#4A443C;border-bottom:2px solid #D08A6F">One customer, one stage of life.</span></p>
+<p style="font-size:18px;line-height:1.6;margin:0;max-width:40ch;color:#6d655b">Useful pieces for starting solids, growing independence and the everyday meals in between.</p>
 </div>
 
-<div style="display:flex;flex-wrap:wrap;gap:22px">
+<div style="display:grid;grid-auto-flow:column;grid-auto-columns:minmax(clamp(160px,23%,320px),1fr);gap:22px;overflow-x:auto">
 
-<div style="flex:1 1 250px;background:#FAF8F4;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease" style-hover="transform:translateY(-4px);box-shadow:0 18px 34px rgba(74,68,60,.10)">
+<div style="min-width:0;background:#FAF8F4;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease" style-hover="transform:translateY(-4px);box-shadow:0 18px 34px rgba(74,68,60,.10)">
 <a href="product.html" style="position:relative;background:#F2E7DB;aspect-ratio:1/1;overflow:hidden;display:block">
 <img src="src/assets/bowl-flat-orange.jpeg" alt="3-in-1 baby bowl — bowl, straw cup and spill-proof lid" style="width:100%;height:100%;object-fit:cover;display:block">
-<span style="position:absolute;top:14px;left:14px;background:#D08A6F;color:#FAF8F4;font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:6px 10px">live now</span>
+<span style="position:absolute;top:14px;left:14px;background:#5F7357;color:#FAF8F4;font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:6px 10px">live now</span>
 </a>
 <div style="padding:22px 20px 26px;display:flex;flex-direction:column;gap:9px;flex:1">
-<div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8d8478">first meals</div>
+<div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8d8478">sips &amp; snacks</div>
 <a href="product.html" style="font-family:'Quicksand',sans-serif;font-size:23px;line-height:1.2">3-in-1 Baby Bowl</a>
-<p style="font-size:17px;line-height:1.5;color:#6d655b;margin:0;flex:1">A stainless steel bowl, a soup cup with a straw and built-in filter, and a spill-proof lid that turns it into a snack bowl.</p>
-<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14px;color:#6d655b;padding-top:12px;border-top:1px solid rgba(74,68,60,.14);margin-top:6px">
-<span style="display:flex;align-items:center;gap:6px"><span style="width:15px;height:15px;border-radius:999px;background:#E8846B;border:1px solid rgba(74,68,60,.22);display:inline-block"></span><span style="width:15px;height:15px;border-radius:999px;background:#B9C77E;border:1px solid rgba(74,68,60,.22);display:inline-block"></span><span style="margin-left:2px">2 colours</span></span>
-<span>One size</span>
-</div>
+<p style="font-size:16px;line-height:1.5;color:#6d655b;margin:0">Stainless-steel bowl with a filtered straw cup and convertible snack lid — three uses in one compact set.</p>
+<div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#8d8478;padding-top:12px;border-top:1px solid rgba(74,68,60,.14);margin-top:auto;flex-wrap:wrap"><span>6 months +</span><span>·</span><span>Dishwasher-safe*</span><span>·</span><span style="display:inline-flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:999px;background:#E8846B;border:1px solid rgba(74,68,60,.22);display:inline-block"></span><span style="width:13px;height:13px;border-radius:999px;background:#B9C77E;border:1px solid rgba(74,68,60,.22);display:inline-block"></span>2 colours</span></div>
 <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:10px">
 <span style="font-size:18px">AED 95</span>
 </div>
-<button style="margin-top:10px;background:#4A443C;color:#FAF8F4;border:none;font-size:16px;padding:13px 18px;border-radius:999px;cursor:pointer" style-hover="background:#D08A6F">Add to bag</button>
+<button style="margin-top:10px;background:#4A443C;color:#FAF8F4;border:none;font-size:16px;padding:13px 18px;border-radius:999px;cursor:pointer" style-hover="background:#7E9573">Add to bag</button>
 </div>
 </div>
 
-<div style="flex:1 1 250px;background:#FAF8F4;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease" style-hover="transform:translateY(-4px);box-shadow:0 18px 34px rgba(74,68,60,.10)">
+<div style="min-width:0;background:#FAF8F4;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease" style-hover="transform:translateY(-4px);box-shadow:0 18px 34px rgba(74,68,60,.10)">
 <div style="background:#FAF8F4;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;min-height:0;overflow:hidden">
 <img src="src/assets/deer-plate.jpg" alt="Divided silicone plate with lid" style="width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;display:block">
 </div>
 <div style="padding:22px 20px 26px;display:flex;flex-direction:column;gap:9px;flex:1">
 <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8d8478">first tastes</div>
 <div style="font-family:'Quicksand',sans-serif;font-size:23px;line-height:1.2">SoftStart Divided Plate</div>
-<p style="font-size:17px;line-height:1.5;color:#6d655b;margin:0;flex:1">Three sections so foods stay apart, a suction base that holds to the tray, and a lid for the half they didn't finish.</p>
-<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14px;color:#6d655b;padding-top:12px;border-top:1px solid rgba(74,68,60,.14);margin-top:6px">
-<span style="display:flex;align-items:center;gap:6px"><span style="width:15px;height:15px;border-radius:999px;background:#CDBFA6;border:1px solid rgba(74,68,60,.22);display:inline-block"></span><span style="margin-left:2px">1 colour</span></span>
-<span>One size</span>
-</div>
+<p style="font-size:16px;line-height:1.5;color:#6d655b;margin:0">Silicone plate with three sections, a suction base and a fitted lid for leftovers.</p>
+<div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#8d8478;padding-top:12px;border-top:1px solid rgba(74,68,60,.14);margin-top:auto;flex-wrap:wrap"><span>6 months +</span><span>·</span><span>Dishwasher-safe*</span><span>·</span><span style="display:inline-flex;align-items:center;gap:6px"><span style="width:13px;height:13px;border-radius:999px;background:#CDBFA6;border:1px solid rgba(74,68,60,.22);display:inline-block"></span>1 colour</span></div>
 <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:10px">
 <span style="font-size:18px">AED 85</span>
 </div>
-<button style="margin-top:10px;background:#4A443C;color:#FAF8F4;border:none;font-size:16px;padding:13px 18px;border-radius:999px;cursor:pointer" style-hover="background:#D08A6F">Add to bag</button>
+<button style="margin-top:10px;background:#4A443C;color:#FAF8F4;border:none;font-size:16px;padding:13px 18px;border-radius:999px;cursor:pointer" style-hover="background:#7E9573">Add to bag</button>
 </div>
 </div>
 
-<div style="flex:1 1 250px;background:#FAF8F4;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease" style-hover="transform:translateY(-4px);box-shadow:0 18px 34px rgba(74,68,60,.10)">
+<div style="min-width:0;background:#FAF8F4;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease" style-hover="transform:translateY(-4px);box-shadow:0 18px 34px rgba(74,68,60,.10)">
 <div style="aspect-ratio:1/1;background:#FAF8F4;display:flex;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;min-height:0;overflow:hidden">
 <img src="src/assets/bib-yellow.jpg" alt="Silicone catch bib" style="width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;display:block">
 </div>
 <div style="padding:22px 20px 26px;display:flex;flex-direction:column;gap:9px;flex:1">
-<div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8d8478">the mess</div>
-<div style="font-family:'Quicksand',sans-serif;font-size:23px;line-height:1.2">CatchAll Silicone Bib, 2-pack</div>
-<p style="font-size:17px;line-height:1.5;color:#6d655b;margin:0;flex:1">A catch pocket wide enough to actually catch, and a shape that holds open instead of collapsing. Two, so one is always dry.</p>
-<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14px;color:#6d655b;padding-top:12px;border-top:1px solid rgba(74,68,60,.14);margin-top:6px">
-<span style="display:flex;align-items:center;gap:6px"><span style="width:15px;height:15px;border-radius:999px;background:#E8CE6B;border:1px solid rgba(74,68,60,.22);display:inline-block"></span><span style="margin-left:2px">1 colour</span></span>
-<span>One size</span>
-</div>
+<div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8d8478">less mess</div>
+<div style="font-family:'Quicksand',sans-serif;font-size:23px;line-height:1.2">CatchAll Silicone Bibs</div>
+<p style="font-size:16px;line-height:1.5;color:#6d655b;margin:0">Soft silicone bibs with adjustable necks and structured catch pockets that stay open. Set of two.</p>
+<div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#8d8478;padding-top:12px;border-top:1px solid rgba(74,68,60,.14);margin-top:auto;flex-wrap:wrap"><span>4 months +</span><span>·</span><span>Easy-clean*</span><span>·</span><span>2 included</span></div>
 <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:10px">
 <span style="font-size:18px">AED 45–65</span>
 </div>
-<button style="margin-top:10px;background:#4A443C;color:#FAF8F4;border:none;font-size:16px;padding:13px 18px;border-radius:999px;cursor:pointer" style-hover="background:#D08A6F">Add to bag</button>
+<button style="margin-top:10px;background:#4A443C;color:#FAF8F4;border:none;font-size:16px;padding:13px 18px;border-radius:999px;cursor:pointer" style-hover="background:#7E9573">Add to bag</button>
 </div>
 </div>
 
-<div style="flex:1 1 250px;background:#FAF8F4;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease" style-hover="transform:translateY(-4px);box-shadow:0 18px 34px rgba(74,68,60,.10)">
+<div style="min-width:0;background:#FAF8F4;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease" style-hover="transform:translateY(-4px);box-shadow:0 18px 34px rgba(74,68,60,.10)">
 <div style="aspect-ratio:1/1;background:#FAF8F4;display:flex;align-items:center;justify-content:center;padding:26px;box-sizing:border-box;min-height:0;overflow:hidden">
 <img src="src/assets/cutlery.jpg" alt="Toddler spoon and fork set" style="width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;display:block">
 </div>
 <div style="padding:22px 20px 26px;display:flex;flex-direction:column;gap:9px;flex:1">
 <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8d8478">self-feeding</div>
 <div style="font-family:'Quicksand',sans-serif;font-size:23px;line-height:1.2">FirstHold Spoon &amp; Fork</div>
-<p style="font-size:17px;line-height:1.5;color:#6d655b;margin:0;flex:1">Stainless heads, a fat grip sized for a toddler fist, and a stopper ring so it doesn't go too far in. Travel case included.</p>
-<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14px;color:#6d655b;padding-top:12px;border-top:1px solid rgba(74,68,60,.14);margin-top:6px">
-<span style="display:flex;align-items:center;gap:6px"><span style="width:15px;height:15px;border-radius:999px;background:#B9C77E;border:1px solid rgba(74,68,60,.22);display:inline-block"></span><span style="margin-left:2px">1 colour</span></span>
-<span>One size</span>
-</div>
+<p style="font-size:16px;line-height:1.5;color:#6d655b;margin:0">Stainless-steel cutlery with easy-grip handles, protective guards and a travel case.</p>
+<div style="display:flex;align-items:center;gap:8px;font-size:13px;color:#8d8478;padding-top:12px;border-top:1px solid rgba(74,68,60,.14);margin-top:auto;flex-wrap:wrap"><span>9 months +</span><span>·</span><span>Dishwasher-safe*</span><span>·</span><span>Case included</span></div>
 <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:10px">
 <span style="font-size:18px">AED 55</span>
 </div>
-<button style="margin-top:10px;background:#4A443C;color:#FAF8F4;border:none;font-size:16px;padding:13px 18px;border-radius:999px;cursor:pointer" style-hover="background:#D08A6F">Add to bag</button>
+<button style="margin-top:10px;background:#4A443C;color:#FAF8F4;border:none;font-size:16px;padding:13px 18px;border-radius:999px;cursor:pointer" style-hover="background:#7E9573">Add to bag</button>
 </div>
 </div>
 
-<div aria-hidden="true" style="flex:1 1 250px;height:0"></div>
-<div aria-hidden="true" style="flex:1 1 250px;height:0"></div>
-
 </div>
 
-<div style="display:flex;flex-wrap:wrap;gap:22px;margin-top:22px">
-<div style="flex:1 1 300px;box-sizing:border-box;background:#FAF8F4;border:1px solid rgba(74,68,60,.13);padding:clamp(26px,3.5vw,34px) clamp(24px,3.5vw,36px);display:flex;justify-content:space-between;align-items:center;gap:24px">
-<div style="display:flex;flex-direction:column;gap:8px">
-<div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#D08A6F">launch category</div>
-<div style="font-family:'Quicksand',sans-serif;font-size:30px">Feeding &amp; weaning</div>
-<p style="font-size:17px;line-height:1.55;color:#6d655b;margin:0;max-width:44ch">Bottles, teats and sterilisers. Weaning sets, bowls and cutlery. Bibs, beakers and food storage.</p>
-</div>
-<a href="#range" style="font-size:17px;white-space:nowrap;border-bottom:1px solid rgba(74,68,60,.3);padding-bottom:3px">Shop →</a>
-</div>
-<div style="flex:1 1 300px;box-sizing:border-box;background:#F6EFE4;border:1px solid rgba(74,68,60,.13);padding:clamp(26px,3.5vw,34px) clamp(24px,3.5vw,36px);display:flex;justify-content:space-between;align-items:center;gap:24px">
-<div style="display:flex;flex-direction:column;gap:8px">
-<div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8d8478">category two</div>
-<div style="font-family:'Quicksand',sans-serif;font-size:30px">Nursing</div>
-<p style="font-size:17px;line-height:1.55;color:#6d655b;margin:0;max-width:44ch">Pump accessories and milk storage. Postpartum care.</p>
-</div>
-<span style="font-size:15px;color:#8d8478;white-space:nowrap">Coming next</span>
-</div>
-</div>
+<p style="font-size:14px;color:#8d8478;margin:26px 0 0">*Care details differ by product — full material and care information is on every product page.</p>
 </div>
 </section>
 
@@ -300,15 +310,15 @@ input,button{font-family:inherit}
 <img src="src/assets/lifestyle-warm.jpg" alt="A family morning at the table" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
 <video src="https://videos.pexels.com/video-files/5894798/5894798-hd_1920_1080_30fps.mp4" poster="https://images.pexels.com/videos/5894798/pexels-photo-5894798.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" ref="{{ videoRef }}" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="auto" aria-label="A family morning, the nimova way" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .8s ease"></video>
 <div style="position:absolute;inset:0;background:rgba(74,68,60,.34)"></div>
-<div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(74,68,60,.9) 0%,rgba(74,68,60,.82) 50%,rgba(74,68,60,.28) 78%,rgba(74,68,60,0) 100%)"></div>
+<div data-rtl-flip="1" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(74,68,60,.9) 0%,rgba(74,68,60,.82) 50%,rgba(74,68,60,.28) 78%,rgba(74,68,60,0) 100%)"></div>
 <div style="position:relative;height:100%;max-width:1320px;margin:0 auto;padding:clamp(28px,4vw,56px) clamp(20px,5vw,40px);display:flex;flex-direction:column;justify-content:center;box-sizing:border-box">
 <div style="max-width:min(560px,88%);display:flex;flex-direction:column;gap:clamp(14px,1.6vw,20px)">
 <span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(251,247,241,.78)">made for real mealtimes</span>
-<h2 style="font-family:'Quicksand',sans-serif;font-weight:500;font-size:clamp(28px,4vw,54px);line-height:1.05;letter-spacing:-.015em;margin:0;color:#FBF7F1;text-wrap:pretty">the bit no product page shows: the fifteen minutes after.</h2>
-<p style="font-size:clamp(16px,1.6vw,19px);line-height:1.6;margin:0;color:rgba(251,247,241,.86);max-width:42ch">Everything comes apart, rinses clean and goes back in the drawer — which is why parents keep it out on the counter.</p>
+<h2 style="font-family:'Quicksand',sans-serif;font-weight:500;font-size:clamp(28px,4vw,54px);line-height:1.05;letter-spacing:-.015em;margin:0;color:#FBF7F1;text-wrap:pretty">made for the meal—and the clean-up after.</h2>
+<p style="font-size:clamp(16px,1.6vw,19px);line-height:1.6;margin:0;color:rgba(251,247,241,.86);max-width:42ch">Easy-to-care-for essentials designed with the clearing, washing and packing away in mind.</p>
 <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-top:6px">
-<a href="#range" style="background:#D08A6F;color:#FAF8F4;font-size:17px;font-weight:500;padding:15px 30px;border-radius:999px" style-hover="background:#FBF7F1;color:#4A443C">Shop the range</a>
-<a href="#watch" style="font-size:17px;color:#FBF7F1;border-bottom:1px solid rgba(251,247,241,.45);padding-bottom:3px">Watch more</a>
+<a href="#range" style="background:#5F7357;color:#FAF8F4;font-size:17px;font-weight:500;padding:15px 30px;border-radius:999px" style-hover="background:#FBF7F1;color:#4A443C">Explore the range</a>
+<a href="#watch" style="font-size:17px;color:#FBF7F1;border-bottom:1px solid rgba(251,247,241,.45);padding-bottom:3px">See them in use</a>
 </div>
 </div>
 </div>
@@ -317,71 +327,33 @@ input,button{font-family:inherit}
 <section id="bundle" style="padding:clamp(44px,6vw,72px) clamp(20px,5vw,40px)">
 <div style="max-width:1320px;margin:0 auto;background:#F6EFE4;display:flex;flex-wrap:wrap;align-items:stretch">
 <div style="flex:1 1 340px;min-height:300px;background:#F2E7DB;overflow:hidden">
-<img src="src/assets/bowl-flat-orange.jpeg" alt="The mealtime starter kit" style="width:100%;height:100%;object-fit:cover;display:block">
+<img src="src/assets/p-weaning-set.jpg" alt="The four pieces of the mealtime starter set" style="width:100%;height:100%;object-fit:cover;display:block">
 </div>
 <div style="flex:1 1 380px;padding:clamp(32px,4vw,52px);display:flex;flex-direction:column;gap:14px;justify-content:center">
-<div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#D08A6F">the starter kit</div>
-<div style="font-family:'Quicksand',sans-serif;font-size:clamp(28px,3.4vw,40px);line-height:1.15;text-wrap:pretty">Everything for the first meal, in one box</div>
-<p style="font-size:17px;line-height:1.6;color:#6d655b;margin:0;max-width:46ch">The 3-in-1 bowl, the divided plate, a catch bib and the spoon-and-fork set. The four things that get used every single day.</p>
-<div style="display:flex;align-items:baseline;gap:14px;margin-top:6px">
+<div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#5F7357">the mealtime starter set</div>
+<div style="font-family:'Quicksand',sans-serif;font-size:clamp(28px,3.4vw,40px);line-height:1.15;text-wrap:pretty">four everyday essentials, in one set.</div>
+<p style="font-size:17px;line-height:1.6;color:#6d655b;margin:0;max-width:46ch">The 3-in-1 Baby Bowl, SoftStart Divided Plate, CatchAll Silicone Bibs and FirstHold Spoon &amp; Fork — brought together to make starting solids simpler.</p>
+<div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-top:6px">
 <span style="font-family:'Quicksand',sans-serif;font-size:30px">AED 245</span>
-<span style="font-size:17px;color:#8d8478;text-decoration:line-through">AED 280</span>
-<span style="font-size:15px;color:#D08A6F">save 12%</span>
+<span style="font-size:16px;color:#8d8478">AED 280 sold separately · Save AED 35</span>
 </div>
-<a href="#range" style="align-self:flex-start;margin-top:10px;background:#D08A6F;color:#FBF7F1;font-size:17px;font-weight:500;padding:15px 30px;border-radius:999px" style-hover="background:#4A443C;color:#FBF7F1">Add the kit</a>
+<div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-top:10px">
+<a href="#range" style="background:#5F7357;color:#FBF7F1;font-size:17px;font-weight:500;padding:15px 30px;border-radius:999px" style-hover="background:#4A443C;color:#FBF7F1">Choose your set</a>
+<a href="#range" style="font-size:17px;border-bottom:1px solid rgba(74,68,60,.3);padding-bottom:3px">View set details</a>
 </div>
 </div>
-</section>
-
-
-
-<section style="background:#F2E7DB;padding:78px 40px">
-<div style="max-width:900px;margin:0 auto;text-align:center;display:flex;flex-direction:column;gap:20px;align-items:center">
-<div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#a58873">what attainable means</div>
-<p style="font-family:'Quicksand',sans-serif;font-size:clamp(24px,3.6vw,36px);line-height:1.3;margin:0;text-wrap:pretty">Attainable doesn't mean cheap. It means the price reflects the product, not the route it took to reach you.</p>
-<p style="font-size:18px;line-height:1.6;margin:0;max-width:58ch;color:#6d655b">We work on a factory-direct model. Each item is carefully crafted with trusted, tested manufacturing partners, at the scale of a house of brands. What that saves goes into the material, not the middle man.</p>
-<div style="font-size:17px;border-top:1px solid rgba(74,68,60,.25);padding-top:16px;margin-top:4px">No markup for the logo on the box.</div>
 </div>
 </section>
 
-<section id="instagram" style="padding:clamp(53px,6vw,88px) clamp(20px,5vw,40px)">
-<div style="max-width:1320px;margin:0 auto">
-<div style="display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:clamp(26px,3vw,40px);flex-wrap:wrap">
-<div>
-<div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#D08A6F;margin-bottom:18px">@nimova</div>
-<h2 style="font-family:'Quicksand',sans-serif;font-weight:500;font-size:clamp(30px,3.9vw,52px);line-height:1.08;margin:0;letter-spacing:-.01em">discover our<br>instagram</h2>
-</div>
-<div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start">
-<p style="font-size:18px;line-height:1.6;margin:0;max-width:38ch;color:#6d655b">Real mealtimes, real kitchens. Tag us and we'll share it.</p>
-<a href="https://instagram.com/nimova" style="border:1px solid rgba(74,68,60,.28);border-radius:999px;padding:12px 22px;font-size:16px" style-hover="border-color:#D08A6F;color:#D08A6F">Follow @nimova</a>
-</div>
-</div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:clamp(12px,1.4vw,18px)">
-<a href="https://instagram.com/nimova" style="min-width:0;position:relative;aspect-ratio:1/1;background:#F2E7DB;overflow:hidden;display:block" style-hover="opacity:.92">
-<img src="src/assets/lifestyle-warm.jpg" alt="Bowl on a kitchen table" style="width:100%;height:100%;object-fit:cover;display:block">
-<span style="position:absolute;left:0;right:0;bottom:0;padding:10px 12px;background:linear-gradient(0deg,rgba(74,68,60,.62),rgba(74,68,60,0));color:#FBF7F1;font-size:14px">First porridge, no fuss</span>
-</a>
-<a href="https://instagram.com/nimova" style="min-width:0;position:relative;aspect-ratio:1/1;background:#F2E7DB;overflow:hidden;display:block" style-hover="opacity:.92">
-<img src="src/assets/fork-hand.jpg" alt="Fork held in a parent&#39;s hand" style="width:100%;height:100%;object-fit:cover;display:block">
-<span style="position:absolute;left:0;right:0;bottom:0;padding:10px 12px;background:linear-gradient(0deg,rgba(74,68,60,.62),rgba(74,68,60,0));color:#FBF7F1;font-size:14px">Little hands, right size</span>
-</a>
-<a href="https://instagram.com/nimova" style="min-width:0;position:relative;aspect-ratio:1/1;background:#F2E7DB;overflow:hidden;display:block" style-hover="opacity:.92">
-<img src="src/assets/unboxing.jpg" alt="nimova box opened" style="width:100%;height:100%;object-fit:cover;display:block">
-<span style="position:absolute;left:0;right:0;bottom:0;padding:10px 12px;background:linear-gradient(0deg,rgba(74,68,60,.62),rgba(74,68,60,0));color:#FBF7F1;font-size:14px">Unboxing day</span>
-</a>
-<a href="https://instagram.com/nimova" style="min-width:0;position:relative;aspect-ratio:1/1;background:#F2E7DB;overflow:hidden;display:block" style-hover="opacity:.92">
-<img src="src/assets/reel-2.jpg" alt="Mealtime at home" style="width:100%;height:100%;object-fit:cover;display:block">
-<span style="position:absolute;left:0;right:0;bottom:0;padding:10px 12px;background:linear-gradient(0deg,rgba(74,68,60,.62),rgba(74,68,60,0));color:#FBF7F1;font-size:14px">Tuesday, 6pm</span>
-</a>
-<a href="https://instagram.com/nimova" style="min-width:0;position:relative;aspect-ratio:1/1;background:#F2E7DB;overflow:hidden;display:block" style-hover="opacity:.92">
-<img src="src/assets/deer-plate.jpg" alt="Divided plate with food" style="width:100%;height:100%;object-fit:cover;display:block">
-<span style="position:absolute;left:0;right:0;bottom:0;padding:10px 12px;background:linear-gradient(0deg,rgba(74,68,60,.62),rgba(74,68,60,0));color:#FBF7F1;font-size:14px">Snack plate rotation</span>
-</a>
-<a href="https://instagram.com/nimova" style="min-width:0;position:relative;aspect-ratio:1/1;background:#F2E7DB;overflow:hidden;display:block" style-hover="opacity:.92">
-<img src="src/assets/bib-yellow.jpg" alt="Yellow bib" style="width:100%;height:100%;object-fit:cover;display:block">
-<span style="position:absolute;left:0;right:0;bottom:0;padding:10px 12px;background:linear-gradient(0deg,rgba(74,68,60,.62),rgba(74,68,60,0));color:#FBF7F1;font-size:14px">Wipe-clean and done</span>
-</a>
-</div>
+
+
+
+<section id="why" style="background:#F2E7DB;padding:clamp(50px,6vw,80px) clamp(20px,5vw,40px)">
+<div style="max-width:820px;margin:0 auto;text-align:center;display:flex;flex-direction:column;gap:18px;align-items:center">
+<div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#5F7357">what attainable means</div>
+<h2 style="font-family:'Quicksand',sans-serif;font-weight:500;font-size:clamp(28px,3.8vw,48px);line-height:1.1;margin:0;letter-spacing:-.01em;text-wrap:pretty">thoughtful products, fairly priced.</h2>
+<p style="font-size:clamp(17px,1.8vw,19px);line-height:1.65;color:#6d655b;margin:0;max-width:56ch">We keep the range focused and work directly with carefully selected manufacturing partners. It helps us prioritise considered materials, relevant testing and useful design, while keeping prices straightforward.</p>
+<p style="font-family:'Quicksand',sans-serif;font-size:clamp(19px,2vw,22px);margin:0;color:#4A443C">Made well for everyday use.</p>
 </div>
 </section>
 
@@ -389,30 +361,30 @@ input,button{font-family:inherit}
 <div style="max-width:1320px;margin:0 auto">
 <div style="display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:38px;flex-wrap:wrap">
 <div>
-<div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#D08A6F;margin-bottom:18px">watch it work</div>
-<h2 style="font-family:'Quicksand',sans-serif;font-weight:500;font-size:clamp(28px,3.6vw,48px);line-height:1.08;margin:0;letter-spacing:-.01em">thirty seconds,<br>one real mealtime</h2>
+<div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#5F7357;margin-bottom:18px">watch it work</div>
+<h2 style="font-family:'Quicksand',sans-serif;font-weight:500;font-size:clamp(28px,3.6vw,48px);line-height:1.08;margin:0;letter-spacing:-.01em">short demonstrations, useful answers.</h2>
 </div>
-<p style="font-size:18px;line-height:1.6;margin:0;max-width:38ch;color:#6d655b">No demo table. Filmed at home, in the light there was.</p>
+<p style="font-size:18px;line-height:1.6;margin:0;max-width:38ch;color:#6d655b">See how the products hold, fit, come apart and clean up — in under a minute each.</p>
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:20px">
 <button onClick="{{ openReel1 }}" style="all:unset;cursor:pointer;position:relative;aspect-ratio:9/16;overflow:hidden;background:#F2E7DB;display:block">
 <img src="src/assets/reel-1.jpg" alt="Suction base held to the table" style="width:100%;height:100%;object-fit:cover;display:block">
-<span style="position:absolute;inset:auto 0 0 0;padding:16px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(transparent,rgba(74,68,60,.55));color:#FAF8F4;font-size:15px"><span>The suction test</span><span style="font-size:13px;opacity:.85">0:24</span></span>
+<span style="position:absolute;inset:auto 0 0 0;padding:16px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(transparent,rgba(74,68,60,.55));color:#FAF8F4;font-size:15px"><span>Does the suction base hold?</span><span style="font-size:13px;opacity:.85">0:24</span></span>
 <span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:999px;background:rgba(247,241,231,.9);color:#4A443C;display:flex;align-items:center;justify-content:center;font-size:17px">▶</span>
 </button>
 <button onClick="{{ openReel2 }}" style="all:unset;cursor:pointer;position:relative;aspect-ratio:9/16;overflow:hidden;background:#F2E7DB;display:block">
 <img src="src/assets/reel-2.jpg" alt="Three pieces, one bowl" style="width:100%;height:100%;object-fit:cover;display:block">
-<span style="position:absolute;inset:auto 0 0 0;padding:16px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(transparent,rgba(74,68,60,.55));color:#FAF8F4;font-size:15px"><span>Bowl, cup, box</span><span style="font-size:13px;opacity:.85">0:31</span></span>
+<span style="position:absolute;inset:auto 0 0 0;padding:16px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(transparent,rgba(74,68,60,.55));color:#FAF8F4;font-size:15px"><span>How do the three parts work?</span><span style="font-size:13px;opacity:.85">0:31</span></span>
 <span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:999px;background:rgba(247,241,231,.9);color:#4A443C;display:flex;align-items:center;justify-content:center;font-size:17px">▶</span>
 </button>
 <button onClick="{{ openReel3 }}" style="all:unset;cursor:pointer;position:relative;aspect-ratio:9/16;overflow:hidden;background:#F2E7DB;display:block">
 <img src="src/assets/reel-3.jpg" alt="Cutlery in a parent's hand" style="width:100%;height:100%;object-fit:cover;display:block">
-<span style="position:absolute;inset:auto 0 0 0;padding:16px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(transparent,rgba(74,68,60,.55));color:#FAF8F4;font-size:15px"><span>Sized for small hands</span><span style="font-size:13px;opacity:.85">0:18</span></span>
+<span style="position:absolute;inset:auto 0 0 0;padding:16px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(transparent,rgba(74,68,60,.55));color:#FAF8F4;font-size:15px"><span>How does the cutlery fit in hand?</span><span style="font-size:13px;opacity:.85">0:18</span></span>
 <span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:999px;background:rgba(247,241,231,.9);color:#4A443C;display:flex;align-items:center;justify-content:center;font-size:17px">▶</span>
 </button>
 <button onClick="{{ openReel4 }}" style="all:unset;cursor:pointer;position:relative;aspect-ratio:9/16;overflow:hidden;background:#F2E7DB;display:block">
 <img src="src/assets/reel-4.jpg" alt="Washing up, sixty seconds" style="width:100%;height:100%;object-fit:cover;display:block">
-<span style="position:absolute;inset:auto 0 0 0;padding:16px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(transparent,rgba(74,68,60,.55));color:#FAF8F4;font-size:15px"><span>Washing up</span><span style="font-size:13px;opacity:.85">0:22</span></span>
+<span style="position:absolute;inset:auto 0 0 0;padding:16px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(transparent,rgba(74,68,60,.55));color:#FAF8F4;font-size:15px"><span>How does it come apart for cleaning?</span><span style="font-size:13px;opacity:.85">0:22</span></span>
 <span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:999px;background:rgba(247,241,231,.9);color:#4A443C;display:flex;align-items:center;justify-content:center;font-size:17px">▶</span>
 </button>
 </div>
@@ -427,132 +399,147 @@ input,button{font-family:inherit}
 </div>
 </sc-if>
 
-<section id="community" style="border-top:1px solid rgba(74,68,60,.12);padding:clamp(50px,6vw,84px) clamp(20px,5vw,40px)">
+<section id="instagram" style="border-top:1px solid rgba(74,68,60,.12);padding:clamp(53px,6vw,88px) clamp(20px,5vw,40px)">
 <div style="max-width:1320px;margin:0 auto">
-<div style="display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:38px;flex-wrap:wrap">
+<div style="display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:clamp(26px,3vw,40px);flex-wrap:wrap">
 <div>
-<div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#D08A6F;margin-bottom:18px">from your kitchens</div>
-<h2 style="font-family:'Quicksand',sans-serif;font-weight:500;font-size:clamp(28px,3.6vw,48px);line-height:1.08;margin:0;letter-spacing:-.01em">#nimovaathome</h2>
+<div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#5F7357;margin-bottom:18px">follow @nimova</div>
+<h2 style="font-family:'Quicksand',sans-serif;font-weight:500;font-size:clamp(30px,3.9vw,52px);line-height:1.08;margin:0;letter-spacing:-.01em">see the products in everyday use.</h2>
 </div>
-<p style="font-size:18px;line-height:1.6;margin:0;max-width:40ch;color:#6d655b">Tag a photo and we'll ask before we ever use it. Real trays, real mess.</p>
-</div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin-bottom:44px">
-<div style="position:relative;aspect-ratio:1/1;overflow:hidden;background:#F2E7DB">
-<img src="src/assets/bowl-green-coral.jpg" alt="Customer photo" style="width:100%;height:100%;object-fit:cover;display:block">
-<span style="position:absolute;left:12px;bottom:12px;font-size:14px;color:#4A443C">@layla.k</span>
-</div>
-<div style="position:relative;aspect-ratio:1/1;overflow:hidden;background:#F2E7DB">
-<img src="src/assets/bowl-topdown.jpg" alt="Customer photo" style="width:100%;height:100%;object-fit:cover;display:block">
-<span style="position:absolute;left:12px;bottom:12px;font-size:14px;color:#4A443C">@the.rahmans</span>
-</div>
-<div style="position:relative;aspect-ratio:1/1;overflow:hidden;background:#F2E7DB">
-<img src="src/assets/fork-hand.jpg" alt="Customer photo" style="width:100%;height:100%;object-fit:cover;display:block">
-<span style="position:absolute;left:12px;bottom:12px;font-size:14px;color:#4A443C">@nadia.eats</span>
-</div>
-<div style="position:relative;aspect-ratio:1/1;overflow:hidden;background:#F2E7DB">
-<img src="src/assets/bowl-parts-coral.jpeg" alt="Customer photo" style="width:100%;height:100%;object-fit:cover;display:block">
-<span style="position:absolute;left:12px;bottom:12px;font-size:14px;color:#4A443C">@sara.in.dxb</span>
-</div>
-<div style="position:relative;aspect-ratio:1/1;overflow:hidden;background:#F2E7DB">
-<img src="src/assets/unboxing.jpg" alt="Customer photo" style="width:100%;height:100%;object-fit:cover;display:block">
-<span style="position:absolute;left:12px;bottom:12px;font-size:14px;color:#4A443C">@mo.and.mira</span>
+<div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start">
+<p style="font-size:18px;line-height:1.6;margin:0;max-width:38ch;color:#6d655b">Product demonstrations, practical feeding ideas and the routines around real mealtimes.</p>
+<a href="https://instagram.com/nimova" style="border:1px solid rgba(74,68,60,.28);border-radius:999px;padding:12px 22px;font-size:16px" style-hover="border-color:#7E9573;color:#7E9573">Follow on Instagram</a>
 </div>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px">
-<div style="background:#FAF8F4;border:1px solid rgba(74,68,60,.13);padding:30px 32px;display:flex;flex-direction:column;gap:12px">
-<div style="color:#D08A6F;font-size:16px;letter-spacing:.18em">★★★★★</div>
-<p style="font-size:18px;line-height:1.55;margin:0">Six months in, through the dishwasher most nights, and the silicone still grips the tray. That was the whole test for me.</p>
-<div style="font-size:15px;color:#8d8478;margin-top:auto">Layla K. · Dubai · verified buyer</div>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.4vw,18px)">
+<a href="https://instagram.com/nimova" style="min-width:0;position:relative;aspect-ratio:1/1;background:#F2E7DB;overflow:hidden;display:block" style-hover="opacity:.92">
+<img src="src/assets/lifestyle-warm.jpg" alt="Bowl on a kitchen table" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+<span style="position:absolute;left:0;right:0;bottom:0;padding:10px 12px;background:linear-gradient(0deg,rgba(74,68,60,.62),rgba(74,68,60,0));color:#FBF7F1;font-size:14px">Setting up for first porridge</span>
+</a>
+<a href="https://instagram.com/nimova" style="min-width:0;position:relative;aspect-ratio:1/1;background:#F2E7DB;overflow:hidden;display:block" style-hover="opacity:.92">
+<img src="src/assets/fork-hand.jpg" alt="Cutlery held in a parent's hand" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+<span style="position:absolute;left:0;right:0;bottom:0;padding:10px 12px;background:linear-gradient(0deg,rgba(74,68,60,.62),rgba(74,68,60,0));color:#FBF7F1;font-size:14px">How the cutlery sits in hand</span>
+</a>
+<a href="https://instagram.com/nimova" style="min-width:0;position:relative;aspect-ratio:1/1;background:#F2E7DB;overflow:hidden;display:block" style-hover="opacity:.92">
+<img src="src/assets/opt-p-sb-ag3.jpg" alt="The suction base being pressed to a tray" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+<span style="position:absolute;left:0;right:0;bottom:0;padding:10px 12px;background:linear-gradient(0deg,rgba(74,68,60,.62),rgba(74,68,60,0));color:#FBF7F1;font-size:14px">Pressing the base to the tray</span>
+</a>
+<a href="https://instagram.com/nimova" style="min-width:0;position:relative;aspect-ratio:1/1;background:#F2E7DB;overflow:hidden;display:block" style-hover="opacity:.92">
+<img src="src/assets/opt-p-sb-ag2.jpg" alt="The straw filter inside the bowl" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+<span style="position:absolute;left:0;right:0;bottom:0;padding:10px 12px;background:linear-gradient(0deg,rgba(74,68,60,.62),rgba(74,68,60,0));color:#FBF7F1;font-size:14px">Where the filter sits</span>
+</a>
+<a href="https://instagram.com/nimova" style="min-width:0;position:relative;aspect-ratio:1/1;background:#F2E7DB;overflow:hidden;display:block" style-hover="opacity:.92">
+<img src="src/assets/deer-plate.jpg" alt="Divided plate with food" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+<span style="position:absolute;left:0;right:0;bottom:0;padding:10px 12px;background:linear-gradient(0deg,rgba(74,68,60,.62),rgba(74,68,60,0));color:#FBF7F1;font-size:14px">Portioning the divided plate</span>
+</a>
+<a href="https://instagram.com/nimova" style="min-width:0;position:relative;aspect-ratio:1/1;background:#F2E7DB;overflow:hidden;display:block" style-hover="opacity:.92">
+<img src="src/assets/flatlay-clean.png" alt="Bowl parts taken apart for washing" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+<span style="position:absolute;left:0;right:0;bottom:0;padding:10px 12px;background:linear-gradient(0deg,rgba(74,68,60,.62),rgba(74,68,60,0));color:#FBF7F1;font-size:14px">Every part comes apart</span>
+</a>
 </div>
-<div style="background:#FAF8F4;border:1px solid rgba(74,68,60,.13);padding:30px 32px;display:flex;flex-direction:column;gap:12px">
-<div style="color:#D08A6F;font-size:16px;letter-spacing:.18em">★★★★★</div>
-<p style="font-size:18px;line-height:1.55;margin:0">Bought it because it was the only one at this price with a stainless inner. Kept it because the straw lid means one less cup to wash.</p>
-<div style="font-size:15px;color:#8d8478;margin-top:auto">Nadia R. · Sharjah · verified buyer</div>
-</div>
-<div style="background:#FAF8F4;border:1px solid rgba(74,68,60,.13);padding:30px 32px;display:flex;flex-direction:column;gap:12px">
-<div style="color:#D08A6F;font-size:16px;letter-spacing:.18em">★★★★☆</div>
-<p style="font-size:18px;line-height:1.55;margin:0">The fork is the right size for a toddler fist — he actually uses it. Wish the travel case was a touch slimmer for the nursery bag.</p>
-<div style="font-size:15px;color:#8d8478;margin-top:auto">Mohammed A. · Abu Dhabi · verified buyer</div>
-</div>
-</div>
+<p style="font-size:16px;line-height:1.6;color:#6d655b;margin:clamp(22px,2.4vw,30px) 0 0;max-width:62ch">Tag <span style="color:#4A443C">@nimova</span> or use <span style="color:#4A443C">#nimovaathome</span> for a chance to be featured. We'll always ask permission before sharing.</p>
 </div>
 </section>
 
 <section id="journal" style="border-top:1px solid rgba(74,68,60,.12);padding:clamp(53px,6vw,88px) clamp(20px,5vw,40px)">
 <div style="max-width:1320px;margin:0 auto">
 <div style="display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:40px;flex-wrap:wrap">
+<div>
 <h2 style="font-family:'Quicksand',sans-serif;font-weight:500;font-size:clamp(28px,4.4vw,40px);line-height:1.1;margin:0">the journal</h2>
-<a href="#journal" style="font-size:17px;border-bottom:1px solid rgba(74,68,60,.3);padding-bottom:3px">All notes →</a>
+<p style="font-size:17px;line-height:1.6;color:#6d655b;margin:12px 0 0;max-width:44ch">Practical guides for feeding, materials and everyday care.</p>
+</div>
+<a href="#journal" style="font-size:17px;border-bottom:1px solid rgba(74,68,60,.3);padding-bottom:3px">View all articles →</a>
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px">
 <article style="display:flex;flex-direction:column;gap:14px">
 <div style="aspect-ratio:16/10;background:repeating-linear-gradient(135deg,#F2E7DB 0 10px,#EADCCC 10px 20px);display:flex;align-items:flex-end;padding:14px;box-sizing:border-box"><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#8a7c6e;background:#FFFFFF;padding:5px 8px">first spoons, six months</span></div>
-<div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8d8478">weaning · 4 min</div>
-<div style="font-family:'Quicksand',sans-serif;font-size:24px;line-height:1.2">Starting solids without the kit list</div>
-<p style="font-size:17px;line-height:1.55;color:#6d655b;margin:0">Four things you actually need at six months, and the rest you can skip.</p>
+<div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8d8478">weaning · reviewed by a paediatric dietitian</div>
+<div style="font-family:'Quicksand',sans-serif;font-size:24px;line-height:1.2">Starting solids: what you’ll use and what can wait</div>
+<p style="font-size:17px;line-height:1.55;color:#6d655b;margin:0">A look at the bowls, bibs, spoons and extras that can help when first tastes begin.</p>
 </article>
 <article style="display:flex;flex-direction:column;gap:14px">
 <div style="aspect-ratio:16/10;background:#FAF8F4;overflow:hidden"><img src="src/assets/bowl-topdown.jpg" alt="Bowl and lid from above" style="width:100%;height:100%;object-fit:cover;display:block"></div>
-<div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8d8478">materials · 3 min</div>
-<div style="font-family:'Quicksand',sans-serif;font-size:24px;line-height:1.2">Why stainless, and where silicone belongs</div>
-<p style="font-size:17px;line-height:1.55;color:#6d655b;margin:0">What each material is good at, in plain terms — and how to wash both properly.</p>
+<div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8d8478">materials · sources listed in full</div>
+<div style="font-family:'Quicksand',sans-serif;font-size:24px;line-height:1.2">Stainless steel or silicone? Where each works best</div>
+<p style="font-size:17px;line-height:1.55;color:#6d655b;margin:0">What each material is suited to, how to care for it and what to check before buying.</p>
 </article>
 <article style="display:flex;flex-direction:column;gap:14px">
 <div style="aspect-ratio:16/10;background:repeating-linear-gradient(135deg,#F2E7DB 0 10px,#EADCCC 10px 20px);display:flex;align-items:flex-end;padding:14px;box-sizing:border-box"><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#8a7c6e;background:#FFFFFF;padding:5px 8px">freezer trays, batch day</span></div>
-<div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8d8478">routines · 5 min</div>
-<div style="font-family:'Quicksand',sans-serif;font-size:24px;line-height:1.2">One batch, a week of purées</div>
-<p style="font-size:17px;line-height:1.55;color:#6d655b;margin:0">A Sunday hour that saves six evenings, with the storage sizes that actually stack.</p>
+<div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8d8478">food safety · reviewed by a paediatric dietitian</div>
+<div style="font-family:'Quicksand',sans-serif;font-size:24px;line-height:1.2">A guide to batch-preparing first foods</div>
+<p style="font-size:17px;line-height:1.55;color:#6d655b;margin:0">How to portion, store and use prepared foods safely throughout the week.</p>
 </article>
 </div>
 </div>
 </section>
 
 <section id="early" style="border-top:1px solid rgba(74,68,60,.12);padding:clamp(46px,6vw,76px) clamp(20px,5vw,40px)">
-<div style="max-width:1320px;margin:0 auto;background:#FAF8F4;border:1px solid rgba(74,68,60,.13);padding:clamp(32px,5vw,52px) clamp(24px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,4vw,48px);align-items:center">
+<div style="max-width:1320px;margin:0 auto;background:#FAF8F4;border:1px solid rgba(74,68,60,.13);box-sizing:border-box;padding:clamp(32px,5vw,52px) clamp(24px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:clamp(28px,4vw,48px);align-items:center">
 <div style="display:flex;flex-direction:column;gap:14px">
-<div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#D08A6F">early access</div>
-<div style="font-family:'Quicksand',sans-serif;font-size:clamp(26px,3.8vw,38px);line-height:1.15;text-wrap:pretty">First to know when the range lands</div>
-<p style="font-size:17px;line-height:1.6;color:#6d655b;margin:0;max-width:48ch">One email when we launch in the GCC, and nothing else. No discount noise.</p>
+<div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#5F7357">stay in the loop</div>
+<div style="font-family:'Quicksand',sans-serif;font-size:clamp(26px,3.8vw,38px);line-height:1.15;text-wrap:pretty">useful notes for everyday mealtimes.</div>
+<p style="font-size:17px;line-height:1.6;color:#6d655b;margin:0;max-width:48ch">Feeding ideas, product updates and new Journal stories — sent occasionally.</p>
 </div>
 <form style="display:flex;flex-direction:column;gap:12px" onSubmit="{{ onSubmit }}">
 <div style="display:flex;gap:12px;flex-wrap:wrap">
-<input type="email" placeholder="you@email.com" value="{{ email }}" onChange="{{ onEmail }}" style="flex:1;min-width:220px;font-size:17px;padding:15px 18px;border:1px solid rgba(74,68,60,.28);background:#FFFFFF;color:#4A443C;border-radius:999px;outline:none">
-<button type="submit" style="background:#D08A6F;color:#FAF8F4;border:none;font-size:17px;font-weight:500;padding:15px 30px;border-radius:999px;cursor:pointer" style-hover="background:#4A443C">{{ subscribeLabel }}</button>
+<input type="email" placeholder="you@email.com" value="{{ email }}" onChange="{{ onEmail }}" style="flex:1 1 200px;min-width:0;font-size:17px;padding:15px 18px;border:1px solid rgba(74,68,60,.28);background:#FFFFFF;color:#4A443C;border-radius:999px;outline:none">
+<button type="submit" style="background:#5F7357;color:#FAF8F4;border:none;font-size:17px;font-weight:500;padding:15px 30px;border-radius:999px;cursor:pointer" style-hover="background:#4A443C">{{ subscribeLabel }}</button>
 </div>
 <span style="font-size:15px;color:#8d8478">{{ formNote }}</span>
 </form>
 </div>
 </section>
 
-<footer style="border-top:1px solid rgba(74,68,60,.12);padding:clamp(48px,7vw,64px) clamp(20px,5vw,40px) clamp(44px,6vw,70px)">
-<div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:clamp(28px,4vw,40px)">
-<div style="display:flex;flex-direction:column;gap:12px">
+<footer id="delivery" style="border-top:1px solid rgba(74,68,60,.12);padding:clamp(48px,7vw,64px) clamp(20px,5vw,40px) clamp(36px,5vw,52px)">
+<div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr));gap:clamp(22px,3vw,40px)">
+<div style="display:flex;flex-direction:column;gap:12px;grid-column:span 2;min-width:0">
 <div style="display:flex;flex-direction:column;gap:5px;align-items:stretch;width:fit-content">
-<span style="font-family:'Quicksand',sans-serif;font-size:clamp(34px,4.6vw,46px);font-weight:500;line-height:1">nimova</span>
-<span style="border-top:1px solid rgba(208,138,111,.85);padding-top:7px;font-family:'Quicksand',sans-serif;font-size:15px;letter-spacing:.015em;color:#4A443C;text-align:center">baby essentials</span>
+<span style="font-family:'Quicksand',sans-serif;font-size:clamp(32px,4.2vw,42px);font-weight:500;line-height:1">nimova</span>
+<span style="border-top:1px solid rgba(126,149,115,.85);padding-top:7px;font-family:'Quicksand',sans-serif;font-size:14px;letter-spacing:.015em;color:#4A443C;text-align:center">baby essentials</span>
 </div>
-<div style="font-size:15px;letter-spacing:.02em;color:#8d8478">part of the <span style="color:#4A443C">talaa <em style="font-style:italic">brands</em></span></div>
-<p style="font-size:16px;line-height:1.6;color:#6d655b;margin:12px 0 0;max-width:38ch">nimova is the first brand from <span style="color:#4A443C">talaa <em style="font-style:italic">brands</em></span>, a Gulf-born house of brands for modern families.</p>
-<p style="font-size:16px;line-height:1.6;color:#6d655b;margin:0;max-width:38ch;text-wrap:balance">Shared sourcing, shared standards.</p>
+<p style="font-size:16px;line-height:1.6;color:#6d655b;margin:10px 0 0;max-width:34ch">Gulf-born baby essentials, thoughtfully designed for everyday family life.</p>
+<div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8d8478;margin-top:8px">part of the talaa house</div>
+<div style="display:flex;gap:14px;margin-top:6px;font-size:15px">
+<a href="https://instagram.com/nimova">Instagram</a>
+<a href="mailto:hello@nimova.com">Email</a>
+</div>
 </div>
 <div style="display:flex;flex-direction:column;gap:10px;font-size:16px">
 <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8d8478;margin-bottom:4px">Shop</span>
-<a href="#range">Feeding &amp; weaning</a>
-<a href="#range">Nursing</a>
-<a href="#range">All products</a>
+<a href="product.html">3-in-1 Baby Bowl</a>
+<a href="#range">SoftStart Divided Plate</a>
+<a href="#range">CatchAll Silicone Bibs</a>
+<a href="#range">FirstHold Spoon &amp; Fork</a>
+<a href="#bundle">Mealtime Starter Set</a>
 </div>
 <div style="display:flex;flex-direction:column;gap:10px;font-size:16px">
-<span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8d8478;margin-bottom:4px">About</span>
-<a href="#instagram">Our story</a>
-<a href="#range">The range</a>
+<span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8d8478;margin-bottom:4px">Customer care</span>
+<a href="mailto:hello@nimova.com">Contact us</a>
+<a href="#delivery">Delivery information</a>
+<a href="#delivery">Returns &amp; refunds</a>
+<a href="#delivery">Track your order</a>
+<a href="#delivery">FAQs</a>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;font-size:16px">
+<span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8d8478;margin-bottom:4px">Product &amp; safety</span>
+<a href="product.html#features">Materials &amp; care</a>
+<a href="#why">Testing &amp; standards</a>
+<a href="#why">Safety information</a>
 <a href="#journal">Journal</a>
+<a href="#why">Why nimova</a>
 </div>
 <div style="display:flex;flex-direction:column;gap:10px;font-size:16px">
-<span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8d8478;margin-bottom:4px">Contact</span>
-<a href="mailto:hello@nimova.com">hello@nimova.com</a>
-<span style="color:#6d655b">nimova FZ LLC · Dubai</span>
-<span style="color:#6d655b">Shipping &amp; returns</span>
+<span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8d8478;margin-bottom:4px">Company</span>
+<a href="#why">About nimova</a>
+<a href="#delivery">Privacy policy</a>
+<a href="#delivery">Cookie preferences</a>
+<a href="#delivery">Terms of sale</a>
+<a href="#delivery">Accessibility</a>
 </div>
+</div>
+<div style="max-width:1320px;margin:clamp(32px,4vw,44px) auto 0;padding-top:22px;border-top:1px solid rgba(74,68,60,.12);display:flex;flex-wrap:wrap;gap:8px 26px;justify-content:space-between;font-size:15px;color:#8d8478">
+<span>Free UAE delivery on orders over AED 200 · Prices include VAT</span>
+<span>nimova FZ LLC · Dubai, United Arab Emirates</span>
 </div>
 </footer>
 
@@ -684,13 +671,17 @@ const AR = {
   "shop by category": "التسوق حسب الفئة", "shop by age": "التسوق حسب العمر",
   "find it by what": "اعثر عليه حسب", "you need today": "ما تحتاجه اليوم",
   "Shop all": "تسوّق الكل",
+  "Shop by age": "التسوق حسب العمر", "The range": "المجموعة", "The routine": "الروتين", "Replacement parts": "قطع الاستبدال", "Bag (0)": "الحقيبة (0)",
   "Feeding": "التغذية", "Bowls, cups and straw lids": "أوعية وأكواب وأغطية بشفاطة",
   "Mealtime": "وقت الطعام", "Cutlery, plates and bibs": "أدوات طعام وأطباق ومرايل",
   "On the go": "أثناء التنقل", "Travel cases and snack boxes": "حافظات سفر وعلب وجبات خفيفة",
   "Care": "العناية", "Cleaning, sterilising, storage": "تنظيف وتعقيم وتخزين",
   "One range, every stage of eating.": "مجموعة واحدة، لكل مرحلة من مراحل الطعام.",
-  "12–24 months": "12–24 شهراً", "2 years +": "سنتان وأكثر",
-  "Plates, cups, lunch boxes": "أطباق وأكواب وعلب غداء",
+  "First spoons, pair": "أول ملعقتين", "Starting solids": "بداية الطعام الصلب",
+  "Divided suction plate": "طبق مقسّم بقاعدة لاصقة", "Self-feeding begins": "بداية الأكل المستقل",
+  "Spout cup": "كوب بفتحة شرب", "Pincer grip": "قبضة الأصابع",
+  "Straw cup": "كوب بشفاطة", "Cup without help": "يشرب بنفسه", "First spoon & fork": "أول ملعقة وشوكة", "Cup without help": "يشرب بنفسه",
+  "Catch-all silicone bib": "مريلة سيليكون بجيب", "Full table": "على الطاولة كاملاً",
   "discover our": "اكتشف", "instagram": "إنستغرام",
   "Real mealtimes, real kitchens. Tag us and we'll share it.": "وجبات حقيقية ومطابخ حقيقية. أشِر إلينا وسنشارك صورتك.",
   "Follow @nimova": "تابع @nimova",
@@ -701,7 +692,93 @@ const AR = {
   "made for real mealtimes": "مصنوع لوجبات حقيقية",
   "the bit no product page shows: the fifteen minutes after.": "الجزء الذي لا تُظهره صفحات المنتجات: الخمس عشرة دقيقة التي تليها.",
   "Everything comes apart, rinses clean and goes back in the drawer — which is why parents keep it out on the counter.": "كل قطعة تُفصل وتُغسل بسهولة وتعود إلى الدرج — ولهذا يبقيه الأهل على الطاولة.",
-  "Watch more": "شاهد المزيد"
+  "Watch more": "شاهد المزيد",
+
+  "Free UAE delivery on orders over AED 200": "توصيل مجاني داخل الإمارات للطلبات فوق ٢٠٠ درهم",
+  "View delivery information": "معلومات التوصيل",
+  "Why nimova": "لماذا nimova",
+  "feeding essentials for everyday family life": "أساسيات التغذية لحياة الأسرة اليومية",
+  "made well for the meals that happen every day.": "مصنوع بعناية للوجبات التي تتكرر كل يوم.",
+  "A focused range of practical feeding essentials, thoughtfully designed to be used, washed and used again.": "مجموعة مختارة من أساسيات التغذية العملية، مصمّمة لتُستخدم وتُغسل وتُستخدم من جديد.",
+  "Explore the range": "استكشف المجموعة", "See it in use": "شاهده أثناء الاستخدام",
+  "the 3-in-1 baby bowl": "وعاء الطفل ٣ في ١",
+  "one bowl, three ways through mealtime.": "وعاء واحد، ثلاث طرق خلال الوجبة.",
+  "Use it as a stainless-steel bowl, a filtered straw cup or a snack bowl with the convertible lid.": "استخدمه وعاءً من الستانلس ستيل، أو كوباً بشفاطة وفلتر، أو وعاء وجبات خفيفة بالغطاء القابل للتحويل.",
+  "Shop the 3-in-1 Bowl": "اشترِ وعاء ٣ في ١",
+  "the mealtime starter set": "طقم بداية الوجبات",
+  "four useful essentials, in one box.": "أربع قطع أساسية مفيدة، في علبة واحدة.",
+  "A bowl, divided plate, catch bib and spoon-and-fork set — brought together to make starting solids simpler.": "وعاء، وطبق مقسّم، ومريلة بجيب، وطقم ملعقة وشوكة — مجتمعة لتسهيل البدء بالطعام الصلب.",
+  "Explore the starter set": "استكشف طقم البداية", "See what’s included": "ما يتضمنه الطقم",
+  "Independent testing": "اختبار مستقل", "Against standards applicable to each product": "وفق المعايير المنطبقة على كل منتج",
+  "Made for daily use": "مصنوع للاستخدام اليومي", "Designed to be used, washed and used again": "مصمّم ليُستخدم ويُغسل ويُستخدم من جديد",
+  "Thoughtful function": "وظيفة مدروسة", "Every feature has a practical purpose": "لكل تفصيل غرض عملي",
+  "Clear materials": "مواد واضحة", "Material and care details for every product": "تفاصيل المواد والعناية لكل منتج",
+  "from first tastes": "من أول المذاقات", "to self-feeding": "إلى الأكل المستقل",
+  "Useful pieces for starting solids, growing independence and the everyday meals in between.": "قطع مفيدة للبدء بالطعام الصلب، ونمو الاستقلالية، والوجبات اليومية بينهما.",
+  "sips & snacks": "الشرب والوجبات الخفيفة", "less mess": "فوضى أقل",
+  "Stainless-steel bowl with a filtered straw cup and convertible snack lid — three uses in one compact set.": "وعاء من الستانلس ستيل مع كوب بشفاطة وفلتر وغطاء قابل للتحويل — ثلاث استخدامات في طقم واحد.",
+  "Silicone plate with three sections, a suction base and a fitted lid for leftovers.": "طبق سيليكون بثلاثة أقسام وقاعدة شفط وغطاء محكم لما يتبقى.",
+  "CatchAll Silicone Bibs": "مرايل كاتش أول من السيليكون",
+  "Soft silicone bibs with adjustable necks and structured catch pockets that stay open. Set of two.": "مرايل سيليكون ناعمة برقبة قابلة للتعديل وجيب مدعّم يبقى مفتوحاً. طقم من قطعتين.",
+  "Stainless-steel cutlery with easy-grip handles, protective guards and a travel case.": "أدوات مائدة من الستانلس ستيل بمقابض مريحة وحواجز حماية وعلبة للتنقل.",
+  "6 months +": "٦ أشهر وأكثر", "4 months +": "٤ أشهر وأكثر", "9 months +": "٩ أشهر وأكثر",
+  "Dishwasher-safe*": "آمن في غسالة الأطباق*", "Easy-clean*": "سهل التنظيف*",
+  "2 included": "قطعتان", "Case included": "مع علبة للتنقل",
+  "*Care details differ by product — full material and care information is on every product page.": "*تختلف تفاصيل العناية بحسب المنتج — معلومات المواد والعناية الكاملة متوفرة في صفحة كل منتج.",
+  "made for the meal—and the clean-up after.": "مصنوع للوجبة — وللتنظيف بعدها.",
+  "Easy-to-care-for essentials designed with the clearing, washing and packing away in mind.": "أساسيات سهلة العناية، مصمّمة مع مراعاة الترتيب والغسل والتخزين.",
+  "See them in use": "شاهدها أثناء الاستخدام",
+  "four everyday essentials, in one set.": "أربع قطع أساسية يومية، في طقم واحد.",
+  "The 3-in-1 Baby Bowl, SoftStart Divided Plate, CatchAll Silicone Bibs and FirstHold Spoon & Fork — brought together to make starting solids simpler.": "وعاء الطفل ٣ في ١، وطبق سوفت ستارت المقسّم، ومرايل كاتش أول، وملعقة وشوكة فيرست هولد — مجتمعة لتسهيل البدء بالطعام الصلب.",
+  "AED 280 sold separately · Save AED 35": "٢٨٠ درهماً عند الشراء منفصلاً · وفّر ٣٥ درهماً",
+  "Choose your set": "اختر طقمك", "View set details": "تفاصيل الطقم",
+  "thoughtful products, fairly priced.": "منتجات مدروسة، بأسعار عادلة.",
+  "We keep the range focused and work directly with carefully selected manufacturing partners. It helps us prioritise considered materials, relevant testing and useful design, while keeping prices straightforward.": "نُبقي المجموعة مركّزة ونعمل مباشرة مع شركاء تصنيع مختارين بعناية. هذا يساعدنا على تقديم مواد مدروسة واختبارات ذات صلة وتصميم مفيد، مع أسعار واضحة.",
+  "Made well for everyday use.": "مصنوع بعناية للاستخدام اليومي.",
+  "short demonstrations, useful answers.": "عروض قصيرة، وأجوبة مفيدة.",
+  "See how the products hold, fit, come apart and clean up — in under a minute each.": "شاهد كيف تثبت المنتجات وتُركّب وتُفصل وتُنظّف — في أقل من دقيقة لكل منها.",
+  "Does the suction base hold?": "هل تثبت قاعدة الشفط؟",
+  "How do the three parts work?": "كيف تعمل القطع الثلاث؟",
+  "How does the cutlery fit in hand?": "كيف تستقر الأدوات في اليد؟",
+  "How does it come apart for cleaning?": "كيف يُفصل للتنظيف؟",
+  "follow @nimova": "تابع @nimova",
+  "see the products in everyday use.": "شاهد المنتجات في الاستخدام اليومي.",
+  "Product demonstrations, practical feeding ideas and the routines around real mealtimes.": "عروض للمنتجات، وأفكار تغذية عملية، وروتين الوجبات الحقيقية.",
+  "Follow on Instagram": "تابعنا على إنستغرام",
+  "Setting up for first porridge": "التحضير لأول عصيدة",
+  "How the cutlery sits in hand": "كيف تستقر الأدوات في اليد",
+  "Pressing the base to the tray": "تثبيت القاعدة على الطاولة",
+  "Where the filter sits": "موضع الفلتر",
+  "Portioning the divided plate": "تقسيم الطبق",
+  "Every part comes apart": "كل قطعة تُفصل",
+  "Practical guides for feeding, materials and everyday care.": "أدلة عملية للتغذية والمواد والعناية اليومية.",
+  "View all articles →": "كل المقالات ←",
+  "weaning · reviewed by a paediatric dietitian": "الفطام · بمراجعة أخصائية تغذية أطفال",
+  "materials · sources listed in full": "المواد · المصادر مذكورة بالكامل",
+  "food safety · reviewed by a paediatric dietitian": "سلامة الغذاء · بمراجعة أخصائية تغذية أطفال",
+  "Starting solids: what you’ll use and what can wait": "البدء بالطعام الصلب: ما ستستخدمه وما يمكن تأجيله",
+  "A look at the bowls, bibs, spoons and extras that can help when first tastes begin.": "نظرة على الأوعية والمرايل والملاعق والإضافات التي تساعد عند أول المذاقات.",
+  "Stainless steel or silicone? Where each works best": "ستانلس ستيل أم سيليكون؟ أين يناسب كل منهما",
+  "What each material is suited to, how to care for it and what to check before buying.": "لماذا تناسب كل مادة استخداماً معيناً، وكيف تعتني بها، وما تتحقق منه قبل الشراء.",
+  "A guide to batch-preparing first foods": "دليل تحضير أول الأطعمة بكميات",
+  "How to portion, store and use prepared foods safely throughout the week.": "كيف تقسّم وتخزّن وتستخدم الطعام المحضّر بأمان خلال الأسبوع.",
+  "stay in the loop": "ابقَ على اطلاع",
+  "useful notes for everyday mealtimes.": "ملاحظات مفيدة لوجبات كل يوم.",
+  "Feeding ideas, product updates and new Journal stories — sent occasionally.": "أفكار للتغذية، وتحديثات المنتجات، ومقالات جديدة — تُرسل من حين لآخر.",
+  "Gulf-born baby essentials, thoughtfully designed for everyday family life.": "أساسيات أطفال وُلدت في الخليج، مصمّمة بعناية لحياة الأسرة اليومية.",
+  "part of the talaa house": "جزء من بيت talaa",
+  "Instagram": "إنستغرام", "Email": "البريد الإلكتروني",
+  "Customer care": "خدمة العملاء", "Product & safety": "المنتج والسلامة", "Company": "الشركة",
+  "Contact us": "اتصل بنا", "Delivery information": "معلومات التوصيل",
+  "Returns & refunds": "الإرجاع والاسترداد", "Track your order": "تتبّع طلبك", "FAQs": "الأسئلة الشائعة",
+  "Materials & care": "المواد والعناية", "Testing & standards": "الاختبارات والمعايير",
+  "Safety information": "معلومات السلامة", "About nimova": "عن nimova",
+  "Privacy policy": "سياسة الخصوصية", "Cookie preferences": "تفضيلات الكوكيز",
+  "Terms of sale": "شروط البيع", "Accessibility": "إمكانية الوصول",
+  "3-in-1 Baby Bowl": "وعاء الطفل ٣ في ١", "SoftStart Divided Plate": "طبق سوفت ستارت المقسّم",
+  "FirstHold Spoon & Fork": "ملعقة وشوكة فيرست هولد", "Mealtime Starter Set": "طقم بداية الوجبات",
+  "Free UAE delivery on orders over AED 200 · Prices include VAT": "توصيل مجاني داخل الإمارات للطلبات فوق ٢٠٠ درهم · الأسعار تشمل ضريبة القيمة المضافة",
+  "nimova FZ LLC · Dubai, United Arab Emirates": "nimova FZ LLC · دبي، الإمارات العربية المتحدة"
 };
 
 class Component extends DCLogic {
@@ -762,6 +839,11 @@ class Component extends DCLogic {
     root.style.fontFamily = lang === "ar"
       ? "'Noto Kufi Arabic','Hanken Grotesk',system-ui,sans-serif"
       : "'Hanken Grotesk',system-ui,sans-serif";
+    document.querySelectorAll('[data-rtl-flip]').forEach((el) => {
+      const want = lang === "ar" ? "270deg" : "90deg";
+      const other = lang === "ar" ? "90deg" : "270deg";
+      el.style.backgroundImage = window.getComputedStyle(el).backgroundImage.split(other).join(want);
+    });
     const input = document.querySelector('input[type="email"]');
     if (input) input.placeholder = lang === "ar" ? "بريدك@الإلكتروني.com" : "you@email.com";
   }
@@ -792,7 +874,8 @@ class Component extends DCLogic {
     return {
       videoRef,
       ...slideVals,
-      langLabel: this.state.lang === "ar" ? "EN" : "عربي",
+      langLabel: this.state.lang === "ar" ? "English" : "العربية",
+      langAria: this.state.lang === "ar" ? "Switch to English" : "التبديل إلى العربية",
       toggleLang: () => {
         const next = this.state.lang === "ar" ? "en" : "ar";
         try { window.localStorage.setItem("nimova-lang", next); } catch (e) {}
