@@ -1,16 +1,241 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="src/support.js"></script>
+<script src="src/product-assets/support.js"></script>
+
 </head>
 <body>
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("src/product-assets/9ff3b9c4-9ff3b9.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("src/product-assets/694b0e77-694b0e.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("src/product-assets/69c43c49-69c43c.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("src/product-assets/f4ab1e6c-f4ab1e.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("src/product-assets/9ff3b9c4-9ff3b9.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("src/product-assets/694b0e77-694b0e.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("src/product-assets/69c43c49-69c43c.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("src/product-assets/f4ab1e6c-f4ab1e.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("src/product-assets/9ff3b9c4-9ff3b9.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("src/product-assets/694b0e77-694b0e.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("src/product-assets/69c43c49-69c43c.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("src/product-assets/f4ab1e6c-f4ab1e.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("src/product-assets/9ff3b9c4-9ff3b9.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("src/product-assets/694b0e77-694b0e.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("src/product-assets/69c43c49-69c43c.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("src/product-assets/f4ab1e6c-f4ab1e.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("src/product-assets/21351125-213511.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("src/product-assets/d6d90c30-d6d90c.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("src/product-assets/b85b7552-b85b75.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("src/product-assets/21351125-213511.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("src/product-assets/d6d90c30-d6d90c.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("src/product-assets/b85b7552-b85b75.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("src/product-assets/21351125-213511.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("src/product-assets/d6d90c30-d6d90c.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("src/product-assets/b85b7552-b85b75.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
 <style>
 html,body{margin:0;padding:0}
 body{background:#FFFFFF;color:#4A443C;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
@@ -56,17 +281,17 @@ input,button{font-family:inherit}
 {{ mainImage }}
 </div>
 <div style="display:flex;gap:12px;flex-wrap:wrap">
-<button onClick="{{ pick0 }}" style="all:unset;cursor:pointer;flex:1 1 90px;max-width:110px;aspect-ratio:1/1;background:#FAF8F4;overflow:hidden;border:{{ thumbBorder0 }}">
-<img src="src/assets/opt-p-sb-ag1.jpg" alt="3-in-1 bowl with lid on, apple green" style="width:100%;height:100%;object-fit:contain;display:block">
+<button sc-camel-on-click="{{ pick0 }}" aria-label="Show: 3-in-1 bowl with lid on, apple green" style="all:unset;cursor:pointer;flex:1 1 90px;max-width:118px;aspect-ratio:1/1;background:#FAF8F4;overflow:hidden;border:{{ thumbBorder0 }}">
+<img src="src/product-assets/103b1772-103b17.jpg" alt="" style="width:100%;height:100%;object-fit:contain;display:block">
 </button>
-<button onClick="{{ pick1 }}" style="all:unset;cursor:pointer;flex:1 1 90px;max-width:110px;aspect-ratio:1/1;background:#FAF8F4;overflow:hidden;border:{{ thumbBorder1 }}">
-<img src="src/assets/opt-p-sb-ag.jpg" alt="Bowl, straw filter, suction base and lid" style="width:100%;height:100%;object-fit:contain;display:block">
+<button sc-camel-on-click="{{ pick1 }}" aria-label="Show: Bowl, straw filter, suction base and lid" style="all:unset;cursor:pointer;flex:1 1 90px;max-width:118px;aspect-ratio:1/1;background:#FAF8F4;overflow:hidden;border:{{ thumbBorder1 }}">
+<img src="src/product-assets/0dc3a390-0dc3a3.jpg" alt="" style="width:100%;height:100%;object-fit:contain;display:block">
 </button>
-<button onClick="{{ pick2 }}" style="all:unset;cursor:pointer;flex:1 1 90px;max-width:110px;aspect-ratio:1/1;background:#FAF8F4;overflow:hidden;border:{{ thumbBorder2 }}">
-<img src="src/assets/opt-p-sb-ag2.jpg" alt="Lid off, stainless steel interior and straw filter" style="width:100%;height:100%;object-fit:contain;display:block">
+<button sc-camel-on-click="{{ pick2 }}" aria-label="Show: Lid off, stainless steel interior and straw filter" style="all:unset;cursor:pointer;flex:1 1 90px;max-width:118px;aspect-ratio:1/1;background:#FAF8F4;overflow:hidden;border:{{ thumbBorder2 }}">
+<img src="src/product-assets/4e5b1c81-4e5b1c.jpg" alt="" style="width:100%;height:100%;object-fit:contain;display:block">
 </button>
-<button onClick="{{ pick3 }}" style="all:unset;cursor:pointer;flex:1 1 90px;max-width:110px;aspect-ratio:1/1;background:#FAF8F4;overflow:hidden;border:{{ thumbBorder3 }}">
-<img src="src/assets/opt-p-sb-ww.jpg" alt="3-in-1 bowl in warm white" style="width:100%;height:100%;object-fit:contain;display:block">
+<button sc-camel-on-click="{{ pick3 }}" aria-label="Show: 3-in-1 bowl in warm white" style="all:unset;cursor:pointer;flex:1 1 90px;max-width:118px;aspect-ratio:1/1;background:#FAF8F4;overflow:hidden;border:{{ thumbBorder3 }}">
+<img src="src/product-assets/5318ecb7-5318ec.jpg" alt="" style="width:100%;height:100%;object-fit:contain;display:block">
 </button>
 </div>
 </div>
@@ -118,8 +343,8 @@ input,button{font-family:inherit}
 <div style="display:flex;flex-direction:column;gap:10px;padding-top:6px">
 <span style="font-size:16px;color:#6d655b">Colour — <span style="color:#4A443C">{{ colourName }}</span></span>
 <div style="display:flex;gap:12px">
-<button onClick="{{ colour0 }}" style="all:unset;cursor:pointer;width:38px;height:38px;border-radius:999px;background:#B9C77E;box-shadow:{{ colourRing0 }}"></button>
-<button onClick="{{ colour1 }}" style="all:unset;cursor:pointer;width:38px;height:38px;border-radius:999px;background:#F0EAE0;box-shadow:{{ colourRing1 }}"></button>
+<button sc-camel-on-click="{{ colour0 }}" style="all:unset;cursor:pointer;width:44px;height:44px;border-radius:999px;background:#B9C77E;box-shadow:{{ colourRing0 }}"></button>
+<button sc-camel-on-click="{{ colour1 }}" style="all:unset;cursor:pointer;width:44px;height:44px;border-radius:999px;background:#F0EAE0;box-shadow:{{ colourRing1 }}"></button>
 </div>
 </div>
 
@@ -129,11 +354,11 @@ input,button{font-family:inherit}
 
 <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:8px">
 <div style="display:inline-flex;align-items:center;border:1px solid rgba(74,68,60,.28);border-radius:999px;overflow:hidden">
-<button onClick="{{ dec }}" style="all:unset;cursor:pointer;padding:14px 18px;font-size:18px;line-height:1">−</button>
+<button sc-camel-on-click="{{ dec }}" style="all:unset;cursor:pointer;padding:14px 18px;font-size:18px;line-height:1">−</button>
 <span style="min-width:28px;text-align:center;font-size:17px">{{ qty }}</span>
-<button onClick="{{ inc }}" style="all:unset;cursor:pointer;padding:14px 18px;font-size:18px;line-height:1">+</button>
+<button sc-camel-on-click="{{ inc }}" style="all:unset;cursor:pointer;padding:14px 18px;font-size:18px;line-height:1">+</button>
 </div>
-<button onClick="{{ addToBag }}" style="flex:1 1 220px;background:#7E9573;color:#FBF7F1;border:none;font-size:17px;font-weight:500;padding:17px 30px;border-radius:999px;cursor:pointer;transition:background .2s ease" style-hover="background:#4A443C">{{ addLabel }}</button>
+<button sc-camel-on-click="{{ addToBag }}" style="flex:1 1 220px;background:#7E9573;color:#FBF7F1;border:none;font-size:17px;font-weight:500;padding:17px 30px;border-radius:999px;cursor:pointer;transition:background .2s ease" style-hover="background:#4A443C">{{ addLabel }}</button>
 </div>
 
 <div style="display:flex;flex-direction:column;gap:9px;padding-top:14px;font-size:16px;color:#6d655b">
@@ -141,9 +366,15 @@ input,button{font-family:inherit}
 <span>Food-grade, BPA-free, tested to EN and ASTM</span>
 <span>Dishwasher safe · lid and straw are removable</span></div>
 
-<div style="display:flex;flex-direction:column;margin-top:14px;border-top:1px solid rgba(74,68,60,.18)">
+</div>
+</section></div>
 
-<button onClick="{{ toggle4 }}" style="all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid rgba(74,68,60,.18);font-family:'Quicksand',sans-serif;font-size:21px">
+
+<section id="info" style="padding:clamp(8px,2vw,20px) clamp(20px,5vw,40px) clamp(44px,6vw,72px)">
+<div style="max-width:900px;margin:0 auto">
+<div style="display:flex;flex-direction:column;border-top:1px solid rgba(74,68,60,.18)">
+
+<button sc-camel-on-click="{{ toggle4 }}" style="all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid rgba(74,68,60,.18);font-family:'Quicksand',sans-serif;font-size:21px">
 <span>Description</span><span style="font-size:22px;color:#7E9573;line-height:1">{{ sign4 }}</span>
 </button>
 <sc-if value="{{ open4 }}" hint-placeholder-val="{{ true }}">
@@ -152,7 +383,7 @@ input,button{font-family:inherit}
 <span>Swap the straw lid for the snack lid and it travels — no decanting, no second container.</span></div>
 </sc-if>
 
-<button onClick="{{ toggle5 }}" style="all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid rgba(74,68,60,.18);font-family:'Quicksand',sans-serif;font-size:21px">
+<button sc-camel-on-click="{{ toggle5 }}" style="all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid rgba(74,68,60,.18);font-family:'Quicksand',sans-serif;font-size:21px">
 <span>Size &amp; weight</span><span style="font-size:22px;color:#7E9573;line-height:1">{{ sign5 }}</span>
 </button>
 <sc-if value="{{ open5 }}" hint-placeholder-val="{{ false }}">
@@ -162,7 +393,7 @@ input,button{font-family:inherit}
 <span>Straw length 95 mm · lid diameter 121 mm</span></div>
 </sc-if>
 
-<button onClick="{{ toggle6 }}" style="all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid rgba(74,68,60,.18);font-family:'Quicksand',sans-serif;font-size:21px">
+<button sc-camel-on-click="{{ toggle6 }}" style="all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid rgba(74,68,60,.18);font-family:'Quicksand',sans-serif;font-size:21px">
 <span>How to use</span><span style="font-size:22px;color:#7E9573;line-height:1">{{ sign6 }}</span>
 </button>
 <sc-if value="{{ open6 }}" hint-placeholder-val="{{ false }}">
@@ -172,7 +403,7 @@ input,button{font-family:inherit}
 <span>Release by lifting the tab at the edge of the base — never pull the bowl.</span></div>
 </sc-if>
 
-<button onClick="{{ toggle0 }}" style="all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid rgba(74,68,60,.18);font-family:'Quicksand',sans-serif;font-size:21px">
+<button sc-camel-on-click="{{ toggle0 }}" style="all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid rgba(74,68,60,.18);font-family:'Quicksand',sans-serif;font-size:21px">
 <span>What's in the box</span><span style="font-size:22px;color:#7E9573;line-height:1">{{ sign0 }}</span>
 </button>
 <sc-if value="{{ open0 }}" hint-placeholder-val="{{ false }}">
@@ -183,7 +414,7 @@ input,button{font-family:inherit}
 <span>One travel-safe outer lid</span></div>
 </sc-if>
 
-<button onClick="{{ toggle1 }}" style="all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid rgba(74,68,60,.18);font-family:'Quicksand',sans-serif;font-size:21px">
+<button sc-camel-on-click="{{ toggle1 }}" style="all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid rgba(74,68,60,.18);font-family:'Quicksand',sans-serif;font-size:21px">
 <span>Materials &amp; safety</span><span style="font-size:22px;color:#7E9573;line-height:1">{{ sign1 }}</span>
 </button>
 <sc-if value="{{ open1 }}" hint-placeholder-val="{{ false }}">
@@ -193,7 +424,7 @@ input,button{font-family:inherit}
 <span>Batch traceability on every production run</span></div>
 </sc-if>
 
-<button onClick="{{ toggle2 }}" style="all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid rgba(74,68,60,.18);font-family:'Quicksand',sans-serif;font-size:21px">
+<button sc-camel-on-click="{{ toggle2 }}" style="all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid rgba(74,68,60,.18);font-family:'Quicksand',sans-serif;font-size:21px">
 <span>Care &amp; cleaning</span><span style="font-size:22px;color:#7E9573;line-height:1">{{ sign2 }}</span>
 </button>
 <sc-if value="{{ open2 }}" hint-placeholder-val="{{ false }}">
@@ -203,7 +434,7 @@ input,button{font-family:inherit}
 <span>The suction base releases by lifting the tab, not by pulling the bowl.</span></div>
 </sc-if>
 
-<button id="shipping" onClick="{{ toggle3 }}" style="all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid rgba(74,68,60,.18);font-family:'Quicksand',sans-serif;font-size:21px">
+<button id="shipping" sc-camel-on-click="{{ toggle3 }}" style="all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid rgba(74,68,60,.18);font-family:'Quicksand',sans-serif;font-size:21px">
 <span>Shipping &amp; returns</span><span style="font-size:22px;color:#7E9573;line-height:1">{{ sign3 }}</span>
 </button>
 <sc-if value="{{ open3 }}" hint-placeholder-val="{{ false }}">
@@ -212,6 +443,7 @@ input,button{font-family:inherit}
 <span>Free over AED 200, otherwise AED 20 flat. Prices include VAT.</span>
 <span>30 days to return, unused and in its box. We cover the return shipping.</span></div>
 </sc-if>
+
 
 </div>
 </div>
@@ -226,15 +458,15 @@ input,button{font-family:inherit}
 </div>
 <p style="font-size:17px;line-height:1.6;margin:0;max-width:34ch;color:#6d655b">Four things that make the difference at the table, not on the box.</p>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:clamp(12px,1.4vw,18px)">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:clamp(12px,1.4vw,18px);max-width:980px;margin-inline:auto;width:100%">
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr));align-items:stretch;background:#FAF8F4;overflow:hidden;min-width:0">
 <div style="padding:clamp(16px,1.8vw,22px);display:flex;flex-direction:column;gap:9px;min-width:0">
 <h3 style="font-family:'Quicksand',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.01em;font-size:clamp(17px,1.7vw,21px);line-height:1.06;margin:0;color:#5F7357">One bowl,<br>three ways</h3>
 <div style="display:flex;flex-wrap:wrap;gap:6px"><span style="font-family:'Quicksand',sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:#5F7357;border:1px solid rgba(126,149,115,.5);border-radius:999px;padding:5px 9px;white-space:nowrap">3-in-1</span><span style="font-family:'Quicksand',sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:#5F7357;border:1px solid rgba(126,149,115,.5);border-radius:999px;padding:5px 9px;white-space:nowrap">350 ml</span></div>
 <p style="font-size:15px;line-height:1.45;margin:0;color:#6d655b"><span style="color:#5F7357;font-weight:600">Bowl, soup cup and snack box</span> — swap the lid, it changes job.</p>
 </div>
-<div style="position:relative;background:#FFFFFF;min-height:150px">
-<img src="src/assets/opt-p-sb-ag1.jpg" alt="The 3-in-1 bowl with its lid on" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block" loading="lazy">
+<div style="position:relative;background:#FFFFFF;min-height:170px;margin:clamp(14px,1.6vw,20px);margin-inline-start:0">
+<img src="src/product-assets/103b1772-103b17.jpg" alt="The 3-in-1 bowl with its lid on" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block" loading="lazy">
 </div>
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr));align-items:stretch;background:#FAF8F4;overflow:hidden;min-width:0">
@@ -243,8 +475,8 @@ input,button{font-family:inherit}
 <div style="display:flex;flex-wrap:wrap;gap:6px"><span style="font-family:'Quicksand',sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:#5F7357;border:1px solid rgba(126,149,115,.5);border-radius:999px;padding:5px 9px;white-space:nowrap">No lumps</span><span style="font-family:'Quicksand',sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:#5F7357;border:1px solid rgba(126,149,115,.5);border-radius:999px;padding:5px 9px;white-space:nowrap">Detachable</span></div>
 <p style="font-size:15px;line-height:1.45;margin:0;color:#6d655b"><span style="color:#5F7357;font-weight:600">The built-in filter</span> keeps lumps in and the straw clear.</p>
 </div>
-<div style="position:relative;background:#FFFFFF;min-height:150px">
-<img src="src/assets/opt-p-sb-ag2.jpg" alt="The straw filter sitting in the bowl" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block" loading="lazy">
+<div style="position:relative;background:#FFFFFF;min-height:170px;margin:clamp(14px,1.6vw,20px);margin-inline-start:0">
+<img src="src/product-assets/4e5b1c81-4e5b1c.jpg" alt="The straw filter sitting in the bowl" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block" loading="lazy">
 </div>
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr));align-items:stretch;background:#FAF8F4;overflow:hidden;min-width:0">
@@ -253,8 +485,8 @@ input,button{font-family:inherit}
 <div style="display:flex;flex-wrap:wrap;gap:6px"><span style="font-family:'Quicksand',sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:#5F7357;border:1px solid rgba(126,149,115,.5);border-radius:999px;padding:5px 9px;white-space:nowrap">Suction base</span><span style="font-family:'Quicksand',sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:#5F7357;border:1px solid rgba(126,149,115,.5);border-radius:999px;padding:5px 9px;white-space:nowrap">Easy release</span></div>
 <p style="font-size:15px;line-height:1.45;margin:0;color:#6d655b"><span style="color:#5F7357;font-weight:600">Strong suction base</span> seals to the tray, lifts off by the tab.</p>
 </div>
-<div style="position:relative;background:#FFFFFF;min-height:150px">
-<img src="src/assets/opt-p-sb-ag3.jpg" alt="The suction base gripping a surface" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block" loading="lazy">
+<div style="position:relative;background:#FFFFFF;min-height:170px;margin:clamp(14px,1.6vw,20px);margin-inline-start:0">
+<img src="src/product-assets/the-suction-base-gripping-a-surface-8a8519.jpg" alt="The suction base gripping a surface" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block" loading="lazy">
 </div>
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr));align-items:stretch;background:#FAF8F4;overflow:hidden;min-width:0">
@@ -263,13 +495,13 @@ input,button{font-family:inherit}
 <div style="display:flex;flex-wrap:wrap;gap:6px"><span style="font-family:'Quicksand',sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:#5F7357;border:1px solid rgba(126,149,115,.5);border-radius:999px;padding:5px 9px;white-space:nowrap">Dishwasher</span><span style="font-family:'Quicksand',sans-serif;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:#5F7357;border:1px solid rgba(126,149,115,.5);border-radius:999px;padding:5px 9px;white-space:nowrap">Sterilise</span></div>
 <p style="font-size:15px;line-height:1.45;margin:0;color:#6d655b"><span style="color:#5F7357;font-weight:600">Every part comes apart</span> — dishwasher, boiling water or steam.</p>
 </div>
-<div style="position:relative;background:#FFFFFF;min-height:150px">
-<img src="src/assets/opt-p-sb-ww.jpg" alt="The bowl in warm white with its orange lid" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block" loading="lazy">
+<div style="position:relative;background:#FFFFFF;min-height:170px;margin:clamp(14px,1.6vw,20px);margin-inline-start:0">
+<img src="src/product-assets/5318ecb7-5318ec.jpg" alt="The bowl in warm white with its orange lid" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block" loading="lazy">
 </div>
 </div>
 </div>
 </div>
-</div>
+
 </section>
 
 <section id="details" style="padding:clamp(48px,6vw,80px) clamp(20px,5vw,40px);border-top:1px solid rgba(74,68,60,.12)">
@@ -287,7 +519,7 @@ input,button{font-family:inherit}
 <span style="font-family:'Quicksand',sans-serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#7E9573">Page 1</span>
 <span style="font-family:'Quicksand',sans-serif;font-size:clamp(18px,1.9vw,22px);line-height:1.2">the all-in-one feeding bowl</span>
 </div>
-<img src="src/assets/opt-detail-page-1.jpg" alt="the all-in-one feeding bowl" style="width:100%;height:auto;display:block;border:1px solid rgba(74,68,60,.10)" loading="lazy">
+<img src="src/product-assets/the-all-in-one-feeding-bowl-7e882c.jpg" alt="the all-in-one feeding bowl" style="width:100%;height:auto;display:block;border:1px solid rgba(74,68,60,.10)" loading="lazy">
 
 </div>
 <div style="display:flex;flex-direction:column;gap:12px">
@@ -295,7 +527,7 @@ input,button{font-family:inherit}
 <span style="font-family:'Quicksand',sans-serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#7E9573">Page 2</span>
 <span style="font-family:'Quicksand',sans-serif;font-size:clamp(18px,1.9vw,22px);line-height:1.2">product information</span>
 </div>
-<img src="src/assets/opt-detail-page-2.jpg" alt="product information" style="width:100%;height:auto;display:block;border:1px solid rgba(74,68,60,.10)" loading="lazy">
+<img src="src/product-assets/product-information-e622c1.jpg" alt="product information" style="width:100%;height:auto;display:block;border:1px solid rgba(74,68,60,.10)" loading="lazy">
 
 </div>
 <div style="display:flex;flex-direction:column;gap:12px">
@@ -303,7 +535,7 @@ input,button{font-family:inherit}
 <span style="font-family:'Quicksand',sans-serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#7E9573">Page 3</span>
 <span style="font-family:'Quicksand',sans-serif;font-size:clamp(18px,1.9vw,22px);line-height:1.2">thoughtful details for growing babies</span>
 </div>
-<img src="src/assets/opt-detail-page-3.jpg" alt="thoughtful details for growing babies" style="width:100%;height:auto;display:block;border:1px solid rgba(74,68,60,.10)" loading="lazy">
+<img src="src/product-assets/thoughtful-details-for-growing-babies-f78578.jpg" alt="thoughtful details for growing babies" style="width:100%;height:auto;display:block;border:1px solid rgba(74,68,60,.10)" loading="lazy">
 
 </div>
 <div style="display:flex;flex-direction:column;gap:12px">
@@ -311,7 +543,7 @@ input,button{font-family:inherit}
 <span style="font-family:'Quicksand',sans-serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#7E9573">Page 4</span>
 <span style="font-family:'Quicksand',sans-serif;font-size:clamp(18px,1.9vw,22px);line-height:1.2">snack guard and suction base</span>
 </div>
-<img src="src/assets/opt-detail-page-4.jpg" alt="snack guard and suction base" style="width:100%;height:auto;display:block;border:1px solid rgba(74,68,60,.10)" loading="lazy">
+<img src="src/product-assets/snack-guard-and-suction-base-1e0cef.jpg" alt="snack guard and suction base" style="width:100%;height:auto;display:block;border:1px solid rgba(74,68,60,.10)" loading="lazy">
 <span style="font-size:15px;line-height:1.55;color:#6d655b">Petal snack guard keeps treats in the bowl · a strong suction base means it will not be flipped over · food-grade silicone straw, odourless and safe.</span>
 </div>
 <div style="display:flex;flex-direction:column;gap:12px">
@@ -319,7 +551,7 @@ input,button{font-family:inherit}
 <span style="font-family:'Quicksand',sans-serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#7E9573">Page 5</span>
 <span style="font-family:'Quicksand',sans-serif;font-size:clamp(18px,1.9vw,22px);line-height:1.2">materials, heat and sterilising</span>
 </div>
-<img src="src/assets/opt-detail-page-5.jpg" alt="materials, heat and sterilising" style="width:100%;height:auto;display:block;border:1px solid rgba(74,68,60,.10)" loading="lazy">
+<img src="src/product-assets/materials-heat-and-sterilising-7f0765.jpg" alt="materials, heat and sterilising" style="width:100%;height:auto;display:block;border:1px solid rgba(74,68,60,.10)" loading="lazy">
 
 </div>
 <div style="display:flex;flex-direction:column;gap:12px">
@@ -327,7 +559,7 @@ input,button{font-family:inherit}
 <span style="font-family:'Quicksand',sans-serif;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#7E9573">Page 6</span>
 <span style="font-family:'Quicksand',sans-serif;font-size:clamp(18px,1.9vw,22px);line-height:1.2">one bowl, three ways</span>
 </div>
-<img src="src/assets/opt-detail-page-6.jpg" alt="one bowl, three ways" style="width:100%;height:auto;display:block;border:1px solid rgba(74,68,60,.10)" loading="lazy">
+<img src="src/product-assets/one-bowl-three-ways-a02261.jpg" alt="one bowl, three ways" style="width:100%;height:auto;display:block;border:1px solid rgba(74,68,60,.10)" loading="lazy">
 <span style="font-size:15px;line-height:1.55;color:#6d655b">Straw cup + snack bowl + suction bowl — safe materials, multi-purpose, strong suction, easy to clean.</span>
 </div>
 </div>
@@ -357,7 +589,7 @@ input,button{font-family:inherit}
 <div style="display:flex;flex-wrap:wrap;gap:22px">
 <a href="index.html#range" style="flex:1 1 250px;background:#FAF8F4;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease" style-hover="transform:translateY(-4px);box-shadow:0 18px 34px rgba(74,68,60,.10)">
 <div style="aspect-ratio:1/1;background:#FAF8F4;display:flex;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;overflow:hidden">
-<img src="src/assets/deer-plate.jpg" alt="Divided silicone plate" style="width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;display:block">
+<img src="src/product-assets/divided-silicone-plate-f476e4.jpg" alt="Divided silicone plate" style="width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;display:block">
 </div>
 <div style="padding:22px 20px 26px;display:flex;flex-direction:column;gap:8px">
 <span style="font-family:'Quicksand',sans-serif;font-size:22px">SoftStart Divided Plate</span>
@@ -365,7 +597,7 @@ input,button{font-family:inherit}
 </a>
 <a href="index.html#range" style="flex:1 1 250px;background:#FAF8F4;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease" style-hover="transform:translateY(-4px);box-shadow:0 18px 34px rgba(74,68,60,.10)">
 <div style="aspect-ratio:1/1;background:#FAF8F4;display:flex;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;overflow:hidden">
-<img src="src/assets/bib-yellow.jpg" alt="Silicone catch bib" style="width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;display:block">
+<img src="src/product-assets/silicone-catch-bib-560193.jpg" alt="Silicone catch bib" style="width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;display:block">
 </div>
 <div style="padding:22px 20px 26px;display:flex;flex-direction:column;gap:8px">
 <span style="font-family:'Quicksand',sans-serif;font-size:22px">CatchAll Silicone Bib</span>
@@ -373,7 +605,7 @@ input,button{font-family:inherit}
 </a>
 <a href="index.html#range" style="flex:1 1 250px;background:#FAF8F4;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease" style-hover="transform:translateY(-4px);box-shadow:0 18px 34px rgba(74,68,60,.10)">
 <div style="aspect-ratio:1/1;background:#FAF8F4;display:flex;align-items:center;justify-content:center;padding:26px;box-sizing:border-box;overflow:hidden">
-<img src="src/assets/cutlery.jpg" alt="Spoon and fork set" style="width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;display:block">
+<img src="src/product-assets/spoon-and-fork-set-c79bcb.jpg" alt="Spoon and fork set" style="width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;display:block">
 </div>
 <div style="padding:22px 20px 26px;display:flex;flex-direction:column;gap:8px">
 <span style="font-family:'Quicksand',sans-serif;font-size:22px">FirstHold Spoon &amp; Fork</span>
@@ -384,8 +616,8 @@ input,button{font-family:inherit}
 </section>
 
 <footer style="border-top:1px solid rgba(74,68,60,.12);padding:clamp(44px,5vw,64px) clamp(20px,5vw,40px) clamp(36px,5vw,52px)">
-<div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr));gap:clamp(22px,3vw,40px)">
-<div style="display:flex;flex-direction:column;gap:12px;grid-column:span 2;min-width:0">
+<div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr));gap:clamp(22px,3vw,40px)">
+<div style="display:flex;flex-direction:column;gap:12px;min-width:0">
 <div style="display:flex;flex-direction:column;gap:5px;align-items:stretch;width:fit-content">
 <span style="font-family:'Quicksand',sans-serif;font-size:clamp(30px,4vw,40px);font-weight:500;line-height:1">nimova</span>
 <span style="border-top:1px solid rgba(126,149,115,.85);padding-top:7px;font-family:'Quicksand',sans-serif;font-size:14px;letter-spacing:.015em;color:#4A443C;text-align:center">baby essentials</span>
@@ -423,18 +655,18 @@ input,button{font-family:inherit}
 </div>
 </footer>
 
-</div>
+
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{}">
+<script type="text/x-dc" data-dc-script="" data-props="{}">
 class Component extends DCLogic {
   state = { img: 0, colour: 0, qty: 1, added: false, open: [false, false, false, false, true, false, false] };
 
   renderVals() {
     const imgs = [
-      ["src/assets/opt-p-sb-ag1.jpg", "3-in-1 bowl with lid on, apple green"],
-      ["src/assets/opt-p-sb-ag.jpg", "Bowl, straw filter, suction base and lid"],
-      ["src/assets/opt-p-sb-ag2.jpg", "Lid off, stainless steel interior and straw filter"],
-      ["src/assets/opt-p-sb-ww.jpg", "3-in-1 bowl in warm white"]
+      ["assets/opt-p-sb-ag1.jpg", "3-in-1 bowl with lid on, apple green"],
+      ["assets/opt-p-sb-ag.jpg", "Bowl, straw filter, suction base and lid"],
+      ["assets/opt-p-sb-ag2.jpg", "Lid off, stainless steel interior and straw filter"],
+      ["assets/opt-p-sb-ww.jpg", "3-in-1 bowl in warm white"]
     ];
     const [src, alt] = imgs[this.state.img];
     const ring = (i) => this.state.colour === i ? "0 0 0 2px #FFFFFF, 0 0 0 4px #4A443C" : "0 0 0 1px rgba(74,68,60,.22)";
@@ -451,8 +683,8 @@ class Component extends DCLogic {
       inc: () => this.setState((s) => ({ qty: Math.min(9, s.qty + 1), added: false })),
       dec: () => this.setState((s) => ({ qty: Math.max(1, s.qty - 1), added: false })),
       addToBag: () => this.setState({ added: true }),
-      colour0: () => this.setState({ colour: 0 }),
-      colour1: () => this.setState({ colour: 1 }),
+      colour0: () => this.setState({ colour: 0, img: 0 }),
+      colour1: () => this.setState({ colour: 1, img: 3 }),
       colourRing0: ring(0),
       colourRing1: ring(1)
     };
@@ -469,5 +701,6 @@ class Component extends DCLogic {
   }
 }
 </script>
-</body>
-</html>
+
+
+</body></html>
