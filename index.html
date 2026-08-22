@@ -1,23 +1,428 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="src/support.js"></script>
-<meta name="ext-resource-dependency" content="src/assets/reel-1.jpg" data-resource-id="reel1" />
-<meta name="ext-resource-dependency" content="src/assets/reel-2.jpg" data-resource-id="reel2" />
-<meta name="ext-resource-dependency" content="src/assets/reel-3.jpg" data-resource-id="reel3" />
-<meta name="ext-resource-dependency" content="src/assets/reel-4.jpg" data-resource-id="reel4" />
+<script src="src/home-assets/support.js"></script>
+
+
+
+
+
 <template id="__bundler_thumbnail" data-bg-color="#FFFFFF">
-<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="800" fill="#FFFFFF"/><circle cx="600" cy="355" r="175" fill="#F2E7DB"/><rect x="480" y="165" width="240" height="46" rx="12" fill="#7E9573"/><text x="600" y="615" font-family="Quicksand, sans-serif" font-size="128" fill="#4A443C" text-anchor="middle">nimova</text></svg>
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="800" fill="#FFFFFF"></rect><circle cx="600" cy="355" r="175" fill="#F2E7DB"></circle><rect x="480" y="165" width="240" height="46" rx="12" fill="#7E9573"></rect><text x="600" y="615" font-family="Quicksand, sans-serif" font-size="128" fill="#4A443C" text-anchor="middle">nimova</text></svg>
 </template>
 </head>
 <body>
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&family=Hanken+Grotesk:wght@300;400;500;600&family=Noto+Kufi+Arabic:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("src/home-assets/e70abc32-e70abc.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("src/home-assets/aa5cef59-aa5cef.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("src/home-assets/759bd2ca-759bd2.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("src/home-assets/31b2edd6-31b2ed.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("src/home-assets/e70abc32-e70abc.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("src/home-assets/aa5cef59-aa5cef.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("src/home-assets/759bd2ca-759bd2.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("src/home-assets/31b2edd6-31b2ed.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("src/home-assets/e70abc32-e70abc.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("src/home-assets/aa5cef59-aa5cef.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("src/home-assets/759bd2ca-759bd2.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("src/home-assets/31b2edd6-31b2ed.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("src/home-assets/e70abc32-e70abc.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("src/home-assets/aa5cef59-aa5cef.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("src/home-assets/759bd2ca-759bd2.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("src/home-assets/31b2edd6-31b2ed.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* arabic */
+@font-face {
+  font-family: 'Noto Kufi Arabic';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("src/home-assets/c2294f05-c2294f.woff2") format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+/* math */
+@font-face {
+  font-family: 'Noto Kufi Arabic';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("src/home-assets/e9b18643-e9b186.woff2") format('woff2');
+  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+}
+/* symbols */
+@font-face {
+  font-family: 'Noto Kufi Arabic';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("src/home-assets/d1aeae82-d1aeae.woff2") format('woff2');
+  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Noto Kufi Arabic';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("src/home-assets/03a980e0-03a980.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Noto Kufi Arabic';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("src/home-assets/82adb947-82adb9.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* arabic */
+@font-face {
+  font-family: 'Noto Kufi Arabic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("src/home-assets/c2294f05-c2294f.woff2") format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+/* math */
+@font-face {
+  font-family: 'Noto Kufi Arabic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("src/home-assets/e9b18643-e9b186.woff2") format('woff2');
+  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+}
+/* symbols */
+@font-face {
+  font-family: 'Noto Kufi Arabic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("src/home-assets/d1aeae82-d1aeae.woff2") format('woff2');
+  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Noto Kufi Arabic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("src/home-assets/03a980e0-03a980.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Noto Kufi Arabic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("src/home-assets/82adb947-82adb9.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* arabic */
+@font-face {
+  font-family: 'Noto Kufi Arabic';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("src/home-assets/c2294f05-c2294f.woff2") format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+/* math */
+@font-face {
+  font-family: 'Noto Kufi Arabic';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("src/home-assets/e9b18643-e9b186.woff2") format('woff2');
+  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+}
+/* symbols */
+@font-face {
+  font-family: 'Noto Kufi Arabic';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("src/home-assets/d1aeae82-d1aeae.woff2") format('woff2');
+  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Noto Kufi Arabic';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("src/home-assets/03a980e0-03a980.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Noto Kufi Arabic';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("src/home-assets/82adb947-82adb9.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* arabic */
+@font-face {
+  font-family: 'Noto Kufi Arabic';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("src/home-assets/c2294f05-c2294f.woff2") format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
+}
+/* math */
+@font-face {
+  font-family: 'Noto Kufi Arabic';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("src/home-assets/e9b18643-e9b186.woff2") format('woff2');
+  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+}
+/* symbols */
+@font-face {
+  font-family: 'Noto Kufi Arabic';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("src/home-assets/d1aeae82-d1aeae.woff2") format('woff2');
+  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Noto Kufi Arabic';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("src/home-assets/03a980e0-03a980.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Noto Kufi Arabic';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("src/home-assets/82adb947-82adb9.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("src/home-assets/8af20cbe-8af20c.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("src/home-assets/66f09a59-66f09a.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("src/home-assets/bbff9bed-bbff9b.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("src/home-assets/8af20cbe-8af20c.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("src/home-assets/66f09a59-66f09a.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("src/home-assets/bbff9bed-bbff9b.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("src/home-assets/8af20cbe-8af20c.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("src/home-assets/66f09a59-66f09a.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("src/home-assets/bbff9bed-bbff9b.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
 <style>
 html,body{margin:0;padding:0}
 body{background:#FFFFFF;color:#4A443C;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
@@ -48,8 +453,8 @@ input,button{font-family:inherit}
 <a href="#journal" style="padding:10px 0;display:inline-block">Journal</a>
 </nav>
 <div style="display:flex;align-items:center;gap:clamp(14px,2vw,26px);flex:0 0 auto;justify-content:flex-end;white-space:nowrap">
-<button id="langbtn" onClick="{{ toggleLang }}" aria-label="{{ langAria }}" style="all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(74,68,60,.34);padding:8px 14px;font-size:15px;line-height:1" style-hover="border-color:#5F7357;color:#5F7357">
-<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18"></path></svg>
+<button id="langbtn" sc-camel-on-click="{{ toggleLang }}" aria-label="{{ langAria }}" style="all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(74,68,60,.34);padding:8px 14px;font-size:15px;line-height:1" style-hover="border-color:#5F7357;color:#5F7357">
+<svg sc-camel-view-box="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18"></path></svg>
 <span>{{ langLabel }}</span>
 </button>
 <a href="#range" style="font-size:clamp(15px,1.5vw,17px)">Bag (0)</a>
@@ -59,8 +464,8 @@ input,button{font-family:inherit}
 
 <section id="top" style="position:relative;height:clamp(440px,54vw,640px);overflow:hidden;background:#F2E7DB">
 <div style="position:absolute;inset:0;opacity:{{ op0 }};transition:opacity .9s ease;pointer-events:{{ pe0 }}">
-<img src="src/assets/bowl-hero-new.jpg" alt="nimova 3-in-1 baby bowl" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
-<video src="https://videos.pexels.com/video-files/5894811/5894811-hd_1920_1080_30fps.mp4" poster="https://images.pexels.com/videos/5894811/pexels-photo-5894811.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" ref="{{ videoRef }}" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="auto" aria-label="A baby enjoying feeding time at home" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .8s ease"></video>
+<img src="src/home-assets/nimova-3-in-1-baby-bowl-af979a.jpg" alt="nimova 3-in-1 baby bowl" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+<video src="src/home-assets/2d11fe78-2d11fe.mp4" poster="src/home-assets/974177b9-974177.jpg" ref="{{ videoRef }}" sc-camel-auto-play="{{ true }}" muted="{{ true }}" loop="{{ true }}" sc-camel-plays-inline="{{ true }}" preload="auto" aria-label="A baby enjoying feeding time at home" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .8s ease"></video>
 <div data-rtl-flip="1" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.94) 0%,rgba(255,255,255,.86) 38%,rgba(255,255,255,.18) 68%,rgba(255,255,255,0) 100%)"></div>
 <div style="position:relative;height:100%;max-width:1320px;margin:0 auto;padding:clamp(36px,5vw,64px) clamp(20px,5vw,40px);display:flex;flex-direction:column;justify-content:center;box-sizing:border-box">
 <div style="max-width:min(560px,86%);display:flex;flex-direction:column;gap:clamp(14px,1.6vw,20px)">
@@ -75,7 +480,7 @@ input,button{font-family:inherit}
 </div>
 </div>
 <div style="position:absolute;inset:0;opacity:{{ op1 }};transition:opacity .9s ease;pointer-events:{{ pe1 }}">
-<img src="src/assets/bowl-exploded.jpeg" alt="The 3-in-1 bowl shown as a steel bowl, a straw cup and a snack bowl" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+<img src="src/home-assets/the-3-in-1-bowl-shown-as-a-steel-bowl-a-straw-cu-b5e86f.jpg" alt="The 3-in-1 bowl shown as a steel bowl, a straw cup and a snack bowl" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
 <div data-rtl-flip="1" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.94) 0%,rgba(255,255,255,.86) 38%,rgba(255,255,255,.18) 68%,rgba(255,255,255,0) 100%)"></div>
 <div style="position:relative;height:100%;max-width:1320px;margin:0 auto;padding:clamp(36px,5vw,64px) clamp(20px,5vw,40px);display:flex;flex-direction:column;justify-content:center;box-sizing:border-box">
 <div style="max-width:min(560px,86%);display:flex;flex-direction:column;gap:clamp(14px,1.6vw,20px)">
@@ -90,7 +495,7 @@ input,button{font-family:inherit}
 </div>
 </div>
 <div style="position:absolute;inset:0;opacity:{{ op2 }};transition:opacity .9s ease;pointer-events:{{ pe2 }}">
-<img src="src/assets/p-weaning-set.jpg" alt="The four pieces of the mealtime starter set" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+<img src="src/home-assets/the-four-pieces-of-the-mealtime-starter-set-5a1f38.jpg" alt="The four pieces of the mealtime starter set" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
 <div data-rtl-flip="1" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.94) 0%,rgba(255,255,255,.86) 38%,rgba(255,255,255,.18) 68%,rgba(255,255,255,0) 100%)"></div>
 <div style="position:relative;height:100%;max-width:1320px;margin:0 auto;padding:clamp(36px,5vw,64px) clamp(20px,5vw,40px);display:flex;flex-direction:column;justify-content:center;box-sizing:border-box">
 <div style="max-width:min(560px,86%);display:flex;flex-direction:column;gap:clamp(14px,1.6vw,20px)">
@@ -105,18 +510,19 @@ input,button{font-family:inherit}
 </div>
 </div>
 <div style="position:absolute;left:0;right:0;bottom:clamp(18px,2.4vw,30px);z-index:2;display:flex;justify-content:center;gap:10px">
-<button onClick="{{ go0 }}" aria-label="Slide 1" style="all:unset;cursor:pointer;width:38px;height:4px;background:{{ dot0 }};transition:background .3s ease"></button>
-<button onClick="{{ go1 }}" aria-label="Slide 2" style="all:unset;cursor:pointer;width:38px;height:4px;background:{{ dot1 }};transition:background .3s ease"></button>
-<button onClick="{{ go2 }}" aria-label="Slide 3" style="all:unset;cursor:pointer;width:38px;height:4px;background:{{ dot2 }};transition:background .3s ease"></button>
+<button sc-camel-on-click="{{ go0 }}" aria-label="Slide 1" style="all:unset;cursor:pointer;width:38px;height:4px;background:{{ dot0 }};transition:background .3s ease"></button>
+<button sc-camel-on-click="{{ go1 }}" aria-label="Slide 2" style="all:unset;cursor:pointer;width:38px;height:4px;background:{{ dot1 }};transition:background .3s ease"></button>
+<button sc-camel-on-click="{{ go2 }}" aria-label="Slide 3" style="all:unset;cursor:pointer;width:38px;height:4px;background:{{ dot2 }};transition:background .3s ease"></button>
 </div>
 </section>
 
 <section style="border-top:1px solid rgba(74,68,60,.12);border-bottom:1px solid rgba(74,68,60,.12);background:#F6EFE4">
-<div style="max-width:1320px;margin:0 auto;padding:clamp(16px,6vw,26px) clamp(20px,5vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:clamp(16px,3vw,32px)">
+<div style="max-width:1320px;margin:0 auto;padding:clamp(16px,6vw,26px) clamp(20px,5vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:clamp(16px,3vw,32px)">
 <div style="display:flex;flex-direction:column;gap:5px"><span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#5F7357">Independent testing</span><span style="font-size:17px;color:#6d655b">Against standards applicable to each product</span></div>
 <div style="display:flex;flex-direction:column;gap:5px"><span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#5F7357">Made for daily use</span><span style="font-size:17px;color:#6d655b">Designed to be used, washed and used again</span></div>
 <div style="display:flex;flex-direction:column;gap:5px"><span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#5F7357">Thoughtful function</span><span style="font-size:17px;color:#6d655b">Every feature has a practical purpose</span></div>
-<div style="display:flex;flex-direction:column;gap:5px"><span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#5F7357">Clear materials</span><span style="font-size:17px;color:#6d655b">Material and care details for every product</span></div>v>
+<div style="display:flex;flex-direction:column;gap:5px"><span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#5F7357">Clear materials</span><span style="font-size:17px;color:#6d655b">Material and care details for every product</span></div>
+<div style="display:flex;flex-direction:column;gap:5px"><span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#5F7357">Designed and built with mothers</span><span style="font-size:17px;color:#6d655b">Every product goes through a cycle of in-home use and feedback</span></div>
 </div>
 </section>
 
@@ -131,28 +537,28 @@ input,button{font-family:inherit}
 </div>
 <div style="display:grid;grid-auto-flow:column;grid-auto-columns:minmax(clamp(160px,23%,320px),1fr);gap:clamp(18px,2.2vw,26px);overflow-x:auto">
 <a href="#range" style="min-width:0;box-sizing:border-box;display:flex;flex-direction:column;gap:14px;transition:transform .25s ease" style-hover="transform:translateY(-4px)">
-<div style="aspect-ratio:4/3;background:#F2E7DB;overflow:hidden"><img src="src/assets/bowl-hero-new.jpg" alt="Feeding" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+<div style="aspect-ratio:4/3;background:#F2E7DB;overflow:hidden"><img src="src/home-assets/nimova-3-in-1-baby-bowl-af979a.jpg" alt="Feeding" style="width:100%;height:100%;object-fit:cover;display:block"></div>
 <div style="display:flex;flex-direction:column;gap:4px">
 <span style="font-family:'Quicksand',sans-serif;font-size:23px;line-height:1.15">Feeding</span>
 <span style="font-size:16px;color:#6d655b">Bowls, cups and straw lids</span>
 </div>
 </a>
 <a href="#range" style="min-width:0;box-sizing:border-box;display:flex;flex-direction:column;gap:14px;transition:transform .25s ease" style-hover="transform:translateY(-4px)">
-<div style="aspect-ratio:4/3;background:#F2E7DB;overflow:hidden"><img src="src/assets/cutlery.jpg" alt="Mealtime" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+<div style="aspect-ratio:4/3;background:#F2E7DB;overflow:hidden"><img src="src/home-assets/mealtime-851ae5.jpg" alt="Mealtime" style="width:100%;height:100%;object-fit:cover;display:block"></div>
 <div style="display:flex;flex-direction:column;gap:4px">
 <span style="font-family:'Quicksand',sans-serif;font-size:23px;line-height:1.15">Mealtime</span>
 <span style="font-size:16px;color:#6d655b">Cutlery, plates and bibs</span>
 </div>
 </a>
 <a href="#range" style="min-width:0;box-sizing:border-box;display:flex;flex-direction:column;gap:14px;transition:transform .25s ease" style-hover="transform:translateY(-4px)">
-<div style="aspect-ratio:4/3;background:#F2E7DB;overflow:hidden"><img src="src/assets/unboxing.jpg" alt="On the go" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+<div style="aspect-ratio:4/3;background:#F2E7DB;overflow:hidden"><img src="src/home-assets/on-the-go-8a4fa0.jpg" alt="On the go" style="width:100%;height:100%;object-fit:cover;display:block"></div>
 <div style="display:flex;flex-direction:column;gap:4px">
 <span style="font-family:'Quicksand',sans-serif;font-size:23px;line-height:1.15">On the go</span>
 <span style="font-size:16px;color:#6d655b">Travel cases and snack boxes</span>
 </div>
 </a>
 <a href="#range" style="min-width:0;box-sizing:border-box;display:flex;flex-direction:column;gap:14px;transition:transform .25s ease" style-hover="transform:translateY(-4px)">
-<div style="aspect-ratio:4/3;background:#F2E7DB;overflow:hidden"><img src="src/assets/bowl-parts-coral.jpeg" alt="Care" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+<div style="aspect-ratio:4/3;background:#F2E7DB;overflow:hidden"><img src="src/home-assets/care-b34693.jpg" alt="Care" style="width:100%;height:100%;object-fit:cover;display:block"></div>
 <div style="display:flex;flex-direction:column;gap:4px">
 <span style="font-family:'Quicksand',sans-serif;font-size:23px;line-height:1.15">Care</span>
 <span style="font-size:16px;color:#6d655b">Cleaning, sterilising, storage</span>
@@ -174,7 +580,7 @@ input,button{font-family:inherit}
 <span style="font-family:'Quicksand',sans-serif;font-size:clamp(17px,1.7vw,21px);letter-spacing:.02em;margin-top:26px">4M</span>
 <span style="width:1px;height:clamp(28px,3.4vw,46px);background:rgba(154,174,147,.55);margin-top:16px"></span>
 <span style="width:100%;aspect-ratio:1/1;background:#F6EFE4;margin-top:clamp(18px,2.2vw,26px);display:block;overflow:hidden">
-<img src="src/assets/p-cutlery.jpg" alt="A pair of nimova first spoons" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+<img src="src/home-assets/a-pair-of-nimova-first-spoons-3cfc19.jpg" alt="A pair of nimova first spoons" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
 </span>
 <span style="font-family:'Quicksand',sans-serif;font-size:clamp(17px,1.7vw,20px);line-height:1.25;margin-top:18px;min-height:2.5em;display:flex;align-items:flex-start;justify-content:center">First spoon &amp; fork</span>
 <span style="font-size:15px;color:#6d655b;margin-top:7px">Starting solids</span>
@@ -184,7 +590,7 @@ input,button{font-family:inherit}
 <span style="font-family:'Quicksand',sans-serif;font-size:clamp(17px,1.7vw,21px);letter-spacing:.02em;margin-top:26px">6M</span>
 <span style="width:1px;height:clamp(28px,3.4vw,46px);background:rgba(154,174,147,.55);margin-top:16px"></span>
 <span style="width:100%;aspect-ratio:1/1;background:#F6EFE4;margin-top:clamp(18px,2.2vw,26px);display:block;overflow:hidden">
-<img src="src/assets/p-plate-set.jpg" alt="Divided suction plate" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+<img src="src/home-assets/divided-suction-plate-c238c0.jpg" alt="Divided suction plate" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
 </span>
 <span style="font-family:'Quicksand',sans-serif;font-size:clamp(17px,1.7vw,20px);line-height:1.25;margin-top:18px;min-height:2.5em;display:flex;align-items:flex-start;justify-content:center">Divided suction plate</span>
 <span style="font-size:15px;color:#6d655b;margin-top:7px">Self-feeding begins</span>
@@ -194,7 +600,7 @@ input,button{font-family:inherit}
 <span style="font-family:'Quicksand',sans-serif;font-size:clamp(17px,1.7vw,21px);letter-spacing:.02em;margin-top:26px">9M</span>
 <span style="width:1px;height:clamp(28px,3.4vw,46px);background:rgba(154,174,147,.55);margin-top:16px"></span>
 <span style="width:100%;aspect-ratio:1/1;background:#F6EFE4;margin-top:clamp(18px,2.2vw,26px);display:block;overflow:hidden">
-<img src="src/assets/p-cup.jpg" alt="Spout cup with two handles" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+<img src="src/home-assets/spout-cup-with-two-handles-622fc5.jpg" alt="Spout cup with two handles" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
 </span>
 <span style="font-family:'Quicksand',sans-serif;font-size:clamp(17px,1.7vw,20px);line-height:1.25;margin-top:18px;min-height:2.5em;display:flex;align-items:flex-start;justify-content:center">Spout cup</span>
 <span style="font-size:15px;color:#6d655b;margin-top:7px">Pincer grip</span>
@@ -204,7 +610,7 @@ input,button{font-family:inherit}
 <span style="font-family:'Quicksand',sans-serif;font-size:clamp(17px,1.7vw,21px);letter-spacing:.02em;margin-top:26px">12M</span>
 <span style="width:1px;height:clamp(28px,3.4vw,46px);background:rgba(154,174,147,.55);margin-top:16px"></span>
 <span style="width:100%;aspect-ratio:1/1;background:#F6EFE4;margin-top:clamp(18px,2.2vw,26px);display:block;overflow:hidden">
-<img src="src/assets/p-straw-cup.jpg" alt="Straw cup with handles" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+<img src="src/home-assets/straw-cup-with-handles-d6c234.jpg" alt="Straw cup with handles" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
 </span>
 <span style="font-family:'Quicksand',sans-serif;font-size:clamp(17px,1.7vw,20px);line-height:1.25;margin-top:18px;min-height:2.5em;display:flex;align-items:flex-start;justify-content:center">Straw cup</span>
 <span style="font-size:15px;color:#6d655b;margin-top:7px">Cup without help</span>
@@ -214,7 +620,7 @@ input,button{font-family:inherit}
 <span style="font-family:'Quicksand',sans-serif;font-size:clamp(17px,1.7vw,21px);letter-spacing:.02em;margin-top:26px">18M+</span>
 <span style="width:1px;height:clamp(28px,3.4vw,46px);background:rgba(154,174,147,.55);margin-top:16px"></span>
 <span style="width:100%;aspect-ratio:1/1;background:#F6EFE4;margin-top:clamp(18px,2.2vw,26px);display:block;overflow:hidden">
-<img src="src/assets/p-bib-green.jpg" alt="Silicone catch bib" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+<img src="src/home-assets/silicone-catch-bib-10eb98.jpg" alt="Silicone catch bib" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
 </span>
 <span style="font-family:'Quicksand',sans-serif;font-size:clamp(17px,1.7vw,20px);line-height:1.25;margin-top:18px;min-height:2.5em;display:flex;align-items:flex-start;justify-content:center">Catch-all silicone bib</span>
 <span style="font-size:15px;color:#6d655b;margin-top:7px">Full table</span>
@@ -237,7 +643,7 @@ input,button{font-family:inherit}
 
 <div style="min-width:0;background:#FAF8F4;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease" style-hover="transform:translateY(-4px);box-shadow:0 18px 34px rgba(74,68,60,.10)">
 <a href="product.html" style="position:relative;background:#F2E7DB;aspect-ratio:1/1;overflow:hidden;display:block">
-<img src="src/assets/bowl-flat-orange.jpeg" alt="3-in-1 baby bowl — bowl, straw cup and spill-proof lid" style="width:100%;height:100%;object-fit:cover;display:block">
+<img src="src/home-assets/3-in-1-baby-bowl-bowl-straw-cup-and-spill-proof--efb1a4.jpg" alt="3-in-1 baby bowl — bowl, straw cup and spill-proof lid" style="width:100%;height:100%;object-fit:cover;display:block">
 <span style="position:absolute;top:14px;left:14px;background:#5F7357;color:#FAF8F4;font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:6px 10px">live now</span>
 </a>
 <div style="padding:22px 20px 26px;display:flex;flex-direction:column;gap:9px;flex:1">
@@ -254,7 +660,7 @@ input,button{font-family:inherit}
 
 <div style="min-width:0;background:#FAF8F4;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease" style-hover="transform:translateY(-4px);box-shadow:0 18px 34px rgba(74,68,60,.10)">
 <div style="background:#FAF8F4;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;min-height:0;overflow:hidden">
-<img src="src/assets/deer-plate.jpg" alt="Divided silicone plate with lid" style="width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;display:block">
+<img src="src/home-assets/divided-silicone-plate-with-lid-f49498.jpg" alt="Divided silicone plate with lid" style="width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;display:block">
 </div>
 <div style="padding:22px 20px 26px;display:flex;flex-direction:column;gap:9px;flex:1">
 <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8d8478">first tastes</div>
@@ -270,7 +676,7 @@ input,button{font-family:inherit}
 
 <div style="min-width:0;background:#FAF8F4;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease" style-hover="transform:translateY(-4px);box-shadow:0 18px 34px rgba(74,68,60,.10)">
 <div style="aspect-ratio:1/1;background:#FAF8F4;display:flex;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;min-height:0;overflow:hidden">
-<img src="src/assets/bib-yellow.jpg" alt="Silicone catch bib" style="width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;display:block">
+<img src="src/home-assets/silicone-catch-bib-8b0af5.jpg" alt="Silicone catch bib" style="width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;display:block">
 </div>
 <div style="padding:22px 20px 26px;display:flex;flex-direction:column;gap:9px;flex:1">
 <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8d8478">less mess</div>
@@ -286,7 +692,7 @@ input,button{font-family:inherit}
 
 <div style="min-width:0;background:#FAF8F4;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease" style-hover="transform:translateY(-4px);box-shadow:0 18px 34px rgba(74,68,60,.10)">
 <div style="aspect-ratio:1/1;background:#FAF8F4;display:flex;align-items:center;justify-content:center;padding:26px;box-sizing:border-box;min-height:0;overflow:hidden">
-<img src="src/assets/cutlery.jpg" alt="Toddler spoon and fork set" style="width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;display:block">
+<img src="src/home-assets/mealtime-851ae5.jpg" alt="Toddler spoon and fork set" style="width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;display:block">
 </div>
 <div style="padding:22px 20px 26px;display:flex;flex-direction:column;gap:9px;flex:1">
 <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8d8478">self-feeding</div>
@@ -307,8 +713,8 @@ input,button{font-family:inherit}
 </section>
 
 <section id="film" style="position:relative;height:clamp(360px,44vw,540px);overflow:hidden;background:#4A443C">
-<img src="src/assets/lifestyle-warm.jpg" alt="A family morning at the table" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
-<video src="https://videos.pexels.com/video-files/5894798/5894798-hd_1920_1080_30fps.mp4" poster="https://images.pexels.com/videos/5894798/pexels-photo-5894798.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" ref="{{ videoRef }}" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="auto" aria-label="A family morning, the nimova way" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .8s ease"></video>
+<img src="src/home-assets/a-family-morning-at-the-table-45526d.jpg" alt="A family morning at the table" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+<video src="src/home-assets/244118d9-244118.mp4" poster="src/home-assets/6e49c8a9-6e49c8.jpg" ref="{{ videoRef }}" sc-camel-auto-play="{{ true }}" muted="{{ true }}" loop="{{ true }}" sc-camel-plays-inline="{{ true }}" preload="auto" aria-label="A family morning, the nimova way" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .8s ease"></video>
 <div style="position:absolute;inset:0;background:rgba(74,68,60,.34)"></div>
 <div data-rtl-flip="1" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(74,68,60,.9) 0%,rgba(74,68,60,.82) 50%,rgba(74,68,60,.28) 78%,rgba(74,68,60,0) 100%)"></div>
 <div style="position:relative;height:100%;max-width:1320px;margin:0 auto;padding:clamp(28px,4vw,56px) clamp(20px,5vw,40px);display:flex;flex-direction:column;justify-content:center;box-sizing:border-box">
@@ -327,7 +733,7 @@ input,button{font-family:inherit}
 <section id="bundle" style="padding:clamp(44px,6vw,72px) clamp(20px,5vw,40px)">
 <div style="max-width:1320px;margin:0 auto;background:#F6EFE4;display:flex;flex-wrap:wrap;align-items:stretch">
 <div style="flex:1 1 340px;min-height:300px;background:#F2E7DB;overflow:hidden">
-<img src="src/assets/p-weaning-set.jpg" alt="The four pieces of the mealtime starter set" style="width:100%;height:100%;object-fit:cover;display:block">
+<img src="src/home-assets/the-four-pieces-of-the-mealtime-starter-set-5a1f38.jpg" alt="The four pieces of the mealtime starter set" style="width:100%;height:100%;object-fit:cover;display:block">
 </div>
 <div style="flex:1 1 380px;padding:clamp(32px,4vw,52px);display:flex;flex-direction:column;gap:14px;justify-content:center">
 <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#5F7357">the mealtime starter set</div>
@@ -367,23 +773,23 @@ input,button{font-family:inherit}
 <p style="font-size:18px;line-height:1.6;margin:0;max-width:38ch;color:#6d655b">See how the products hold, fit, come apart and clean up — in under a minute each.</p>
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:20px">
-<button onClick="{{ openReel1 }}" style="all:unset;cursor:pointer;position:relative;aspect-ratio:9/16;overflow:hidden;background:#F2E7DB;display:block">
-<img src="src/assets/reel-1.jpg" alt="Suction base held to the table" style="width:100%;height:100%;object-fit:cover;display:block">
+<button sc-camel-on-click="{{ openReel1 }}" style="all:unset;cursor:pointer;position:relative;aspect-ratio:9/16;overflow:hidden;background:#F2E7DB;display:block">
+<img src="src/home-assets/suction-base-held-to-the-table-6bb595.jpg" alt="Suction base held to the table" style="width:100%;height:100%;object-fit:cover;display:block">
 <span style="position:absolute;inset:auto 0 0 0;padding:16px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(transparent,rgba(74,68,60,.55));color:#FAF8F4;font-size:15px"><span>Does the suction base hold?</span><span style="font-size:13px;opacity:.85">0:24</span></span>
 <span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:999px;background:rgba(247,241,231,.9);color:#4A443C;display:flex;align-items:center;justify-content:center;font-size:17px">▶</span>
 </button>
-<button onClick="{{ openReel2 }}" style="all:unset;cursor:pointer;position:relative;aspect-ratio:9/16;overflow:hidden;background:#F2E7DB;display:block">
-<img src="src/assets/reel-2.jpg" alt="Three pieces, one bowl" style="width:100%;height:100%;object-fit:cover;display:block">
+<button sc-camel-on-click="{{ openReel2 }}" style="all:unset;cursor:pointer;position:relative;aspect-ratio:9/16;overflow:hidden;background:#F2E7DB;display:block">
+<img src="src/home-assets/three-pieces-one-bowl-d8bb57.jpg" alt="Three pieces, one bowl" style="width:100%;height:100%;object-fit:cover;display:block">
 <span style="position:absolute;inset:auto 0 0 0;padding:16px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(transparent,rgba(74,68,60,.55));color:#FAF8F4;font-size:15px"><span>How do the three parts work?</span><span style="font-size:13px;opacity:.85">0:31</span></span>
 <span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:999px;background:rgba(247,241,231,.9);color:#4A443C;display:flex;align-items:center;justify-content:center;font-size:17px">▶</span>
 </button>
-<button onClick="{{ openReel3 }}" style="all:unset;cursor:pointer;position:relative;aspect-ratio:9/16;overflow:hidden;background:#F2E7DB;display:block">
-<img src="src/assets/reel-3.jpg" alt="Cutlery in a parent's hand" style="width:100%;height:100%;object-fit:cover;display:block">
+<button sc-camel-on-click="{{ openReel3 }}" style="all:unset;cursor:pointer;position:relative;aspect-ratio:9/16;overflow:hidden;background:#F2E7DB;display:block">
+<img src="src/home-assets/cutlery-in-a-parent-s-hand-60d1b6.jpg" alt="Cutlery in a parent's hand" style="width:100%;height:100%;object-fit:cover;display:block">
 <span style="position:absolute;inset:auto 0 0 0;padding:16px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(transparent,rgba(74,68,60,.55));color:#FAF8F4;font-size:15px"><span>How does the cutlery fit in hand?</span><span style="font-size:13px;opacity:.85">0:18</span></span>
 <span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:999px;background:rgba(247,241,231,.9);color:#4A443C;display:flex;align-items:center;justify-content:center;font-size:17px">▶</span>
 </button>
-<button onClick="{{ openReel4 }}" style="all:unset;cursor:pointer;position:relative;aspect-ratio:9/16;overflow:hidden;background:#F2E7DB;display:block">
-<img src="src/assets/reel-4.jpg" alt="Washing up, sixty seconds" style="width:100%;height:100%;object-fit:cover;display:block">
+<button sc-camel-on-click="{{ openReel4 }}" style="all:unset;cursor:pointer;position:relative;aspect-ratio:9/16;overflow:hidden;background:#F2E7DB;display:block">
+<img src="src/home-assets/washing-up-sixty-seconds-8ba368.jpg" alt="Washing up, sixty seconds" style="width:100%;height:100%;object-fit:cover;display:block">
 <span style="position:absolute;inset:auto 0 0 0;padding:16px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(transparent,rgba(74,68,60,.55));color:#FAF8F4;font-size:15px"><span>How does it come apart for cleaning?</span><span style="font-size:13px;opacity:.85">0:22</span></span>
 <span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:999px;background:rgba(247,241,231,.9);color:#4A443C;display:flex;align-items:center;justify-content:center;font-size:17px">▶</span>
 </button>
@@ -392,7 +798,7 @@ input,button{font-family:inherit}
 </section>
 
 <sc-if value="{{ reelOpen }}" hint-placeholder-val="{{ false }}">
-<div onClick="{{ closeReel }}" style="position:fixed;inset:0;z-index:60;background:rgba(74,68,60,.82);display:flex;align-items:center;justify-content:center;padding:clamp(16px,4vw,40px);cursor:pointer">
+<div sc-camel-on-click="{{ closeReel }}" style="position:fixed;inset:0;z-index:60;background:rgba(74,68,60,.82);display:flex;align-items:center;justify-content:center;padding:clamp(16px,4vw,40px);cursor:pointer">
 <div style="display:flex;flex-direction:column;gap:14px;align-items:center">
 {{ reelImg }}<span style="font-family:ui-monospace,Menlo,monospace;font-size:13px;color:#FBF7F1;background:rgba(74,68,60,.6);padding:8px 12px">video slot — drop the .mp4 here · click anywhere to close</span>
 </div>
@@ -413,27 +819,27 @@ input,button{font-family:inherit}
 </div>
 <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.4vw,18px)">
 <a href="https://instagram.com/nimova" style="min-width:0;position:relative;aspect-ratio:1/1;background:#F2E7DB;overflow:hidden;display:block" style-hover="opacity:.92">
-<img src="src/assets/lifestyle-warm.jpg" alt="Bowl on a kitchen table" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+<img src="src/home-assets/a-family-morning-at-the-table-45526d.jpg" alt="Bowl on a kitchen table" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
 <span style="position:absolute;left:0;right:0;bottom:0;padding:10px 12px;background:linear-gradient(0deg,rgba(74,68,60,.62),rgba(74,68,60,0));color:#FBF7F1;font-size:14px">Setting up for first porridge</span>
 </a>
 <a href="https://instagram.com/nimova" style="min-width:0;position:relative;aspect-ratio:1/1;background:#F2E7DB;overflow:hidden;display:block" style-hover="opacity:.92">
-<img src="src/assets/fork-hand.jpg" alt="Cutlery held in a parent's hand" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+<img src="src/home-assets/cutlery-held-in-a-parent-s-hand-c949cb.jpg" alt="Cutlery held in a parent's hand" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
 <span style="position:absolute;left:0;right:0;bottom:0;padding:10px 12px;background:linear-gradient(0deg,rgba(74,68,60,.62),rgba(74,68,60,0));color:#FBF7F1;font-size:14px">How the cutlery sits in hand</span>
 </a>
 <a href="https://instagram.com/nimova" style="min-width:0;position:relative;aspect-ratio:1/1;background:#F2E7DB;overflow:hidden;display:block" style-hover="opacity:.92">
-<img src="src/assets/opt-p-sb-ag3.jpg" alt="The suction base being pressed to a tray" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+<img src="src/home-assets/the-suction-base-being-pressed-to-a-tray-ca2187.jpg" alt="The suction base being pressed to a tray" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
 <span style="position:absolute;left:0;right:0;bottom:0;padding:10px 12px;background:linear-gradient(0deg,rgba(74,68,60,.62),rgba(74,68,60,0));color:#FBF7F1;font-size:14px">Pressing the base to the tray</span>
 </a>
 <a href="https://instagram.com/nimova" style="min-width:0;position:relative;aspect-ratio:1/1;background:#F2E7DB;overflow:hidden;display:block" style-hover="opacity:.92">
-<img src="src/assets/opt-p-sb-ag2.jpg" alt="The straw filter inside the bowl" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+<img src="src/home-assets/the-straw-filter-inside-the-bowl-dd9bd0.jpg" alt="The straw filter inside the bowl" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
 <span style="position:absolute;left:0;right:0;bottom:0;padding:10px 12px;background:linear-gradient(0deg,rgba(74,68,60,.62),rgba(74,68,60,0));color:#FBF7F1;font-size:14px">Where the filter sits</span>
 </a>
 <a href="https://instagram.com/nimova" style="min-width:0;position:relative;aspect-ratio:1/1;background:#F2E7DB;overflow:hidden;display:block" style-hover="opacity:.92">
-<img src="src/assets/deer-plate.jpg" alt="Divided plate with food" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+<img src="src/home-assets/divided-silicone-plate-with-lid-f49498.jpg" alt="Divided plate with food" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
 <span style="position:absolute;left:0;right:0;bottom:0;padding:10px 12px;background:linear-gradient(0deg,rgba(74,68,60,.62),rgba(74,68,60,0));color:#FBF7F1;font-size:14px">Portioning the divided plate</span>
 </a>
 <a href="https://instagram.com/nimova" style="min-width:0;position:relative;aspect-ratio:1/1;background:#F2E7DB;overflow:hidden;display:block" style-hover="opacity:.92">
-<img src="src/assets/flatlay-clean.png" alt="Bowl parts taken apart for washing" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+<img src="src/home-assets/bowl-parts-taken-apart-for-washing-df4e23.jpg" alt="Bowl parts taken apart for washing" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
 <span style="position:absolute;left:0;right:0;bottom:0;padding:10px 12px;background:linear-gradient(0deg,rgba(74,68,60,.62),rgba(74,68,60,0));color:#FBF7F1;font-size:14px">Every part comes apart</span>
 </a>
 </div>
@@ -458,7 +864,7 @@ input,button{font-family:inherit}
 <p style="font-size:17px;line-height:1.55;color:#6d655b;margin:0">A look at the bowls, bibs, spoons and extras that can help when first tastes begin.</p>
 </article>
 <article style="display:flex;flex-direction:column;gap:14px">
-<div style="aspect-ratio:16/10;background:#FAF8F4;overflow:hidden"><img src="src/assets/bowl-topdown.jpg" alt="Bowl and lid from above" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+<div style="aspect-ratio:16/10;background:#FAF8F4;overflow:hidden"><img src="src/home-assets/bowl-and-lid-from-above-96d349.jpg" alt="Bowl and lid from above" style="width:100%;height:100%;object-fit:cover;display:block"></div>
 <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8d8478">materials · sources listed in full</div>
 <div style="font-family:'Quicksand',sans-serif;font-size:24px;line-height:1.2">Stainless steel or silicone? Where each works best</div>
 <p style="font-size:17px;line-height:1.55;color:#6d655b;margin:0">What each material is suited to, how to care for it and what to check before buying.</p>
@@ -480,9 +886,9 @@ input,button{font-family:inherit}
 <div style="font-family:'Quicksand',sans-serif;font-size:clamp(26px,3.8vw,38px);line-height:1.15;text-wrap:pretty">useful notes for everyday mealtimes.</div>
 <p style="font-size:17px;line-height:1.6;color:#6d655b;margin:0;max-width:48ch">Feeding ideas, product updates and new Journal stories — sent occasionally.</p>
 </div>
-<form style="display:flex;flex-direction:column;gap:12px" onSubmit="{{ onSubmit }}">
+<form style="display:flex;flex-direction:column;gap:12px" sc-camel-on-submit="{{ onSubmit }}">
 <div style="display:flex;gap:12px;flex-wrap:wrap">
-<input type="email" placeholder="you@email.com" value="{{ email }}" onChange="{{ onEmail }}" style="flex:1 1 200px;min-width:0;font-size:17px;padding:15px 18px;border:1px solid rgba(74,68,60,.28);background:#FFFFFF;color:#4A443C;border-radius:999px;outline:none">
+<input type="email" placeholder="you@email.com" value="{{ email }}" sc-camel-on-change="{{ onEmail }}" style="flex:1 1 200px;min-width:0;font-size:17px;padding:15px 18px;border:1px solid rgba(74,68,60,.28);background:#FFFFFF;color:#4A443C;border-radius:999px;outline:none">
 <button type="submit" style="background:#5F7357;color:#FAF8F4;border:none;font-size:17px;font-weight:500;padding:15px 30px;border-radius:999px;cursor:pointer" style-hover="background:#4A443C">{{ subscribeLabel }}</button>
 </div>
 <span style="font-size:15px;color:#8d8478">{{ formNote }}</span>
@@ -491,8 +897,8 @@ input,button{font-family:inherit}
 </section>
 
 <footer id="delivery" style="border-top:1px solid rgba(74,68,60,.12);padding:clamp(48px,7vw,64px) clamp(20px,5vw,40px) clamp(36px,5vw,52px)">
-<div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr));gap:clamp(22px,3vw,40px)">
-<div style="display:flex;flex-direction:column;gap:12px;grid-column:span 2;min-width:0">
+<div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr));gap:clamp(22px,3vw,40px)">
+<div style="display:flex;flex-direction:column;gap:12px;min-width:0">
 <div style="display:flex;flex-direction:column;gap:5px;align-items:stretch;width:fit-content">
 <span style="font-family:'Quicksand',sans-serif;font-size:clamp(32px,4.2vw,42px);font-weight:500;line-height:1">nimova</span>
 <span style="border-top:1px solid rgba(126,149,115,.85);padding-top:7px;font-family:'Quicksand',sans-serif;font-size:14px;letter-spacing:.015em;color:#4A443C;text-align:center">baby essentials</span>
@@ -545,7 +951,7 @@ input,button{font-family:inherit}
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{}">
+<script type="text/x-dc" data-dc-script="" data-props="{}">
 const AR = {
   "Launching in the GCC · free shipping over AED 200": "الإطلاق في دول الخليج · توصيل مجاني للطلبات فوق ٢٠٠ درهم",
   "baby essentials": "أساسيات الطفل",
@@ -713,6 +1119,8 @@ const AR = {
   "Made for daily use": "مصنوع للاستخدام اليومي", "Designed to be used, washed and used again": "مصمّم ليُستخدم ويُغسل ويُستخدم من جديد",
   "Thoughtful function": "وظيفة مدروسة", "Every feature has a practical purpose": "لكل تفصيل غرض عملي",
   "Clear materials": "مواد واضحة", "Material and care details for every product": "تفاصيل المواد والعناية لكل منتج",
+  "Designed and built with mothers": "مصمّم ومطوّر مع الأمهات",
+  "Every product goes through a cycle of in-home use and feedback": "يمرّ كل منتج بدورة من الاستخدام المنزلي والملاحظات",
   "from first tastes": "من أول المذاقات", "to self-feeding": "إلى الأكل المستقل",
   "Useful pieces for starting solids, growing independence and the everyday meals in between.": "قطع مفيدة للبدء بالطعام الصلب، ونمو الاستقلالية، والوجبات اليومية بينهما.",
   "sips & snacks": "الشرب والوجبات الخفيفة", "less mess": "فوضى أقل",
@@ -885,10 +1293,10 @@ class Component extends DCLogic {
       reelImg: this.state.reel
         ? React.createElement("img", { src: this.state.reel, alt: "Lifestyle video", style: { maxHeight: "76vh", width: "auto", display: "block" } })
         : null,
-      openReel1: open((window.__resources && window.__resources.reel1) || "src/assets/reel-1.jpg"),
-      openReel2: open((window.__resources && window.__resources.reel2) || "src/assets/reel-2.jpg"),
-      openReel3: open((window.__resources && window.__resources.reel3) || "src/assets/reel-3.jpg"),
-      openReel4: open((window.__resources && window.__resources.reel4) || "src/assets/reel-4.jpg"),
+      openReel1: open((window.__resources && window.__resources.reel1) || "assets/w-reel-1.jpg"),
+      openReel2: open((window.__resources && window.__resources.reel2) || "assets/w-reel-2.jpg"),
+      openReel3: open((window.__resources && window.__resources.reel3) || "assets/w-reel-3.jpg"),
+      openReel4: open((window.__resources && window.__resources.reel4) || "assets/w-reel-4.jpg"),
       closeReel: () => this.setState({ reel: null }),
       email: this.state.email,
       subscribeLabel: this.state.sent ? "You're on the list" : "Notify me",
@@ -949,5 +1357,4 @@ class Component extends DCLogic {
 })();
 </script>
 
-</body>
-</html>
+</body></html>
